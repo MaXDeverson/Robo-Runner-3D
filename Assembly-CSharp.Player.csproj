@@ -56,17 +56,28 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Gun.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Hero Scrips\ShootLogic.cs" />
+    <Compile Include="Assets\Scripts\Hero Scrips\HeroMover.cs" />
+    <Compile Include="Assets\Scripts\Hero Scrips\MoverLogic.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\Tag.cs" />
+    <Compile Include="Assets\Scripts\Hero Scrips\ManagerAnimation.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\AnimationType.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\Shaders\Universal.shader" />
-     <None Include="Assets\Shaders\Flexus.cginc" />
+     <None Include="Assets\Materials\Shaders\Universal.shader" />
+     <None Include="Assets\Materials\Shaders\Flexus.cginc" />
      <None Include="Assets\Materials\Skybox\Skybox Cubemap Extended.shader" />
-     <None Include="Assets\Shaders\UniversalOutlined.shader" />
-     <None Include="Assets\Shaders\FPSParticleBlendDirLight.shader" />
-     <None Include="Assets\Shaders\UniversalTransparent.shader" />
-     <None Include="Assets\Shaders\Skybox Gradient.shader" />
-     <None Include="Assets\Shaders\FPSGlowAdditive.shader" />
+     <None Include="Assets\Materials\Shaders\UniversalOutlined.shader" />
+     <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
+     <None Include="Assets\Materials\Shaders\FPSParticleBlendDirLight.shader" />
+     <None Include="Assets\Materials\Shaders\UniversalTransparent.shader" />
+     <None Include="Assets\Materials\Shaders\Skybox Gradient.shader" />
+     <None Include="Assets\Materials\Shaders\FPSGlowAdditive.shader" />
+     <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.dll</HintPath>
     </Reference>

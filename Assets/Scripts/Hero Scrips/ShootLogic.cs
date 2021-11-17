@@ -6,7 +6,7 @@ public class ShootLogic : MonoBehaviour
 {
     [SerializeField] private Gun _gun;
     [SerializeField] private ManagerAnimation _managerAniamtion;
-    [SerializeField] private bool _shoot;
+    private bool _enemyIsInZone;
     void Start()
     {
 
@@ -14,17 +14,16 @@ public class ShootLogic : MonoBehaviour
 
     private void Update()
     {
-
-        _gun.ShootWait(_shoot);
-        _managerAniamtion.SetMainAnimation(_shoot ? AnimationType.Shoot : AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
-
+        _gun.ShootWait(_enemyIsInZone);
+        _managerAniamtion.SetMainAnimation(_enemyIsInZone ? AnimationType.Shoot : AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
+        _enemyIsInZone = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag(Tag.Enemy))
         {
-
+            _enemyIsInZone = true;
         }
     }
 }

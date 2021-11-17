@@ -10,7 +10,6 @@ public class HeroMover : MonoBehaviour
     private Rigidbody _rigidbody;
     private float _previousLogicPosition;
     private const float _moveXRestriction = 2.7F;
-
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();

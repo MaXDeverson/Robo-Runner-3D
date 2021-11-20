@@ -37,7 +37,8 @@ public class Gun : Weapon
         _muzzleFlash.Play();
         Rigidbody newBullet = Instantiate(_bullet, _backPoint.position, transform.rotation);
         Vector3 directionShoot = _muzzlePoint.position - _backPoint.position;
-        newBullet.velocity = new Vector3(0, 0, _bulletVelocity);
+        //newBullet.velocity = new Vector3(0, 0, _bulletVelocity);
+        newBullet.velocity = directionShoot.normalized * _bulletVelocity;
         Destroy(newBullet.gameObject, _bulletLifeTime);
         yield return new WaitForSeconds(_rateFire);
         isShoot = false;
@@ -45,7 +46,7 @@ public class Gun : Weapon
 
     private bool _waitChange;
 
-    public override async void ShootWait(bool shoot)
+    public override void ShootWait(bool shoot)
     {
         isActive = shoot;
     }

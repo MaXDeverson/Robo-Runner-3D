@@ -7,16 +7,19 @@ public class HeroMover : MonoBehaviour
     [SerializeField] private MoverLogic _moverLogic;
     [SerializeField] private float _velocity;
     [SerializeField] private ManagerAnimation _managerAnimation;
+    [SerializeField] private HeroDestroyer _destroyer;
     private Rigidbody _rigidbody;
     private float _previousLogicPosition;
     private const float _moveXRestriction = 2.7F;
+    private bool _isDie;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _destroyer.DieAction += () => _isDie = true;
     }
-    // Update is called once per frame
     void Update()
     {
+        if (_isDie) return;
         float newXPosition = transform.position.x + _moverLogic.PositionX;
         if(newXPosition > _moveXRestriction)
         {

@@ -8,4 +8,6 @@ public enum AnimationType
    Run,
    Jump,
    Shoot,
+   GetDamage,
+   Die,
 }

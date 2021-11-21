@@ -34,7 +34,7 @@ public class EnemyAnimator : MonoBehaviour
                 System.Random random = new System.Random();
                 _rigidbody.AddForce(new Vector3(random.Next((int)_pushForce,(int)-_pushForce), _pushForce, -_pushForce * 3), ForceMode.Impulse);
                  await Task.Delay(1100);
-                _boomParticles.transform.SetParent(null);
+                _boomParticles.transform.parent = null;
                 Destroy(_destroyObj, 0.1f);
                 _boomParticles.Play();
                 break;

@@ -23,11 +23,14 @@ public class Bullet : MonoBehaviour
             {
                 _mainParticles.Stop();
             }
+            if (_rigidbody != null)
+            {
                 _finishParticles.Play();
                 _rigidbody.velocity = Vector3.zero;
                 _finishParticles.transform.parent = null;
                 Destroy(_finishParticles, 0.5f);
-            Destroy(this.gameObject);
+                Destroy(this.gameObject);
+            }
 
         }
     }

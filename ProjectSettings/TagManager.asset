@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Bullet
   - EnemyBullet
+  - Mine
   layers:
   - Default
   - TransparentFX

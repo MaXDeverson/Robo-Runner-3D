@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textLifes;
     [SerializeField] private Slider _lifesSlider;
+
     private HeroDestroyer _heroDestroyer;
 
     public void SetHeroDestroyer(HeroDestroyer heroDestroyer) => _heroDestroyer = heroDestroyer;

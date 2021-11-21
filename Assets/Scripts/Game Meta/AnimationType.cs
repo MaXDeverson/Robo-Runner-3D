@@ -10,4 +10,5 @@ public enum AnimationType
    Shoot,
    GetDamage,
    Die,
+   GetDamageMine,
 }

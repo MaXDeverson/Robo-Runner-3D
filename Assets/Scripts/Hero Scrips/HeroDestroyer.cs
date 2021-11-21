@@ -21,22 +21,31 @@ public class HeroDestroyer : MonoBehaviour
         switch (other.tag)
         {
             case Tag.EnemyBullet:
-                _countLifes -= 1;
-                if(_countLifes >= 0)
-                {
-                    GetDamageAction?.Invoke(_countLifes);
-                    GetDamageActionProcent?.Invoke(_countLifes / _maxCounLefes);
-                }
-                if (_countLifes>0)
-                {   
-                    _managerAnimation.SetMainAnimation(AnimationType.GetDamage, ManagerAnimation.LayerType.MainLayer);
-                }
-                else
-                {
-                    _managerAnimation.SetMainAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);
-                    DieAction?.Invoke();
-                }
+                GetDamage(1,AnimationType.GetDamage);
                 break;
+            case Tag.Mine:
+                GetDamage(1,AnimationType.GetDamageMine);
+                break;
+        }
+    }
+
+    private void GetDamage(int count,AnimationType typeAnimation)
+    {
+        _countLifes -= count;
+        if (_countLifes >= 0)
+        {
+            GetDamageAction?.Invoke(_countLifes);
+            GetDamageActionProcent?.Invoke(_countLifes / _maxCounLefes);
+        }
+        if (_countLifes > 0)
+        {
+            _managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
+        }
+        else
+        {
+            _managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
+            _managerAnimation.SetMainAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);
+            DieAction?.Invoke();
         }
     }
 }

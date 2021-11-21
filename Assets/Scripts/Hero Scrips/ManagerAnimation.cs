@@ -6,13 +6,16 @@ using UnityEngine;
 public class ManagerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private float _upForce;
+    [SerializeField] private ParticleSystem _dieParticles;
     private const string MAIN_LAYER_NAME = "MainLayer";
     private const string HAND_LAYER_NAME = "HandLayer";
+    private Rigidbody _rigidbody;
     private bool _palyDieAnimation;
     private bool _isDie;
     void Start()
     {
-
+        _rigidbody = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -21,10 +24,7 @@ public class ManagerAnimation : MonoBehaviour
 
     public async void SetMainAnimation(AnimationType type,LayerType layerType)
     {
-        if (type.Equals(AnimationType.Die))
-        {
-            _palyDieAnimation = true;
-        }
+        if (_palyDieAnimation) return;
         switch (type)
         {
             case AnimationType.GetDamage:
@@ -42,6 +42,14 @@ public class ManagerAnimation : MonoBehaviour
                 }
                 transform.eulerAngles = Vector3.zero;
                 return;
+            case AnimationType.Die:
+                _palyDieAnimation = true;
+                _dieParticles.Play();
+                transform.tag = Tag.Bullet;//For exept bullet animation after die;
+                break;
+            case AnimationType.GetDamageMine:
+                _rigidbody.AddForce(new Vector3(0, _upForce, 0), ForceMode.Impulse);
+                break;
         }
         string layerName = layerType.Equals(LayerType.MainLayer) ? MAIN_LAYER_NAME : HAND_LAYER_NAME;
         _animator.SetInteger(layerName, (int)type);

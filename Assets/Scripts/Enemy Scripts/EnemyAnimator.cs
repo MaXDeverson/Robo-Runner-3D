@@ -27,6 +27,9 @@ public class EnemyAnimator : MonoBehaviour
         }
         switch (animation)
         {
+            case AnimationType.Shoot:
+                _animator.SetInteger(MAIN_LAYER_NAME, (int)animation);
+                break;
             case AnimationType.Die:
                 _isDie = true;
                 _animator.SetInteger(MAIN_LAYER_NAME,(int)animation);

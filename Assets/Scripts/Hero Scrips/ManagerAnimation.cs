@@ -8,8 +8,10 @@ public class ManagerAnimation : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private float _upForce;
     [SerializeField] private ParticleSystem _dieParticles;
+    [SerializeField] private ParticleSystem _flyAnimation;
     private const string MAIN_LAYER_NAME = "MainLayer";
     private const string HAND_LAYER_NAME = "HandLayer";
+    private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
     private Rigidbody _rigidbody;
     private bool _palyDieAnimation;
     private bool _isDie;
@@ -50,9 +52,21 @@ public class ManagerAnimation : MonoBehaviour
             case AnimationType.GetDamageMine:
                 _rigidbody.AddForce(new Vector3(0, _upForce, 0), ForceMode.Impulse);
                 break;
+            case AnimationType.Jump:
+                StartCoroutine(SlowJumpAnimation());
+                break;
         }
         string layerName = layerType.Equals(LayerType.MainLayer) ? MAIN_LAYER_NAME : HAND_LAYER_NAME;
         _animator.SetInteger(layerName, (int)type);
+        _flyAnimation.Pause();
+    }
+
+    private IEnumerator SlowJumpAnimation()
+    {
+        _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 1);
+        _flyAnimation.Play();
+        yield return new WaitForSeconds(1f);
+        _animator.SetFloat(SPEED_JUMP_MULTIPLIER,0.2f);
     }
 
     public enum LayerType

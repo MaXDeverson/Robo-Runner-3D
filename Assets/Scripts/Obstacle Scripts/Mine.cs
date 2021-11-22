@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _boomParticle;
+    [SerializeField] private GameObject _destroyMineMash;
     void Start()
     {
         
@@ -21,6 +22,7 @@ public class Mine : MonoBehaviour
         if (other.CompareTag(Tag.Player))
         {
             _boomParticle.Play();
+            Destroy(_destroyMineMash.gameObject);
         }
     }
 }

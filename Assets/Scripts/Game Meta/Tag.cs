@@ -10,4 +10,5 @@ public class Tag : MonoBehaviour
     public const string EnemyBullet = "EnemyBullet";
     public const string Player = "Player";
     public const string Mine = "Mine";
+    public const string Jump = "JumpPlace";
 }

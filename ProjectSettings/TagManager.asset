@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - EnemyBullet
   - Mine
+  - JumpPlace
   layers:
   - Default
   - TransparentFX

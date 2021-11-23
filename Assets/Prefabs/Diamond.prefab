@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8778260980315687942
 Transform:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2637659298200183618}
   m_Layer: 0
   m_Name: Diamond
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,14 +234,14 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0ab2e2cc87e3c5a4ba43ba37fad36d09, type: 2}
+      objectReference: {fileID: 2100000, guid: af7d87705f5c8d44cb365d3d22793e6b, type: 2}
     - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_Name
       value: uploads_files_833908_crystal_low
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - Mine
   - JumpPlace
+  - Crystal
   layers:
   - Default
   - TransparentFX

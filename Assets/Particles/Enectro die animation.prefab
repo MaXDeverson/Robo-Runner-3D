@@ -121,7 +121,6 @@ GameObject:
   - component: {fileID: 354965280214355999}
   - component: {fileID: 354965280233755999}
   - component: {fileID: 354965280233860351}
-  - component: {fileID: 354965280208583135}
   m_Layer: 0
   m_Name: Enectro die animation
   m_TagString: Untagged
@@ -4896,16 +4895,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &354965280208583135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354965280214060095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnlyDeactivate: 0

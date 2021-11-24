@@ -55,10 +55,12 @@ public class ManagerAnimation : MonoBehaviour
             case AnimationType.Jump:
                 StartCoroutine(SlowJumpAnimation());
                 break;
+            case AnimationType.Run:
+                _flyAnimation.Stop();
+                break;
         }
         string layerName = layerType.Equals(LayerType.MainLayer) ? MAIN_LAYER_NAME : HAND_LAYER_NAME;
         _animator.SetInteger(layerName, (int)type);
-        _flyAnimation.Pause();
     }
 
     private IEnumerator SlowJumpAnimation()

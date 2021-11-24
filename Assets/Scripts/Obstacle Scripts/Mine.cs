@@ -22,7 +22,7 @@ public class Mine : MonoBehaviour
         if (other.CompareTag(Tag.Player))
         {
             _boomParticle.Play();
-            Destroy(_destroyMineMash.gameObject);
+            if(_destroyMineMash!= null)Destroy(_destroyMineMash.gameObject);
         }
     }
 }

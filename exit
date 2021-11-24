@@ -1,0 +1,53 @@
+[33mcommit 51bb4f4ee2af71fccff449a95f11516efeacc625[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Tue Nov 23 15:07:13 2021 +0200
+
+    Create Crystal counter
+
+[33mcommit e9e2ea6ceb6258ef8b6d579335fb9b9ee0cc9fbe[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Mon Nov 22 23:16:24 2021 +0200
+
+    Fix Previous BUG
+
+[33mcommit dd12913a1607f688cc40908bd69f577b4b44e0b2[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Mon Nov 22 23:03:02 2021 +0200
+
+    Create BUG, some ui, Jump, Fix bug with out die a hero
+
+[33mcommit 0de6b64a38983d85ee6f3c3416318bbbd73106b1[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Sun Nov 21 21:53:12 2021 +0200
+
+    Create: crystals,transparent tramplin; Fix bug with miss bullets of enemy, create 1-t lv prototype
+
+[33mcommit 0f0759b7af431e8910f7cea441eb48dc713c87b0[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Sun Nov 21 10:12:24 2021 +0200
+
+    Create not bed enemy bullets, hit animation, die animatinn, mines
+
+[33mcommit d3b4e85ecd26a1f507f57a56e30d9a6024c03893[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Sat Nov 20 12:03:33 2021 +0200
+
+    created UI damage indicator; Create mine ; added camera animation rotate
+
+[33mcommit 91172db1910bd47ae99effdf6bc099cb2fbecbc9[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Wed Nov 17 12:19:51 2021 +0200
+
+    Create norm animation layers; Realized shoot mecanic
+
+[33mcommit 16904e6697a487b6823da96a08fa3fdb11471674[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Tue Nov 16 22:08:20 2021 +0200
+
+    Create Shoot mecanic
+
+[33mcommit ac9a3d92efb441a1e80637007f5d7a1e205ea061[m
+Author: MaXDeverson <max791194091@gmail.com>
+Date:   Tue Nov 16 11:22:03 2021 +0200
+
+    Start Verstion

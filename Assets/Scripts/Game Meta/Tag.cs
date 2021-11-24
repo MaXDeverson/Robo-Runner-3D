@@ -12,4 +12,5 @@ public class Tag : MonoBehaviour
     public const string Mine = "Mine";
     public const string Jump = "JumpPlace";
     public const string Crystal = "Crystal";
+    public const string ElectroCrystal = "ElectroCrystal";
 }

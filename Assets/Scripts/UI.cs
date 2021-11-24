@@ -22,6 +22,10 @@ public class UI : MonoBehaviour
         {
             _textCountUsualCrystals.text = updateCount + "";
         };
+        dtata.ChangeCountElectroCrystalAction += (int updateCount) =>
+          {
+              _textCountElectricCrystal.text = updateCount + "";
+          };
     }
     private void Start()
     {

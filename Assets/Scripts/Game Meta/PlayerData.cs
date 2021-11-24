@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     public Action<int> ChangeCountUsualCrystalAction;
+    public Action<int> ChangeCountElectroCrystalAction;
     private int _countUsualCrystals;
     private int _countElectroCrystals;
     private int _maxCountLifes;//in future;
@@ -20,6 +21,11 @@ public class PlayerData
     {
         _countUsualCrystals ++;
         ChangeCountUsualCrystalAction.Invoke(_countUsualCrystals);
+    }
+    public void AddElectroCrystal()
+    {
+        _countElectroCrystals++;
+        ChangeCountElectroCrystalAction.Invoke(_countElectroCrystals);
     }
 
     public static PlayerData GetPlayerData()

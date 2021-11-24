@@ -12,6 +12,9 @@ public class ThingsCounter : MonoBehaviour
             case Tag.Crystal:
                 _playerData.AddUsualCrystals();
                 break;
+            case Tag.ElectroCrystal:
+                _playerData.AddElectroCrystal();
+                break;
         }
     }
     public void SetListener(PlayerData playerData) => _playerData = playerData;

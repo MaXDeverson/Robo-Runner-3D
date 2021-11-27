@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     [Header("For crystals")]
     [SerializeField] private TextMeshProUGUI _textCountUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textCountElectricCrystal;
+    [SerializeField] private Button _replyButton;
 
     private HeroDestroyer _heroDestroyer;
 
@@ -29,6 +30,10 @@ public class UI : MonoBehaviour
     }
     private void Start()
     {
+        _replyButton.onClick.AddListener(() =>
+        {
+            Level.CurrentLevel.Restart();
+        });
         _heroDestroyer.GetDamageAction += (count) =>
         {
             _textLifes.text = count + "";

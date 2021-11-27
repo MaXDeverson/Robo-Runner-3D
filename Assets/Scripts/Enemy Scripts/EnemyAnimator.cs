@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class EnemyAnimator : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected Animator _animator;
     [SerializeField] private float _pushForce;
     [Header("For Die")]
     [SerializeField] private ParticleSystem _boomParticles;
     [SerializeField] private GameObject _destroyObj;
+    public AnimationType CurrentAnimation { get; private set; }
     private Rigidbody _rigidbody;
-    private const string MAIN_LAYER_NAME = "MainLayer";
+    protected const string MAIN_LAYER_NAME = "MainLayer";
     private bool _isDie;
     void Start()
     {
@@ -19,17 +20,16 @@ public class EnemyAnimator : MonoBehaviour
     }
 
 
-    public async  void PlayAnimation(AnimationType animation)
+    public virtual async void PlayAnimation(AnimationType animation)
     {
         if (_isDie)
         {
             return;
         }
+        CurrentAnimation = animation;
+        //Specific animation;
         switch (animation)
         {
-            case AnimationType.Shoot:
-                _animator.SetInteger(MAIN_LAYER_NAME, (int)animation);
-                break;
             case AnimationType.Die:
                 _isDie = true;
                 _animator.SetInteger(MAIN_LAYER_NAME,(int)animation);
@@ -37,10 +37,13 @@ public class EnemyAnimator : MonoBehaviour
                 System.Random random = new System.Random();
                 _rigidbody.AddForce(new Vector3(random.Next((int)_pushForce,(int)-_pushForce), _pushForce, -_pushForce * 3), ForceMode.Impulse);
                  await Task.Delay(1100);
-                _boomParticles.transform.parent = null;
-                Destroy(_destroyObj, 0.1f);
-                _boomParticles.Play();
-                break;
+                if (Application.isPlaying)
+                {
+                    _boomParticles.transform.parent = null;
+                    Destroy(_destroyObj, 0.1f);
+                    _boomParticles.Play();
+                }
+                return;
             case AnimationType.GetDamage:
                 _rigidbody.AddForce(new Vector3(0, 0, -_pushForce), ForceMode.Impulse);
                  await Task.Delay(200);
@@ -48,7 +51,8 @@ public class EnemyAnimator : MonoBehaviour
                 {
                     _rigidbody.velocity = Vector3.zero;
                 }
-                break;
+                return;
         }
+        _animator.SetInteger(MAIN_LAYER_NAME, (int)animation);
     }
 }

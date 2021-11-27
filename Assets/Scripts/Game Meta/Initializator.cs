@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Initializator : MonoBehaviour
 {
-    private void Awake()
+    public void Play()
     {
-        SceneManager.LoadScene(Serializator.GetLevel());
+        SceneManager.LoadScene(Serializator.GetData(DataName.CurrentLevel));
+    }
+
+    public void Reset()
+    {
+        Serializator.ResetValues();
     }
 }

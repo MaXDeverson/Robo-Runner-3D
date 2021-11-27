@@ -11,13 +11,16 @@ public class Level : MonoBehaviour
     public static Level CurrentLevel;
     private PlayerData _playerData;
     private int currentLevelIndex;
+    private bool _nextLoading;
     private void Awake()
     {
         _ui.SetHeroDestroyer(_heroDestroyer);
         _playerData = PlayerData.GetPlayerData();
         _ui.SetUpdateDataUsualCrystal(_playerData);
         _thingsCounter.SetListener(_playerData);
-        currentLevelIndex = Serializator.GetLevel();
+        currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        Serializator.SetData(DataName.CurrentLevel, currentLevelIndex);
+        Debug.Log("Load Scene: " + currentLevelIndex);
         CurrentLevel = this;
     }
     private void Start()
@@ -32,5 +35,24 @@ public class Level : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(currentLevelIndex);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag(Tag.Player))
+        {
+            LoadNextScene();
+        }
+    }
+
+    private void LoadNextScene()
+    {
+        if (!_nextLoading)
+        {
+            _nextLoading = true;
+            _playerData.SaveResult();
+            SceneManager.LoadScene(++currentLevelIndex);
+        }
     }
 }

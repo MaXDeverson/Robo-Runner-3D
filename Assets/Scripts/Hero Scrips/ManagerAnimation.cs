@@ -18,6 +18,7 @@ public class ManagerAnimation : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.2f);
     }
     void Update()
     {

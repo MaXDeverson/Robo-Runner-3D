@@ -17,16 +17,16 @@ public class UI : MonoBehaviour
     private HeroDestroyer _heroDestroyer;
 
     public void SetHeroDestroyer(HeroDestroyer heroDestroyer) => _heroDestroyer = heroDestroyer;
-    public void SetUpdateDataUsualCrystal(PlayerData dtata)
+    public void SetUpdateDataUsualCrystal(PlayerData data)
     {
-        dtata.ChangeCountUsualCrystalAction += (int updateCount) =>
+        data.SetChangeCounUCystal((int updateCount) =>
         {
             _textCountUsualCrystals.text = updateCount + "";
-        };
-        dtata.ChangeCountElectroCrystalAction += (int updateCount) =>
-          {
-              _textCountElectricCrystal.text = updateCount + "";
-          };
+        });
+        data.SetChangeCounECrystal((int updateCount) =>
+         {
+             _textCountElectricCrystal.text = updateCount + "";
+         });
     }
     private void Start()
     {

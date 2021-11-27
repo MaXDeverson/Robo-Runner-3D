@@ -4,23 +4,38 @@ using UnityEngine;
 
 public static class Serializator
 {
-    public static int GetLevel()
+    private static string [] Names = {"CurrentLevel","CountCrystals","CountECystals","MaxContLives"};
+
+    public static int GetData(DataName name)
     {
-        int levelIndex = PlayerPrefs.GetInt(DataName.CurrentLevel);
-        if(levelIndex == 0)
+        int value = PlayerPrefs.GetInt(Names[(int)name]);
+        //Additional conditions
+        switch (name)
         {
-            levelIndex = 1;
-            SetLevel(levelIndex);
+            case DataName.CurrentLevel:
+                if (value == 0)
+                {
+                    SetData(name, 1);
+                    return 1;
+                }
+                break;
         }
-        return levelIndex;
-
+        return value;
     }
- 
+    public static void SetData(DataName name, int value) => PlayerPrefs.SetInt(Names[(int)name], value);
 
-    public static void SetLevel(int level) => PlayerPrefs.SetInt(DataName.CurrentLevel,level);
-
-    private class DataName
+    public static void ResetValues()
     {
-        public const string CurrentLevel = "CurrentLevel";
+        for(int i = 0; i < Names.Length; i++)
+        {
+            PlayerPrefs.SetInt(Names[i], 0);
+        }
     }
+}
+public enum DataName
+{
+    CurrentLevel,
+    CountCrystals,
+    CountECrystals,
+    MaxCounLives,
 }

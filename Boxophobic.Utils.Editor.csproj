@@ -56,48 +56,48 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\SettingsUtils\LoadSettingsData.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledMessageDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledMessageDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledBannerDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledInteractiveDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledTexturePreviewDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledInteractiveDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledIndentDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledEnumDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledMaskDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledToggleDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledPopupLayersDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledIndentDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledTextureDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledGUI\DrawInspectorBanner.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\SettingsUtils\SaveSettingsData.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledGUI\DrawInspectorCategory.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledGUI\DrawWindowBanner.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledSpaceDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledTextureSingleLineDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledButtonDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\Constants\Constants.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledDiffusionMaterialDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMono\StyledMonoBehaviourEditor.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledSpaceDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMono\StyledScriptableObjectEditor.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledCategoryDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledPopupArrayDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledIEnumDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledIMaskDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledTextDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledGUI\DrawWindowCategory.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledCategoryDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledButtonDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledRangeOptionsDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledInspector\StyledBannerDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledTextDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledOptionsSliderDrawer.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Editor\StyledMaterial\StyledRemapSliderDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\SettingsUtils\LoadSettingsData.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledMessageDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledMessageDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledBannerDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledInteractiveDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledTexturePreviewDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledInteractiveDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledIndentDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledEnumDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledMaskDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledToggleDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledPopupLayersDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledIndentDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledTextureDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledGUI\DrawInspectorBanner.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\SettingsUtils\SaveSettingsData.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledGUI\DrawInspectorCategory.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledGUI\DrawWindowBanner.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledSpaceDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledTextureSingleLineDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledButtonDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\Constants\Constants.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledDiffusionMaterialDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMono\StyledMonoBehaviourEditor.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledSpaceDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMono\StyledScriptableObjectEditor.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledCategoryDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledPopupArrayDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledIEnumDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledIMaskDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledTextDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledGUI\DrawWindowCategory.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledCategoryDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledButtonDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledRangeOptionsDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledInspector\StyledBannerDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledTextDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledOptionsSliderDrawer.cs" />
+    <Compile Include="Assets\Beautiful Skyboxes\Utils\Editor\StyledMaterial\StyledRemapSliderDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\BOXOPHOBIC\Utils\Editor\Boxophobic.Utils.Editor.asmdef" />
+     <None Include="Assets\Beautiful Skyboxes\Utils\Editor\Boxophobic.Utils.Editor.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -342,7 +342,7 @@
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>Assets\JMO Assets\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+      <HintPath>Assets\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

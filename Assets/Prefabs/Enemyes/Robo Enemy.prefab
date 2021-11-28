@@ -209,6 +209,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3473675984561808154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234363934734869015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbf26dfaba3cfe4d9178e28fe9c2f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2601712563593957061
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +294,7 @@ GameObject:
   - component: {fileID: 2601712564442994623}
   - component: {fileID: 5038033919325073779}
   m_Layer: 0
-  m_Name: Robon Enemy
+  m_Name: Robo Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5687,13 +5699,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2ed0e94ea37b42246a833bb820cb94bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f432554f564e69242897607d34218939, type: 3}
+--- !u!95 &234363934629822898 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2836004473841745626, guid: f432554f564e69242897607d34218939, type: 3}
+  m_PrefabInstance: {fileID: 2601712563230572392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &234363934735302199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2836004475591197023, guid: f432554f564e69242897607d34218939, type: 3}
   m_PrefabInstance: {fileID: 2601712563230572392}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &234363934629822898 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2836004473841745626, guid: f432554f564e69242897607d34218939, type: 3}
+--- !u!1 &234363934734869015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2836004475591695743, guid: f432554f564e69242897607d34218939, type: 3}
   m_PrefabInstance: {fileID: 2601712563230572392}
   m_PrefabAsset: {fileID: 0}

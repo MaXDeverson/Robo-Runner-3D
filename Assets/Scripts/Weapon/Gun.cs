@@ -27,11 +27,11 @@ public class Gun : Weapon
         if (isActive && !isShoot)
         {
             _audio.Play();
-            StartCoroutine(Shoot());
+            StartCoroutine(WaitShoot());
         }
     }
 
-    private IEnumerator Shoot()
+    private IEnumerator WaitShoot()
     {
         isShoot = true;
         _muzzleFlash.Play();
@@ -44,13 +44,23 @@ public class Gun : Weapon
         isShoot = false;
     }
 
-    private bool _waitChange;
-
+    /// <summary>
+    /// true: weapon shoot
+    /// falce: weapon stop shoot;
+    /// </summary>
+    /// <param name="shoot"></param>
     public override void ShootWait(bool shoot)
     {
         isActive = shoot;
     }
-
+    public override void ShootOnce()
+    {
+        _muzzleFlash.Play();
+        Rigidbody newBullet = Instantiate(_bullet, _backPoint.position, transform.rotation);
+        Vector3 directionShoot = _muzzlePoint.position - _backPoint.position;
+        newBullet.velocity = directionShoot.normalized * _bulletVelocity;
+        Destroy(newBullet.gameObject, _bulletLifeTime);
+    }
 
     private void OnDrawGizmos()
     {

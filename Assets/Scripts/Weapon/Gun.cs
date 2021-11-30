@@ -56,9 +56,14 @@ public class Gun : Weapon
     public override void ShootOnce()
     {
         _muzzleFlash.Play();
-        Rigidbody newBullet = Instantiate(_bullet, _backPoint.position, transform.rotation);
         Vector3 directionShoot = _muzzlePoint.position - _backPoint.position;
-        newBullet.velocity = directionShoot.normalized * _bulletVelocity;
+        Rigidbody newBullet = Instantiate(_bullet, _backPoint.position, transform.rotation);
+        //directionShoot = new Vector3(newBullet.transform.position.x, directionShoot.y, newBullet.transform.position.z);
+        newBullet.transform.eulerAngles = directionShoot;
+        directionShoot.y = 0;
+        newBullet.velocity =  directionShoot.normalized * _bulletVelocity;
+
+
         Destroy(newBullet.gameObject, _bulletLifeTime);
     }
 

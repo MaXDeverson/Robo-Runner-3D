@@ -24,17 +24,29 @@ public class HeroMover : Triggerable
     void Update()
     {
         if (_isDie) return;
-        float newXPosition = transform.position.x + _moverLogic.PositionX;
-        if (newXPosition > _moveXRestriction)
-        {
-            newXPosition = _moveXRestriction;
-        }
-        else if (newXPosition < -_moveXRestriction)
-        {
-            newXPosition = -_moveXRestriction;
-        }
-        transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
-        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _rigidbody.velocity.y, _velocity);
+        //    float newXPosition = transform.position.x + _moverLogic.PositionX;
+        //    if (newXPosition > _moveXRestriction)
+        //    {
+        //        newXPosition = _moveXRestriction;
+        //    }
+        //    else if (newXPosition < -_moveXRestriction)
+        //    {
+        //        newXPosition = -_moveXRestriction;
+        //    }
+        //    transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
+
+        float xVelocity = _moverLogic.PositionX * 50;
+            if (transform.position.x > _moveXRestriction)
+            {
+                transform.position = new Vector3(_moveXRestriction, transform.position.y, transform.position.z);
+                xVelocity = 0;
+            }
+            if (transform.position.x < -_moveXRestriction)
+            {
+                transform.position = new Vector3(-_moveXRestriction, transform.position.y, transform.position.z);
+                xVelocity = 0;
+            }
+        _rigidbody.velocity = new Vector3(xVelocity, _rigidbody.velocity.y, _velocity);
         if (!_isJump && _startAnimationWillPlayed)
         {
             _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);

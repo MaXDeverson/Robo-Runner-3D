@@ -69,7 +69,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 114
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &5171306989979998346
 MonoBehaviour:
@@ -4959,7 +4959,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 5171306990578001827}
   _rateFire: 0.2
   _bulletVelocity: 80
-  _bulletLifeTime: 2
+  _bulletLifeTime: 0.7
   _muzzlePoint: {fileID: 5171306990555295966}
   _backPoint: {fileID: 5171306990546877387}
   _audio: {fileID: 5171306990279383972}
@@ -10001,6 +10001,7 @@ MonoBehaviour:
   _gun: {fileID: 5171306990279383973}
   _managerAniamtion: {fileID: 5171306989979998347}
   _heroDestroyer: {fileID: 5171306991148546532}
+  _shootEvent: {fileID: 2345385828914271237}
 --- !u!65 &5171306990979920200
 BoxCollider:
   m_ObjectHideFlags: 0

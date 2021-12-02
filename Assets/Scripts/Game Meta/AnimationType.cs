@@ -12,5 +12,5 @@ public enum AnimationType
    Die,
    GetDamageMine,
    MoveLeft,
-   MoveRight
+   MoveRight,
 }

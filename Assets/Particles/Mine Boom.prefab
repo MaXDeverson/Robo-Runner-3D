@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000013197965828
 Transform:
   m_ObjectHideFlags: 0
@@ -9693,7 +9693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000013957168258
 Transform:
   m_ObjectHideFlags: 0
@@ -14589,7 +14589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000010768021990
 Transform:
   m_ObjectHideFlags: 0
@@ -19400,7 +19400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000012435647134
 Transform:
   m_ObjectHideFlags: 0
@@ -29047,7 +29047,7 @@ GameObject:
   - component: {fileID: 198000011976894484}
   - component: {fileID: 199000010420214726}
   m_Layer: 0
-  m_Name: explosion_stylized_large_originalFire_noSmoke
+  m_Name: Mine Boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38591,7 +38591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4184707956609004
 Transform:
   m_ObjectHideFlags: 0
@@ -43249,7 +43249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4706000119258396
 Transform:
   m_ObjectHideFlags: 0
@@ -52982,7 +52982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4983770871882892
 Transform:
   m_ObjectHideFlags: 0
@@ -62409,7 +62409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4887078599520268
 Transform:
   m_ObjectHideFlags: 0
@@ -67264,6 +67264,10 @@ PrefabInstance:
     - target: {fileID: 8065427417584649695, guid: b1cfe5e45492e224d9ce122afec650d2, type: 3}
       propertyPath: m_Name
       value: circle_area
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065427417584649695, guid: b1cfe5e45492e224d9ce122afec650d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1cfe5e45492e224d9ce122afec650d2, type: 3}

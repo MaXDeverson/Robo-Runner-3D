@@ -9,6 +9,7 @@ public class ManagerAnimation : MonoBehaviour
     [SerializeField] private float _upForce;
     [SerializeField] private ParticleSystem _dieParticles;
     [SerializeField] private ParticleSystem _flyAnimation;
+    [SerializeField] private Transform _animatetTransformForCatchBullet;
     private const string MAIN_LAYER_NAME = "MainLayer";
     private const string HAND_LAYER_NAME = "HandLayer";
     private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
@@ -35,11 +36,11 @@ public class ManagerAnimation : MonoBehaviour
                 {
                     if (i < 5)
                     {
-                        transform.Rotate(new Vector3(0, 5, 0));
+                        _animatetTransformForCatchBullet.Rotate(new Vector3(0, 5, 0));
                     }
                     else
                     {
-                        transform.Rotate(new Vector3(0, -5, 0));
+                        _animatetTransformForCatchBullet.Rotate(new Vector3(0, -5, 0));
                     }
                     await Task.Delay(10);
                 }
@@ -51,6 +52,7 @@ public class ManagerAnimation : MonoBehaviour
                 transform.tag = Tag.Bullet;//For exept bullet animation after die;
                 break;
             case AnimationType.GetDamageMine:
+                _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, _rigidbody.velocity.z);
                 _rigidbody.AddForce(new Vector3(0, _upForce, 0), ForceMode.Impulse);
                 break;
             case AnimationType.Jump:

@@ -1,8 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour
@@ -13,6 +13,8 @@ public class UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textCountUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textCountElectricCrystal;
     [SerializeField] private Button _replyButton;
+    [SerializeField] private Button _menuButton;
+    [SerializeField] private Button _shieldMode;
 
     private HeroDestroyer _heroDestroyer;
 
@@ -23,10 +25,14 @@ public class UI : MonoBehaviour
         {
             _textCountUsualCrystals.text = updateCount + "";
         });
-        data.SetChangeCounECrystal((int updateCount) =>
+        data.SetChangeCounECrystal ((int updateCount) =>
          {
              _textCountElectricCrystal.text = updateCount + "";
          });
+    }
+    public void SetShieldModeEvent(UnityAction action)
+    {
+        _shieldMode.onClick.AddListener(action);
     }
     private void Start()
     {
@@ -42,10 +48,9 @@ public class UI : MonoBehaviour
         {
             _lifesSlider.value = procent;
         };
-    }
-
-    void Update()
-    {
-        
+        _menuButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(0);
+        });
     }
 }

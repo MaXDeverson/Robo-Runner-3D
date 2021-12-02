@@ -8,20 +8,29 @@ public class Level : MonoBehaviour
     [SerializeField] private UI _ui;
     [SerializeField] private HeroDestroyer _heroDestroyer;
     [SerializeField] private ThingsCounter _thingsCounter;
+    [SerializeField] private Shield _heroShield;
     public static Level CurrentLevel;
     private PlayerData _playerData;
     private int currentLevelIndex;
     private bool _nextLoading;
     private void Awake()
     {
-        _ui.SetHeroDestroyer(_heroDestroyer);
         _playerData = PlayerData.GetPlayerData();
-        _ui.SetUpdateDataUsualCrystal(_playerData);
+        UIInitialization();
         _thingsCounter.SetListener(_playerData);
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Serializator.SetData(DataName.CurrentLevel, currentLevelIndex);
-        Debug.Log("Load Scene: " + currentLevelIndex);
         CurrentLevel = this;
+    }
+
+    private void UIInitialization()
+    {
+        _ui.SetHeroDestroyer(_heroDestroyer);
+        _ui.SetUpdateDataUsualCrystal(_playerData);
+        _ui.SetShieldModeEvent(() =>
+        {
+            _heroShield.SetActive(true);
+        });
     }
     private void Start()
     {

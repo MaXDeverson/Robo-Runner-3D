@@ -11,6 +11,7 @@ public class HeroDestroyer : MonoBehaviour
     [SerializeField] private int _countLifes;
     [SerializeField] private ManagerAnimation _managerAnimation;
     private float _maxCounLefes;
+    private bool _isIgnoreDamage;
     void Start()
     {
         _maxCounLefes = _countLifes;
@@ -18,6 +19,7 @@ public class HeroDestroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_isIgnoreDamage) return;
         switch (other.tag)
         {
             case Tag.EnemyBullet:
@@ -47,5 +49,10 @@ public class HeroDestroyer : MonoBehaviour
             _managerAnimation.SetMainAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);
             DieAction?.Invoke();
         }
+    }
+
+    public void IgnoreDamage(bool input)
+    {
+        _isIgnoreDamage = input;
     }
 }

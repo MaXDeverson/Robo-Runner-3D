@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2BB543FE-AD26-45CC-7326-31AD0A37D0BD}</ProjectGuid>
+    <ProjectGuid>{A7A58723-7C34-0827-AD90-356CEC14D2A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Boxophobic.Utils.Scripts</AssemblyName>

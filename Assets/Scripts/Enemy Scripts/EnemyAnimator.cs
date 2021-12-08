@@ -6,14 +6,14 @@ using UnityEngine;
 public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField] protected Animator _animator;
-    [SerializeField] private float _pushForce;
+    [SerializeField] protected float _pushForce;
     [Header("For Die")]
-    [SerializeField] private ParticleSystem _boomParticles;
-    [SerializeField] private GameObject _destroyObj;
+    [SerializeField] protected ParticleSystem _boomParticles;
+    [SerializeField] protected GameObject _destroyObj;
     public AnimationType CurrentAnimation { get; private set; }
-    private Rigidbody _rigidbody;
+    protected Rigidbody _rigidbody;
     protected const string MAIN_LAYER_NAME = "MainLayer";
-    private bool _isDie;
+    protected bool _isDie;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();

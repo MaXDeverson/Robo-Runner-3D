@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    [SerializeField] HeroDestroyer _destroyer;
+    [SerializeField] private HeroDestroyer _destroyer;
+    [SerializeField] private GameObject _shieldObj;
     void Start()
     {
         
@@ -19,5 +20,6 @@ public class Shield : MonoBehaviour
     public void SetActive(bool enable)
     {
         _destroyer.IgnoreDamage(enable);
+        _shieldObj.SetActive(enable);
     }
 }

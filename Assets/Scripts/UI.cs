@@ -40,10 +40,7 @@ public class UI : MonoBehaviour
         {
             Level.CurrentLevel.Restart();
         });
-        _heroDestroyer.GetDamageAction += (count) =>
-        {
-            _textLifes.text = count + "";
-        };
+        _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count + "");
         _heroDestroyer.GetDamageActionProcent += (procent) =>
         {
             _lifesSlider.value = procent;

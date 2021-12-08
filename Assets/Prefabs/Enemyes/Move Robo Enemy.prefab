@@ -4904,7 +4904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 4003318284397965611}
-  _pushForce: -15
+  _pushForce: -10
   _boomParticles: {fileID: 7921629997164752278}
   _destroyObj: {fileID: 1212919447557269283}
 --- !u!65 &8152840432341385706
@@ -5033,6 +5033,7 @@ MonoBehaviour:
   _muzzlePoint: {fileID: 1212919447580558654}
   _backPoint: {fileID: 1212919447328374339}
   _audio: {fileID: 1212919448782632989}
+  _ignoreZAxis: 1
 --- !u!82 &1212919448782632989
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5248,6 +5249,7 @@ MonoBehaviour:
   _enemyDestroyer: {fileID: 2314753654811252643}
   _animator: {fileID: 1212919447557269286}
   _shootEvent: {fileID: 1195924270921596207}
+  _shootInStart: 0
 --- !u!65 &1945566581850583515
 BoxCollider:
   m_ObjectHideFlags: 0

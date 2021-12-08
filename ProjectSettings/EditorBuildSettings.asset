@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2.unity
     guid: 49d5df3c89c7d66498dd1799d736832b
   - enabled: 1
-    path: Assets/Scenes/Level Tempate.unity
-    guid: c47b4ed3d2cba414aa0aa97cb937e787
+    path: Assets/Scenes/Level 3.unity
+    guid: 35688fe8a44d3b74e86a60edba40d9eb
   m_configObjects: {}

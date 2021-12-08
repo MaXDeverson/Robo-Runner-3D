@@ -18,6 +18,7 @@ public class Gun : Weapon
     [SerializeField] private Transform _backPoint;
     //Sound
     [SerializeField] private AudioSource _audio;
+    [SerializeField] private bool _ignoreZAxis;
     private bool isActive;
     private bool isShoot;
 
@@ -58,11 +59,14 @@ public class Gun : Weapon
         _muzzleFlash.Play();
         Vector3 directionShoot = _muzzlePoint.position - _backPoint.position;
         Rigidbody newBullet = Instantiate(_bullet, _backPoint.position, transform.rotation);
-        //directionShoot = new Vector3(newBullet.transform.position.x, directionShoot.y, newBullet.transform.position.z);
-        newBullet.transform.eulerAngles = directionShoot;
-        directionShoot.y = 0;
-        newBullet.velocity =  directionShoot.normalized * _bulletVelocity;
+        if (_ignoreZAxis)
+        {
+            newBullet.transform.eulerAngles = directionShoot;
+            directionShoot.y = 0;
+        }
+        newBullet.velocity = directionShoot.normalized * _bulletVelocity;
 
+        //directionShoot = new Vector3(newBullet.transform.position.x, directionShoot.y, newBullet.transform.position.z);
 
         Destroy(newBullet.gameObject, _bulletLifeTime);
     }

@@ -53,6 +53,8 @@ public class HeroMover : Triggerable
         }
     }
 
+    public float GetZVelocity() => _velocity;
+
     private void OnCollisionStay(Collision collision)
     {
         if (_canAbortJump)

@@ -28380,8 +28380,6 @@ GameObject:
   - component: {fileID: 9190498047425140484}
   - component: {fileID: 9023647178901121416}
   - component: {fileID: 9027463041387190874}
-  - component: {fileID: 9108504903675603618}
-  - component: {fileID: 9083848913277612428}
   m_Layer: 0
   m_Name: Robo Boom
   m_TagString: Untagged
@@ -33195,32 +33193,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!135 &9108504903675603618
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189187375754992658}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.51
-  m_Center: {x: 0, y: 0.78, z: 0}
---- !u!114 &9083848913277612428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189187375754992658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a895231490da6545890b1e1794f8704, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathtimer: 5
 --- !u!1 &9189187376175022814
 GameObject:
   m_ObjectHideFlags: 0

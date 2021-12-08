@@ -61,6 +61,7 @@ public class Level : MonoBehaviour
         {
             _nextLoading = true;
             _playerData.SaveResult();
+            
             SceneManager.LoadScene(++currentLevelIndex);
         }
     }

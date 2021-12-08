@@ -19,12 +19,12 @@ public class EnemyDestroyer : MonoBehaviour
             {
                 _countLifes--;
                 ActionGetDamage?.Invoke(_countLifes);
-                _animator.PlayAnimation(AnimationType.GetDamage);
-            }
-            else
-            {
-                _animator.PlayAnimation(AnimationType.Die);
-                ActionDie?.Invoke();
+                if(_animator != null)_animator.PlayAnimation(AnimationType.GetDamage);
+                if(_countLifes == 0)
+                {
+                    if (_animator != null) _animator.PlayAnimation(AnimationType.Die);
+                    ActionDie?.Invoke();
+                }
             }
         }
     }

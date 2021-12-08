@@ -125,6 +125,7 @@ MonoBehaviour:
   _muzzlePoint: {fileID: 2601712564415509927}
   _backPoint: {fileID: 2601712563593957082}
   _audio: {fileID: 2601712562949195908}
+  _ignoreZAxis: 1
 --- !u!82 &2601712562949195908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 234363934629822898}
-  _pushForce: -15
+  _pushForce: -10
   _boomParticles: {fileID: 6422498683367890191}
   _destroyObj: {fileID: 2601712564442994618}
 --- !u!65 &5038033919325073779

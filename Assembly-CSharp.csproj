@@ -89,6 +89,7 @@
     <Compile Include="Assets\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMoveAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneMover.cs" />
     <Compile Include="Assets\Scripts\Triggerable.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ManagerAnimation.cs" />
     <Compile Include="Assets\Scripts\UI.cs" />
@@ -96,10 +97,12 @@
     <Compile Include="Assets\Scripts\Game Meta\Initializator.cs" />
     <Compile Include="Assets\Beautiful Progress Bar\Scripts\SliderScripts.cs" />
     <Compile Include="Assets\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets\StylizedExplosion\scripts\destroyMe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Weapon\Gun.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\StylizedExplosion\scripts\particleColorChanger.cs" />
     <Compile Include="Assets\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\Game Meta\Serializator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -109,6 +112,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\Shield.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneShooter.cs" />
+    <Compile Include="Assets\StylizedExplosion\scripts\instantiateEffectCaller.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ShootLogic.cs" />
     <Compile Include="Assets\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
@@ -134,9 +139,7 @@
     <Compile Include="Assets\Scripts\Game Meta\Tag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\StylizedExplosionPack\scripts\destroyMe.cs" />
-    <Compile Include="Assets\StylizedExplosionPack\scripts\particleColorChanger.cs" />
-    <Compile Include="Assets\StylizedExplosionPack\scripts\instantiateEffectCaller.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -165,7 +168,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\StylizedExplosionPack\shader\alphaBlend_glow.shader" />
+     <None Include="Assets\StylizedExplosion\shader\alphaBlend_glow.shader" />
      <None Include="Assets\Materials\Shaders\Skybox Gradient.shader" />
      <None Include="Assets\Materials\Shaders\FPSGlowAdditive.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />

@@ -40,12 +40,12 @@ public class DroneMover : Triggerable
     }
     private void FixedUpdate()
     {
+        Vector3 deltaDistance = _hero.transform.position - transform.position;
+        float newXRotation = Mathf.Atan(-deltaDistance.y / deltaDistance.z);
+        transform.eulerAngles = new Vector3((newXRotation * 180 / Mathf.PI), transform.eulerAngles.y, transform.eulerAngles.z);
         if (_canMove)
         {
             _rigidbody.AddForce(_moveForce);
-            Vector3 deltaDistance = _hero.transform.position - transform.position;
-            float newXRotation = Mathf.Atan(-deltaDistance.y / deltaDistance.z);
-            transform.eulerAngles = new Vector3((newXRotation * 180 / Mathf.PI), transform.eulerAngles.y, transform.eulerAngles.z);
         }
     }
 

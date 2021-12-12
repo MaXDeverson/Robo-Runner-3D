@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _finishParticles;
     [SerializeField] private ParticleSystem _mainParticles;
+    [SerializeField] private bool _isEnemy;
     //[SerializeField] private GameObject _destroyObj;
     private Rigidbody _rigidbody;
 
@@ -12,6 +13,7 @@ public class Bullet : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
+    public bool IsEnemy() => _isEnemy;
     private void OnTriggerEnter(Collider other)
     {
         gameObject.GetComponent<Collider>().isTrigger = true;

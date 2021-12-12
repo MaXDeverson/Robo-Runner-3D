@@ -9828,6 +9828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _finishParticles: {fileID: 7115875829305065474}
   _mainParticles: {fileID: 5346199172979759918}
+  _isEnemy: 1
 --- !u!1001 &4389000687238234891
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,8 +16,14 @@ public class UI : MonoBehaviour
     [SerializeField] private Button _replyButton;
     [SerializeField] private Button _menuButton;
     [SerializeField] private Button _shieldMode;
+    [SerializeField] private Image _damageEffect;
 
     private HeroDestroyer _heroDestroyer;
+    //damage animation
+    private bool _damageAnimationIsPlayed;
+    private bool _playDamageAniamtion;
+    private bool _valueToUp;
+    private float _transparentValue;
 
     public void SetHeroDestroyer(HeroDestroyer heroDestroyer) => _heroDestroyer = heroDestroyer;
     public void SetUpdateDataUsualCrystal(PlayerData data)
@@ -40,7 +47,11 @@ public class UI : MonoBehaviour
         {
             Level.CurrentLevel.Restart();
         });
-        _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count + "");
+        _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count + "",true);
+        _heroDestroyer.SetGetDamageAction(count =>
+        {
+            PlayDamageAnimation();
+        },false);
         _heroDestroyer.GetDamageActionProcent += (procent) =>
         {
             _lifesSlider.value = procent;
@@ -49,5 +60,43 @@ public class UI : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         });
+    }
+    private void FixedUpdate()
+    {
+        if (!_damageAnimationIsPlayed && _playDamageAniamtion)
+        {
+            StartCoroutine(DamageAnimation());
+        }
+    }
+
+    private void PlayDamageAnimation()
+    {
+        _playDamageAniamtion = true;
+        _valueToUp = true;
+        _transparentValue = 0;
+        StartCoroutine(DamageAnimation());
+
+    }
+
+    private IEnumerator DamageAnimation()
+    {
+        _damageAnimationIsPlayed = true;
+        _transparentValue += _valueToUp ? 0.25f : -0.1f;
+        if (_transparentValue >= 1)
+        {
+            _valueToUp = false;
+
+        }
+        if (_transparentValue <= 0)
+        {
+            _playDamageAniamtion = false;
+            _damageEffect.color = new Color(1, 1, 1, 0);
+        }
+        if(_transparentValue >= 0 && _transparentValue<=1)
+        {
+            _damageEffect.color = new Color(255, 255, 255, _transparentValue);
+        }
+        yield return new WaitForSeconds(0.005f);
+        _damageAnimationIsPlayed = false;
     }
 }

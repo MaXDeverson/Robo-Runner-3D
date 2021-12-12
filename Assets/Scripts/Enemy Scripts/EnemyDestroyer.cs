@@ -8,22 +8,24 @@ public class EnemyDestroyer : MonoBehaviour
     public UnityAction<int> ActionGetDamage;
     public UnityAction ActionDie;
     [SerializeField] private int _countLifes;
-    [SerializeField] private EnemyAnimator _animator;
+    [SerializeField] protected EnemyAnimator _animator;
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Tag.Bullet))
         {
-         
-            if (_countLifes > 0)
+            if (!other.GetComponent<Bullet>().IsEnemy())
             {
-                _countLifes--;
-                ActionGetDamage?.Invoke(_countLifes);
-                if(_animator != null)_animator.PlayAnimation(AnimationType.GetDamage);
-                if(_countLifes == 0)
+                if (_countLifes > 0)
                 {
-                    if (_animator != null) _animator.PlayAnimation(AnimationType.Die);
-                    ActionDie?.Invoke();
+                    _countLifes--;
+                    ActionGetDamage?.Invoke(_countLifes);
+                    if (_animator != null) _animator.PlayAnimation(AnimationType.GetDamage);
+                    if (_countLifes == 0)
+                    {
+                        if (_animator != null) _animator.PlayAnimation(AnimationType.Die);
+                        ActionDie?.Invoke();
+                    }
                 }
             }
         }

@@ -8,15 +8,15 @@ public class HeroDestroyer : MonoBehaviour
     private Action<int> getDamageAction;
     public Action<float> GetDamageActionProcent;
     public Action DieAction;
-    private int _countLifes = 3;
+    [SerializeField] private int _countLifes = 3;
     [SerializeField] private ManagerAnimation _managerAnimation;
     private float _maxCounLefes;
     private bool _isIgnoreDamage;
 
-    public void SetGetDamageAction(Action<int> action)
+    public void SetGetDamageAction(Action<int> action,bool invoke)
     {
         getDamageAction += action;
-        getDamageAction.Invoke(_countLifes);
+        if(invoke) getDamageAction.Invoke(_countLifes);
     }
     void Start()
     {
@@ -34,6 +34,14 @@ public class HeroDestroyer : MonoBehaviour
             case Tag.Mine:
                 GetDamage(1,AnimationType.GetDamageMine);
                 break;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag(Tag.Bullet))
+        {
+            Debug.Log("Enter Bullet");
         }
     }
 

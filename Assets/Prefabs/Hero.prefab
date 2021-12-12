@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d440122afe656743bf844193c1bbedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyer: {fileID: 5171306991148546532}
+  _destroyer: {fileID: 6478284773137302558}
   _shieldObj: {fileID: 3348483139863220108}
 --- !u!1 &5171306989979998342
 GameObject:
@@ -135,10 +135,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5171306989979998343}
-  - component: {fileID: 5171306989979998345}
   - component: {fileID: 5171306989979998344}
   - component: {fileID: 5171306989979998346}
   - component: {fileID: 5171306989979998347}
+  - component: {fileID: 2885491803234555091}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -168,20 +168,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5171306989979998345
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5171306989979998342}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &5171306989979998344
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213,7 +199,7 @@ MonoBehaviour:
   _moverLogic: {fileID: 0}
   _velocity: 15
   _managerAnimation: {fileID: 5171306989979998347}
-  _destroyer: {fileID: 5171306991148546532}
+  _destroyer: {fileID: 6478284773137302558}
 --- !u!114 &5171306989979998347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +217,20 @@ MonoBehaviour:
   _dieParticles: {fileID: 4839464445819800189}
   _flyAnimation: {fileID: 5171306989992237090}
   _animatetTransformForCatchBullet: {fileID: 6962476257422283466}
+--- !u!136 &2885491803234555091
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171306989979998342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4211296
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.003947682, y: 1, z: 0}
 --- !u!1 &5171306989992237279
 GameObject:
   m_ObjectHideFlags: 0
@@ -10129,7 +10129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gun: {fileID: 5171306990279383973}
   _managerAniamtion: {fileID: 5171306989979998347}
-  _heroDestroyer: {fileID: 5171306991148546532}
+  _heroDestroyer: {fileID: 6478284773137302558}
   _shootEvent: {fileID: 2345385828914271237}
 --- !u!65 &5171306990979920200
 BoxCollider:
@@ -10153,10 +10153,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5171306991148546531}
-  - component: {fileID: 5171306991148546532}
-  - component: {fileID: 5171306991148546533}
   - component: {fileID: 5171306991148546534}
   - component: {fileID: 5171306991148546535}
+  - component: {fileID: 6478284773137302558}
+  - component: {fileID: 5868032042724350079}
   m_Layer: 0
   m_Name: HeroDestroyer/Counter
   m_TagString: Player
@@ -10178,32 +10178,6 @@ Transform:
   m_Father: {fileID: 5171306989979998343}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5171306991148546532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5171306991148546530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d916d8b7d3685074eb22c06d66debe4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _managerAnimation: {fileID: 5171306989979998347}
---- !u!65 &5171306991148546533
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5171306991148546530}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &5171306991148546534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10228,7 +10202,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9daf3b6014f7804991c39a81b2b0eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerable: {fileID: 5171306989979998346}
+  triggerables:
+  - {fileID: 5171306989979998346}
+--- !u!114 &6478284773137302558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171306991148546530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d916d8b7d3685074eb22c06d66debe4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _countLifes: 3
+  _managerAnimation: {fileID: 5171306989979998347}
+--- !u!65 &5868032042724350079
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171306991148546530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8420612, y: 1.987108, z: 0.936071}
+  m_Center: {x: 0.0037602584, y: 0.987105, z: -0.031964697}
 --- !u!114 &2345385828914271237
 MonoBehaviour:
   m_ObjectHideFlags: 0

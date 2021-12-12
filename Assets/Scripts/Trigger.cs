@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    [SerializeField] private Triggerable triggerable;
+    [SerializeField] private Triggerable[] triggerables;
 
     private void OnTriggerEnter(Collider other)
     {
-        triggerable.OnTrigger(other);
+
+        for (int i = 0; i < triggerables.Length; i++)
+            if (triggerables[i] != null) triggerables[i].OnTrigger(other);
+        
     }
 }

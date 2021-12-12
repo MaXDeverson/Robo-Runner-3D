@@ -9796,8 +9796,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.66182786, y: 0.6679678, z: 1}
-  m_Center: {x: 0.02228102, y: 0.03745365, z: 0}
+  m_Size: {x: 0.4, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6570563520908016707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9828,6 +9828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _finishParticles: {fileID: 6446498345957287003}
   _mainParticles: {fileID: 8180710214465175415}
+  _isEnemy: 1
 --- !u!1001 &531116434515748690
 PrefabInstance:
   m_ObjectHideFlags: 0

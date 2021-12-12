@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\JMO Particles\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+    <Compile Include="Assets\Effects\JMO Particles\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll" />
+     <None Include="Assets\Effects\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -304,7 +304,7 @@
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>Assets\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+      <HintPath>Assets\Effects\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

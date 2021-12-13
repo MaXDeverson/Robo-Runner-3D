@@ -10480,6 +10480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PBRCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2836004475591695743, guid: f432554f564e69242897607d34218939, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2836004475605291061, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

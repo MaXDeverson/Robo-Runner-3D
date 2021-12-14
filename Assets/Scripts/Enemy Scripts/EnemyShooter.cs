@@ -8,23 +8,21 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] private EnemyDestroyer _enemyDestroyer;
     [SerializeField] private EnemyAnimator _animator;
     [SerializeField] private ShootEventListener _shootEvent;
-    [SerializeField] private bool _shootInStart;
+    private bool _isShoot;
     void Start()
     {
         _enemyDestroyer.ActionDie += () => _gun.ShootWait(false);
-        if (_shootInStart)
-        {
-            _shootEvent.ShootAction += () => _gun.ShootOnce();
-            _animator.PlayAnimation(AnimationType.Shoot);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_isShoot) return;
         if (other.CompareTag(Tag.Player) && !other.isTrigger)
         {
             _shootEvent.ShootAction += () => _gun.ShootOnce();
             _animator.PlayAnimation(AnimationType.Shoot);
+            _isShoot = true;
         }
+        
     }
 }

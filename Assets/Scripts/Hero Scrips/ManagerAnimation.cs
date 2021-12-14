@@ -68,10 +68,10 @@ public class ManagerAnimation : MonoBehaviour
 
     private IEnumerator SlowJumpAnimation()
     {
-        _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 1);
+        _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.8f);
         _flyAnimation.Play();
         yield return new WaitForSeconds(1f);
-        _animator.SetFloat(SPEED_JUMP_MULTIPLIER,0.2f);
+        _animator.SetFloat(SPEED_JUMP_MULTIPLIER,0.1f);
     }
 
     public enum LayerType

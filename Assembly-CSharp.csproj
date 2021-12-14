@@ -157,6 +157,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\SciFiHeroPBR\Shader\PBRMaskTint.shader" />
      <None Include="Assets\Materials\Shaders\UniversalOutlined.shader" />
      <None Include="Assets\Beautiful Skyboxes\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Blend.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />

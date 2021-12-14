@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563233779201432753}
   - component: {fileID: 563233779201432752}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jump Trigger
   m_TagString: JumpPlace
   m_Icon: {fileID: 0}

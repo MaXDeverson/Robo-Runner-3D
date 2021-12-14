@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1551997287545822072}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9757,10 +9757,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8646855462725989704}
-  - component: {fileID: 4986672737545949775}
   - component: {fileID: 6570563520908016707}
   - component: {fileID: 2878596874557191278}
-  m_Layer: 0
+  - component: {fileID: 9081939733024552750}
+  m_Layer: 3
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -9785,19 +9785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4986672737545949775
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5941333564368628169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6570563520908016707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9829,6 +9816,19 @@ MonoBehaviour:
   _finishParticles: {fileID: 6446498345957287003}
   _mainParticles: {fileID: 8180710214465175415}
   _isEnemy: 1
+--- !u!65 &9081939733024552750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941333564368628169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.40503946, y: 0.4089283, z: 1}
+  m_Center: {x: -0.0058329105, y: 0.0038886496, z: 0}
 --- !u!1001 &531116434515748690
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         for (int i = 0; i < triggerables.Length; i++)
             if (triggerables[i] != null) triggerables[i].OnTrigger(other);
         

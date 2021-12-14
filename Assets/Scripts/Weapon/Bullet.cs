@@ -16,10 +16,8 @@ public class Bullet : MonoBehaviour
     public bool IsEnemy() => _isEnemy;
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.GetComponent<Collider>().isTrigger = true;
         if (!other.isTrigger && !other.CompareTag(Tag.Bullet))
         {
-
             //if(_destroyObj!=null) Destroy(_destroyObj);
             if (_mainParticles != null)
             {
@@ -29,8 +27,8 @@ public class Bullet : MonoBehaviour
             {
                 _finishParticles.Play();
                 _rigidbody.velocity = Vector3.zero;
-                _finishParticles.transform.parent = null;
                 Destroy(_finishParticles, 0.5f);
+                _finishParticles.transform.parent = null;
                 Destroy(this.gameObject);
             }
 

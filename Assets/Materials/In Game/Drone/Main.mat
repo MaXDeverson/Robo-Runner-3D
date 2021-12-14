@@ -84,7 +84,7 @@ Material:
     - _Saturation: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularMultiplier: 1
+    - _SpecularMultiplier: 0.6
     - _SrcBlend: 1
     - _UVSec: 0
     - _UseCC: 0
@@ -94,9 +94,9 @@ Material:
     - _UseTexture: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.12281951, g: 0.15143338, b: 0.2264151, a: 1}
+    - _Color: {r: 0.20754719, g: 0.2046102, b: 0.2046102, a: 1}
     - _CubemapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GlowColor: {r: 0.29214135, g: 0.6132076, b: 0.55531037, a: 1}
+    - _GlowColor: {r: 0.1549929, g: 0.3632648, b: 0.4056604, a: 1}
     - _GradientFogVector: {r: 30, g: 50, b: -15, a: -35}
   m_BuildTextureStacks: []

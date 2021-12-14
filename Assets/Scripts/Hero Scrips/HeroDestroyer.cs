@@ -36,15 +36,6 @@ public class HeroDestroyer : MonoBehaviour
                 break;
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag(Tag.Bullet))
-        {
-            Debug.Log("Enter Bullet");
-        }
-    }
-
     private void GetDamage(int count,AnimationType typeAnimation)
     {
         _countLifes -= count;

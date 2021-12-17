@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Game Meta\Level.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\ShieldFollower.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\Hero Scrips\ThingsCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scripts\Menu\CameraBuy.cs" />
     <Compile Include="Assets\Scripts\Game Meta\AnimationType.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyShooter.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
@@ -141,6 +143,7 @@
     <Compile Include="Assets\Scripts\Game Meta\Tag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Scripts\Menu\BuyUppLogic.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -157,7 +160,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\SciFiHeroPBR\Shader\PBRMaskTint.shader" />
+     <None Include="Assets\SciFiHeroPBR\Textures\PBRMaskTint.shader" />
      <None Include="Assets\Materials\Shaders\UniversalOutlined.shader" />
      <None Include="Assets\Beautiful Skyboxes\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Blend.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />

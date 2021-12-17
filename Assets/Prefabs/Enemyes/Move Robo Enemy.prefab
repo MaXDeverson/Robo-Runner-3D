@@ -5249,7 +5249,6 @@ MonoBehaviour:
   _enemyDestroyer: {fileID: 2314753654811252643}
   _animator: {fileID: 1212919447557269286}
   _shootEvent: {fileID: 1195924270921596207}
-  _shootInStart: 0
 --- !u!65 &1945566581850583515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5392,9 +5391,23 @@ PrefabInstance:
     m_TransformParent: {fileID: 1212919447557269282}
     m_Modifications:
     - target: {fileID: 2836004473841745626, guid: f432554f564e69242897607d34218939, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d420b0989f0eab945a99e1dc349d5e74, type: 3}
+    - target: {fileID: 2836004473841745626, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a5c24deff6b98df40a0e0c3486e7de2a, type: 2}
+    - target: {fileID: 2836004473841745626, guid: f432554f564e69242897607d34218939, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
+        'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform 'Headgear_Right'\n\tTransform
+        'Headgear_Left'\n\tFrom animation clip 'Reload'\n\tFrom animation clip 'Die'\n\tFrom
+        animation clip 'Shoot_SingleShot_AR'\n\tFrom animation clip 'Idle_Guard_AR'\n\tFrom
+        animation clip 'WalkLeft_Shoot_AR'\n\tFrom animation clip 'WalkRight_Shoot_AR'"
+      objectReference: {fileID: 0}
     - target: {fileID: 2836004475591197023, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_RootOrder
       value: 1

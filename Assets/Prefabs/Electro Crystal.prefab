@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4089675539969664698}
   - component: {fileID: 4089675539969664697}
   - component: {fileID: 4089675539969664696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Electro Crystal
   m_TagString: ElectroCrystal
   m_Icon: {fileID: 0}
@@ -146,6 +146,10 @@ PrefabInstance:
       value: Mash
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -164,12 +168,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 4089675539969664699}
     m_Modifications:
     - target: {fileID: 354965280214060093, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 354965280214060093, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 354965280214060095, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
       propertyPath: m_Name
       value: Enectro die animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 354965280214060095, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 354965280214060095, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
       propertyPath: m_StaticEditorFlags

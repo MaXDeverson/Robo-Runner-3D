@@ -47,6 +47,15 @@ MonoBehaviour:
   _ui: {fileID: 0}
   _heroDestroyer: {fileID: 0}
   _thingsCounter: {fileID: 0}
+  _heroShield: {fileID: 0}
+  _moverLogic: {fileID: 0}
+  _heroes:
+  - {fileID: 5171306989979998343, guid: 4fafa92f354fba74f8cd2b330e5cb13d, type: 3}
+  - {fileID: 7246488862146396695, guid: e21bafde0f2c4554ba5aec867a898766, type: 3}
+  - {fileID: 2655057019194379344, guid: 611fe6fe61d1e5a4eb58d010cc1ac65d, type: 3}
+  - {fileID: 6489690833053764522, guid: 776d7dfa9e0c3e14f92b39dc1df01995, type: 3}
+  _startHero: {fileID: 0}
+  _camera: {fileID: 0}
 --- !u!65 &6702669894784730857
 BoxCollider:
   m_ObjectHideFlags: 0

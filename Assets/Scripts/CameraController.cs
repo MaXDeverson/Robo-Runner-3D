@@ -28,4 +28,5 @@ public class CameraController : MonoBehaviour
         float newXRotation = Mathf.Atan(-deltaDistance.y / deltaDistance.z);
         transform.eulerAngles = new Vector3(_startRotationX + (newXRotation * 180 / Mathf.PI), transform.eulerAngles.y, transform.eulerAngles.z);
     }
+    public void SetFollowObj(Transform obj) => _followObj = obj;
 }

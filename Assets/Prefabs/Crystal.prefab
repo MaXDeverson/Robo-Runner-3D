@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8266397711241759406}
   - component: {fileID: 840329153299396668}
   - component: {fileID: 2637659298200183618}
-  m_Layer: 0
-  m_Name: Diamond
+  m_Layer: 3
+  m_Name: Crystal
   m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,6 +146,10 @@ PrefabInstance:
       value: uploads_files_833908_crystal_low
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -164,8 +168,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 8778260980665198552}
     m_Modifications:
     - target: {fileID: 1064834829004598, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064834829004598, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278236788414174, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1278236788414174, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -174,6 +186,10 @@ PrefabInstance:
     - target: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
       propertyPath: m_Name
       value: CFX4 Aura Bubble C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
       propertyPath: m_IsActive

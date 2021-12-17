@@ -10,6 +10,9 @@ public class StartUI : MonoBehaviour
     [SerializeField] private Button _reset;
     [SerializeField] private GameObject _loadOBjects;
     [SerializeField] private Text text;
+    [Header("Buy/Update")]
+    [SerializeField] private Button _nextHeroButton;
+    [SerializeField] private Button _previousHeroButton;
     void Start()
     {
         _play.onClick.AddListener(() =>
@@ -29,4 +32,8 @@ public class StartUI : MonoBehaviour
             _initializator.Reset();
         });
     }
+
+    public void AddActionNext(Action action) => _nextHeroButton.onClick.AddListener(()=>action?.Invoke());
+    public void AddActionPrevious(Action action) => _previousHeroButton.onClick.AddListener(() => action?.Invoke());
+    public void AddActionPlay(Action action) => _play.onClick.AddListener(() => action?.Invoke());
 }

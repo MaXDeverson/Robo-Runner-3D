@@ -41,7 +41,7 @@ public class HeroMover : Triggerable
             _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
         }
     }
-
+    public void SetMoverLogic(MoverLogic logic) => _moverLogic = logic;
     public float GetZVelocity() => _velocity;
 
     private void OnCollisionStay(Collision collision)

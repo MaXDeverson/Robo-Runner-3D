@@ -9,10 +9,8 @@ public class EnemyMoverLogic : MonoBehaviour
     [SerializeField] private float _speed;
     void Start()
     {
-        
+        _aim = Level.CurrentLevel.Hero;
     }
-
-    // Update is called once per frame
     void Update()
     {
         PositionX = Mathf.Lerp(transform.position.x,_aim.position.x,_speed);

@@ -15,6 +15,7 @@ public class DroneMover : Triggerable
     }
     void Start()
     {
+        _hero = Level.CurrentLevel.Hero.GetComponent<HeroMover>();
         _rigidbody = GetComponent<Rigidbody>();
         _moveForce = new Vector3(_random.Next(-3, 0), _random.Next(-3, 0), 0);
     }

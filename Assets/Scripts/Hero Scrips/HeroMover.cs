@@ -53,7 +53,7 @@ public class HeroMover : Triggerable
         }
         _startAnimationWillPlayed = true;
     }
-    public async override void OnTrigger(Collider inputCollider)
+    public async override void OnTrigger(Collider inputCollider, int index)
     {
         if (inputCollider.CompareTag(Tag.Jump))
         {

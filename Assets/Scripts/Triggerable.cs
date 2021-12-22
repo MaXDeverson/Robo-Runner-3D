@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Triggerable : MonoBehaviour
 {
-    public abstract void OnTrigger(Collider inputCollider);
+    public abstract void OnTrigger(Collider inputCollider,int triggerIndex);
 }

@@ -50,7 +50,7 @@ public class DroneMover : Triggerable
         }
     }
 
-    public override void OnTrigger(Collider inputCollider)
+    public override void OnTrigger(Collider inputCollider,int index)
     {
         if (inputCollider.CompareTag(Tag.Player))
         {

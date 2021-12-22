@@ -11,7 +11,7 @@ public class EnemyMover : MonoBehaviour
     private Rigidbody _rigidbody;
     private bool CanAnimated;
     private bool Pause;
-    private const float NoAnimatedDistance = 0.3f;
+    private const float NoAnimatedDistance = 0.2f; 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -30,7 +30,7 @@ public class EnemyMover : MonoBehaviour
             if (_moverLogic.PositionX > transform.position.x + NoAnimatedDistance)
             {
                 _animator.PlayAnimation(AnimationType.MoveRight);
-                _rigidbody.velocity = new Vector3(_speed, _rigidbody.velocity.y, 5);
+                _rigidbody.velocity = new Vector3(_speed, _rigidbody.velocity.y,_rigidbody.velocity.z);
             }
             else if (_moverLogic.PositionX < transform.position.x - NoAnimatedDistance)
             {
@@ -40,7 +40,7 @@ public class EnemyMover : MonoBehaviour
             else
             {
                 _animator.PlayAnimation(AnimationType.Stay);
-                _rigidbody.velocity = new Vector3(0,_rigidbody.velocity.y,5);
+                _rigidbody.velocity = new Vector3(0,_rigidbody.velocity.y, _rigidbody.velocity.z);
             }
         }
        // transform.position = new Vector3(_moverLogic.PositionX, transform.position.y, transform.position.z);

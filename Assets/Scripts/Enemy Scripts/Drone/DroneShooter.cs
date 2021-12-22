@@ -32,7 +32,7 @@ public class DroneShooter : Triggerable
         _isShoot = false;
     }
 
-    public override void OnTrigger(Collider inputCollider)
+    public override void OnTrigger(Collider inputCollider,int index)
     {
         _canShoot = true;
     }

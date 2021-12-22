@@ -10,7 +10,7 @@ public class EnemyAnimator : MonoBehaviour
     [Header("For Die")]
     [SerializeField] protected ParticleSystem _boomParticles;
     [SerializeField] protected GameObject _destroyObj;
-    public AnimationType CurrentAnimation { get; private set; }
+    public AnimationType CurrentAnimation { get; protected set; }
     protected Rigidbody _rigidbody;
     protected const string MAIN_LAYER_NAME = "MainLayer";
     protected bool _isDie;
@@ -55,4 +55,5 @@ public class EnemyAnimator : MonoBehaviour
         }
         _animator.SetInteger(MAIN_LAYER_NAME, (int)animation);
     }
+
 }

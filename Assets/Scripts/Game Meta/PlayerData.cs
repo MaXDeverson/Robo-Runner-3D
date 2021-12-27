@@ -38,6 +38,20 @@ public class PlayerData
         _countElectroCrystals++;
         _changeCountElectroCrystalAction.Invoke(_countElectroCrystals);
     }
+    public bool SpendElectroCrystals(int count)
+    {
+        if(_countElectroCrystals < count)
+        {
+            return false;
+        }
+        else
+        {
+            _countElectroCrystals -= count;
+            _changeCountElectroCrystalAction.Invoke(_countElectroCrystals);
+            return true;
+        }
+        
+    }
 
     public void SaveResult()
     {

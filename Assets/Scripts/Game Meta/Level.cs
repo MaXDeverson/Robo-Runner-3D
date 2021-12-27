@@ -47,16 +47,9 @@ public class Level : MonoBehaviour
         _ui.SetUpdateDataUsualCrystal(_playerData);
         _ui.SetShieldModeEvent(() =>
         {
-            _heroShield.SetActive(true);
+            if(!_heroShield.ShieldIsActive() && _playerData.SpendElectroCrystals(1))
+                _heroShield.SetActive(true);
         });
-    }
-    private void Start()
-    {
-        
-    }
-    private void Update()
-    {
-        
     }
 
     public void Restart()
@@ -72,7 +65,6 @@ public class Level : MonoBehaviour
             LoadNextScene();
         }
     }
-
     private void LoadNextScene()
     {
         if (!_nextLoading)

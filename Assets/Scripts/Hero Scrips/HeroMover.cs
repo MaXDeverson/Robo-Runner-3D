@@ -13,13 +13,16 @@ public class HeroMover : Triggerable
     //for jump animation;
     private bool _isJump;
     private bool _canAbortJump;
+    private GameObject _jumpGameObject;
     //for start animation;
     private bool _startAnimationWillPlayed;
     void Start()
     {
+        _jumpGameObject = gameObject;
         _rigidbody = GetComponent<Rigidbody>();
         _destroyer.DieAction += () => _isDie = true;
         _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
+
     }
     void Update()
     {
@@ -57,11 +60,17 @@ public class HeroMover : Triggerable
     {
         if (inputCollider.CompareTag(Tag.Jump))
         {
-            _isJump = true;
-            _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
-            _rigidbody.AddForce(new Vector3(0, 3, 0), ForceMode.Impulse);
-            await Task.Delay(500);
-            _canAbortJump = true;
+            if (!_jumpGameObject.Equals(inputCollider.gameObject))
+            {
+                _jumpGameObject = inputCollider.gameObject;
+                _isJump = true;
+                _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
+                _rigidbody.AddForce(new Vector3(0, 3, 0), ForceMode.Impulse);
+                await Task.Delay(500);
+                _canAbortJump = true;
+              
+            }
+
         }
     }
 }

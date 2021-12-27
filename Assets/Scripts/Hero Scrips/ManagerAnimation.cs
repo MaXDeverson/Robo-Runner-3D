@@ -15,17 +15,11 @@ public class ManagerAnimation : MonoBehaviour
     private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
     private Rigidbody _rigidbody;
     private bool _palyDieAnimation;
-    private bool _isDie;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.2f);
     }
-    void Update()
-    {
-        
-    }
-
     public async void SetMainAnimation(AnimationType type,LayerType layerType)
     {
         if (_palyDieAnimation) return;

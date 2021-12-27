@@ -13,4 +13,5 @@ public enum AnimationType
    GetDamageMine,
    MoveLeft,
    MoveRight,
+   Throw,
 }

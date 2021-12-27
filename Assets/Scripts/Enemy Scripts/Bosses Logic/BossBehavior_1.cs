@@ -12,13 +12,6 @@ public class BossBehavior_1 : Triggerable
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void OnTrigger(Collider inputCollider, int triggerIndex)
     {
         if (inputCollider.CompareTag(Tag.Player))

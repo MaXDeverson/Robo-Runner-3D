@@ -7,51 +7,115 @@ public class Shield : MonoBehaviour
     [SerializeField] private HeroDestroyer _destroyer;
     [SerializeField] private GameObject _shieldObj;
     private const int MAX_SCALE_SHIELD = 6;
+    private const int MIN_SCALE_SHIELD = 1;
     private float _shieldScaleValue = 1;
+    private int _shieldTimeActive = 4;
 
-    private bool _isAnimatedScale;
-    private bool _animationIsActive;
+    private bool _isAnimatedScaleUP;
+    private bool _animationUPIsActive;
+    private bool _isAnimatedScaleDown;
+    private bool _animationDownIsActive;
+
+    private bool _shieldIsActive;
+
+    public void SetShieldTimeActive(int timeInSeconds) => _shieldScaleValue = timeInSeconds;
+    public bool ShieldIsActive() => _shieldIsActive;
+
     void Start()
     {
-        _shieldObj.transform.localScale = new Vector3(1, 1, 1);
+        _shieldObj.transform.localScale = new Vector3(MIN_SCALE_SHIELD, MIN_SCALE_SHIELD, MIN_SCALE_SHIELD);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (!_isAnimatedScale && _animationIsActive)
+        if (!_isAnimatedScaleUP && _animationUPIsActive)
         {
-            StartCoroutine(Scale());
+            StartCoroutine(ScaleUP());
+        }
+        if(!_isAnimatedScaleDown && _animationDownIsActive)
+        {
+            StartCoroutine(ScaleDOWN());
         }
     }
 
     public void SetActive(bool enable)
     {
+
         _destroyer.IgnoreDamage(enable);
         _shieldObj.SetActive(enable);
-        StartScaleAniamtion();
+        if (enable)
+        {
+            if (!_shieldIsActive)
+            {
+                _shieldIsActive = true;
+                _shieldObj.transform.localScale = new Vector3(MIN_SCALE_SHIELD, MIN_SCALE_SHIELD, MIN_SCALE_SHIELD);
+                _shieldObj.gameObject.SetActive(true);
+                _shieldScaleValue = 1;
+                _isAnimatedScaleUP = false;
+                StartScaleUpAniamtion();
+                StartCoroutine(TurnOff());
+            }
+        }
+        else
+        {
+            _shieldObj.transform.localScale = new Vector3(6, 6, 6);
+            _shieldObj.gameObject.SetActive(true);
+            _shieldScaleValue = 6;
+            _isAnimatedScaleDown = false;
+
+            StartScaleDownAnimation();
+        }
     }
 
-    private void StartScaleAniamtion()
+    private void StartScaleUpAniamtion()
     {
-        _animationIsActive = true;
+        _animationUPIsActive = true;
     }
 
-    private IEnumerator Scale()
+    private void StartScaleDownAnimation()
     {
-        _isAnimatedScale = true;
+        _animationDownIsActive = true;
+    }
+
+    private IEnumerator ScaleUP()
+    {
+        _isAnimatedScaleUP = true;
         yield return new WaitForSeconds(0.001f);
         _shieldScaleValue += 0.6f;
         if (_shieldScaleValue >= MAX_SCALE_SHIELD)
         {
             _shieldObj.transform.localScale = new Vector3(MAX_SCALE_SHIELD, MAX_SCALE_SHIELD, MAX_SCALE_SHIELD);
-            _animationIsActive = false;
+            _animationUPIsActive = false;
         }
         else
         {
             _shieldObj.transform.localScale = new Vector3(_shieldScaleValue, _shieldScaleValue, _shieldScaleValue);
-            _isAnimatedScale = false;
+            _isAnimatedScaleUP = false;
         }
-       
+    }
+
+    private IEnumerator ScaleDOWN()
+    {
+        _isAnimatedScaleDown = true;
+        yield return new WaitForSeconds(0.001f);
+        _shieldScaleValue -= 0.6f;
+        if (_shieldScaleValue <= MIN_SCALE_SHIELD)
+        {
+            _shieldObj.transform.localScale = new Vector3(MIN_SCALE_SHIELD, MIN_SCALE_SHIELD, MIN_SCALE_SHIELD);
+            _animationDownIsActive = false;
+            _shieldObj.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            _shieldObj.transform.localScale = new Vector3(_shieldScaleValue, _shieldScaleValue, _shieldScaleValue);
+            _isAnimatedScaleDown = false;
+            _shieldIsActive = false;
+        }
+    }
+    private IEnumerator TurnOff()
+    {
+        yield return new WaitForSeconds(_shieldTimeActive);
+        SetActive(false);
     }
 }

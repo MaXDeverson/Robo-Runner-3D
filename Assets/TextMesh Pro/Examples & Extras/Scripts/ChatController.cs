@@ -36,7 +36,7 @@ public class ChatController : MonoBehaviour {
 
         TMP_ChatInput.ActivateInputField();
 
-        // Set the scrollbar to the bottom when next text is submitted.
+        // Set the scrollbar to the bottom when next _text is submitted.
         ChatScrollbar.value = 0;
 
     }

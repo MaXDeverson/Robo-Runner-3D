@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Menu\CameraBuy.cs" />
     <Compile Include="Assets\Scripts\Game Meta\AnimationType.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyShooter.cs" />
+    <Compile Include="Assets\Scripts\UI\UpgradeUI.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDestroyer.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Weapon\Gun.cs" />
+    <Compile Include="Assets\Scripts\FallBoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\StylizedExplosion\scripts\particleColorChanger.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneShooter.cs" />
     <Compile Include="Assets\StylizedExplosion\scripts\instantiateEffectCaller.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\HeroData.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ShootLogic.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\HeroMover.cs" />
@@ -131,7 +134,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\ShootEventListener.cs" />
-    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMover.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -148,7 +150,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\BuyUppLogic.cs" />
-    <Compile Include="Assets\Scripts\FallBoom.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\StayEnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

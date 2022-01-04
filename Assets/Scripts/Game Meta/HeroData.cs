@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+using System;
+[Serializable]
 public class HeroData
 {
     public bool IsSelect { get; set; }
-    public bool IsBuy {get; private set; }
+    public bool IsBuy {get; set; }
     public int Price { get; set; }
     public  int LifesLevel { get; set; }
     public int DamageLevel { get; set; }

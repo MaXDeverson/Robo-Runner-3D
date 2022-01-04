@@ -27,7 +27,7 @@ public class Level : MonoBehaviour
         UIInitialization();
         _thingsCounter.SetListener(_playerData);
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        Serializator.SetData(DataName.CurrentLevel, currentLevelIndex);
+        Serializator.Serialize(DataName.CurrentLevel, currentLevelIndex);
         CurrentLevel = this;
     }
     private void InitHero()
@@ -54,7 +54,10 @@ public class Level : MonoBehaviour
 
     public void Restart()
     {
+        Serializator.Serialize(DataName.CountCrystals, _playerData.CountUsualCrystals);
+        Serializator.Serialize(DataName.CountECrystals, _playerData.CountElectroCrystals);
         SceneManager.LoadScene(currentLevelIndex);
+
     }
 
     private void OnTriggerEnter(Collider other)

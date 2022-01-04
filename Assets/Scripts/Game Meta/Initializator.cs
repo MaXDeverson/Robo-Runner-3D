@@ -7,11 +7,12 @@ public class Initializator : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(Serializator.GetData(DataName.CurrentLevel));
+        SceneManager.LoadScene(Serializator.DeSerialize(DataName.CurrentLevel));
     }
 
     public void Reset()
     {
         Serializator.ResetValues();
+
     }
 }

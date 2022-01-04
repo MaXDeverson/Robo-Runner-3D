@@ -1,41 +1,40 @@
-
 using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeUI : MonoBehaviour
 {
-    [SerializeField] private Button _nextHeroButton;
-    [SerializeField] private Button _previousHeroButton;
+    [SerializeField] private GameObject _rootObj;
+    [SerializeField] private Button _backButton;
+    [SerializeField] private Button _upgradeButton;
 
-    [SerializeField] private Button _selectButton;
-    [SerializeField] private Button _buyButton;
-    [SerializeField] private Button _updateLifesButton;
-    [SerializeField] private Button _back;
+    [SerializeField] private Button _lifesSelectButton;
+    [SerializeField] private Button _damageSelectButton;
+    [SerializeField] private TextMeshProUGUI _priceUpgrade;
+    [SerializeField] private List<GameObject> _upgradeLevelIcons;
     void Start()
     {
-        _back.onClick.AddListener(() => SetActive(false));
+        
     }
+
+    public void AddActionBack(Action action) => _backButton.onClick.AddListener(() => action?.Invoke());
+    public void AddActionUpgrade(Action action) => _upgradeButton.onClick.AddListener(() => action?.Invoke());
+    public void AddActionLifesSelect(Action action) => _lifesSelectButton.onClick.AddListener(() => action?.Invoke());
+    public void AddActionDamageSelect(Action action) => _damageSelectButton.onClick.AddListener(() => action?.Invoke());
+
+    public void SetActive(bool active)
+    {
+        _rootObj.SetActive(active);
+        if (active)
+        {
+           //initialization;
+        }
+    }
+
     public void UpdateUI(HeroData data)
     {
-        _selectButton.gameObject.SetActive(data.IsBuy && !data.IsSelect);
-        _buyButton.gameObject.SetActive(!data.IsBuy);
-    }
-    public void AddActionNext(Action action) => _nextHeroButton.onClick.AddListener(() => action?.Invoke());
-    public void AddActionPrevious(Action action) => _previousHeroButton.onClick.AddListener(() => action?.Invoke());
-    public void AddActionSelect(Action action) => _selectButton.onClick.AddListener(() => action?.Invoke());
-    public void AddActionBuy(Action action) => _buyButton.onClick.AddListener(() => action?.Invoke());
-    public void AddAtionUpdateLifes(Action action) => _updateLifesButton.onClick.AddListener(() => action?.Invoke());
-    public void AddActionBack(Action action) => _back.onClick.AddListener(() => action?.Invoke());
 
-    public void SetActive(bool isActive)
-    {
-        _nextHeroButton.gameObject.SetActive(isActive);
-        _previousHeroButton.gameObject.SetActive(isActive);
-        _selectButton.gameObject.SetActive(isActive);
-        _buyButton.gameObject.SetActive(isActive);
-        _updateLifesButton.gameObject.SetActive(isActive);
-        _back.gameObject.SetActive(isActive);
     }
-
 }

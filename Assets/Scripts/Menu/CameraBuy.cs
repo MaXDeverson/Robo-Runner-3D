@@ -18,10 +18,11 @@ public class CameraBuy : MonoBehaviour
     {
 
     }
-    public void SetTarget(Transform target)
+    public void SetTarget(Transform target,bool withAnimation = true)
     {
         _target = target;
-        transform.DOMove(target.position + _delta, 0.5f,false);
+        if (withAnimation) transform.DOMove(target.position + _delta, 0.5f, false);
+        else transform.position = target.position + _delta;
     }
 
     public void AnimatePositionNear()

@@ -6,59 +6,78 @@ public class BuyUppLogic : MonoBehaviour
 {
     [SerializeField] private List<Transform> _visualHeroes;
     [SerializeField] private CameraBuy _camera;
-    [SerializeField] private UpgradeUI _upgradeUI;
+    [SerializeField] private BuyUI _buyUI;
     [SerializeField] private StartUI _startUI;
+    [SerializeField] private UpgradeUI _upgradeUI;
     private List<HeroData> _dataHeroes;
-    private int _selectedVisualHeroIndex;
+    private PlayerData _palyerData;
+    private int _selectedHeroIndex;
     private int _currentHeroIndex;
     void Start()
     {
         _startUI.gameObject.SetActive(true);////fortesting
-        _upgradeUI.gameObject.SetActive(true);//
+        _upgradeUI.gameObject.SetActive(true);
+        _buyUI.gameObject.SetActive(true);
+        _buyUI.SetActive(false);
+        _upgradeUI.SetActive(false);
         ////////////////////////////////////////
+        _palyerData = PlayerData.GetPlayerData();
         InitializationDataOfHero();
+
         InitializationUI();
-        _camera.SetTarget(_visualHeroes[_currentHeroIndex]);
+        _camera.SetTarget(_visualHeroes[_selectedHeroIndex],false);
+        _palyerData.SetChangeCounUCystal((usualCont) => _startUI.UpdateUsualCrystals(usualCont));
+        _palyerData.SetChangeCounECrystal((count) => _startUI.UpdateElectroCrysals(count));
     }
     private void InitializationUI()
     {
-        _upgradeUI.AddActionNext(NextHero);
-        _upgradeUI.AddActionSelect(()=> {
-            _dataHeroes.ForEach(hero => hero.IsSelect = false);
-            _dataHeroes[_currentHeroIndex].IsSelect = true;
-            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
-            _selectedVisualHeroIndex = _currentHeroIndex;
-            Level.SetHeroIndex(_currentHeroIndex);
-        });
-        _upgradeUI.AddActionBack(BackToUI);
-        _upgradeUI.AddActionPrevious(PreviousHero);
-        _startUI.AddActionUpgrade(() => _upgradeUI.SetActive(true));
-        _startUI.AddActionUpgrade(() => _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex]));
-        _startUI.AddActionUpgrade(_camera.AnimatePositionNear);
-       
+        _buyUI.AddActionNext(NextHero);
+        _buyUI.AddActionSelect(()=>SelectHero());
+        _buyUI.AddActionBack(BackToUI);
+        _buyUI.AddActionPrevious(PreviousHero);
+        _buyUI.AddActionBuy(BuyHero);
+        _buyUI.AddActionUpgrade(UpgradeHero);
 
+        _startUI.AddActionUpgrade(() => _buyUI.SetActive(true));
+        _startUI.AddActionUpgrade(() => _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]));
+        _startUI.AddActionUpgrade(_camera.AnimatePositionNear);
+        _startUI.AddActionResset(() => {
+            Serializator.ResetValues();//Serialization initial data
+            _dataHeroes = Serializator.DeSerialize();
+            _selectedHeroIndex = 0;
+            _currentHeroIndex = 0;
+            Level.SetHeroIndex(_currentHeroIndex);
+            _startUI.UpdateElectroCrysals(0);
+            _startUI.UpdateUsualCrystals(0);
+            _buyUI.UpdateUI(_dataHeroes[0]);
+            _camera.SetTarget(_visualHeroes[_selectedHeroIndex]);
+        });
+        InitializationUpgradeUI();
+    }
+
+    private void InitializationUpgradeUI()
+    {
+        _upgradeUI.AddActionBack(BackToBuyMode);
     }
     private void InitializationDataOfHero()
     {
-        //her wil be serialization;
-        _dataHeroes = new List<HeroData>
-        {
-            new HeroData(true,true,0,0,0,new int[]{2,3,4},new int[]{1,2,3}),
-            new HeroData(true,false,0,0,0,new int[]{4,5},new int[]{4,5,6}),
-            new HeroData(false,false,0,0,0,new int[]{6,7,8},new int[]{7,8,9}),
-            new HeroData(false,false,0,0,0,new int[]{9,10,12},new int[]{12,13,15})
-        };
+        _dataHeroes = Serializator.DeSerialize();
         for(int i = 0; i < _dataHeroes.Count; i++)
         {
-            if (_dataHeroes[i].IsSelect) _selectedVisualHeroIndex = i;
+            if (_dataHeroes[i].IsSelect)
+            {
+                _selectedHeroIndex = i;
+                Level.SetHeroIndex(i);
+                _currentHeroIndex = i;
+            }
         }
     }
     private void BackToUI()
     {
         _startUI.SetActiveUI(true);
-        _camera.SetTarget(_visualHeroes[_selectedVisualHeroIndex]);
+        _camera.SetTarget(_visualHeroes[_selectedHeroIndex]);
         _camera.AnimatePositionFar();
-        _currentHeroIndex = _selectedVisualHeroIndex;
+        _currentHeroIndex = _selectedHeroIndex;
     }
     private void NextHero()
     {
@@ -66,7 +85,7 @@ public class BuyUppLogic : MonoBehaviour
         {
             _currentHeroIndex = 0;
         }
-        _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+        _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
         _camera.SetTarget(_visualHeroes[_currentHeroIndex]);
     }
     private void PreviousHero()
@@ -75,7 +94,42 @@ public class BuyUppLogic : MonoBehaviour
         {
             _currentHeroIndex = _visualHeroes.Count - 1;
         }
-        _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+        _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
         _camera.SetTarget(_visualHeroes[_currentHeroIndex]);
+    }
+    private void BuyHero()
+    {
+        int price = _dataHeroes[_currentHeroIndex].Price;
+        if (_palyerData.SpendUsualCrystals(price))
+        {
+            _dataHeroes[_currentHeroIndex].IsBuy = true;
+            _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+            Serializator.Serialize(_dataHeroes);
+            Serializator.Serialize(DataName.CountCrystals, _palyerData.CountUsualCrystals);
+        }
+        else
+        {
+
+        }
+    }
+    private void SelectHero()
+    {
+        _dataHeroes.ForEach(hero => hero.IsSelect = false);
+        _dataHeroes[_currentHeroIndex].IsSelect = true;
+        _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+        _selectedHeroIndex = _currentHeroIndex;
+        Level.SetHeroIndex(_currentHeroIndex);
+        Serializator.Serialize(_dataHeroes);
+    }
+    private void UpgradeHero()
+    {
+        _buyUI.SetActive(false);
+        _upgradeUI.SetActive(true);
+        _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+    }
+    private void BackToBuyMode()
+    {
+        _upgradeUI.SetActive(false);
+        _buyUI.SetActive(true);
     }
 }

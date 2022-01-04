@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +12,18 @@ public class StartUI : MonoBehaviour
     [SerializeField] private GameObject _loadObjects;
     [SerializeField] private Text _text;
     [SerializeField] private Button _upgradeButton;
-    [SerializeField] private UpgradeUI _upgradeUI;
+    [SerializeField] private BuyUI _upgradeUI;
+    [Header("Crystals")]
+    [SerializeField] private TextMeshProUGUI _textUsualCrystals;
+    [SerializeField] private TextMeshProUGUI _textElectroCrystals;
+
+
     void Start()
     {
         _upgradeUI.gameObject.SetActive(false);
         _playButton.onClick.AddListener(() =>
         {
-            if(DateTime.Now < new DateTime(2021,12,29))
+            if(DateTime.Now < new DateTime(2022,1,14))
             {
                 _initializator.Play();
                 _loadObjects.SetActive(true);
@@ -27,17 +33,20 @@ public class StartUI : MonoBehaviour
                 _text.text = "Срок дії закінчився, напишіть в інстаграм waisempai (Власнику ігри)";
             }
         });
-        _reset.onClick.AddListener(() =>
-        {
-            _initializator.Reset();
-        });
         _upgradeButton.onClick.AddListener(() => {
             _upgradeUI.gameObject.SetActive(true);
              SetActiveUI(false);
         });
+        //player data initialization;
+        PlayerData data = PlayerData.GetPlayerData();
+        _textUsualCrystals.text = data.CountUsualCrystals + "";
+        _textElectroCrystals.text = data.CountElectroCrystals + "";
+
+
     }
     public void AddActionPlay(Action action) => _playButton.onClick.AddListener(() => action?.Invoke());
     public void AddActionUpgrade(Action action) => _upgradeButton.onClick.AddListener(() => action?.Invoke());
+    public void AddActionResset(Action action) => _reset.onClick.AddListener(()=>action?.Invoke());
 
     public void SetActiveUI(bool isActive)
     {
@@ -46,4 +55,7 @@ public class StartUI : MonoBehaviour
         _reset.gameObject.SetActive(isActive);
 
     }
+    public void UpdateUsualCrystals(int countUsualCrystals) => _textUsualCrystals.text = countUsualCrystals + "";
+    public void UpdateElectroCrysals(int countCrystals)=> _textElectroCrystals.text = countCrystals + "";
+
 }

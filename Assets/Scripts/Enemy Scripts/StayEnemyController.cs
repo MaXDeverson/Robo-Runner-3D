@@ -40,11 +40,14 @@ public class StayEnemyController : MonoBehaviour
         float eulerAngle = Mathf.Atan(vectorDirection.x / vectorDirection.z) * 180 / Mathf.PI;
         _enemy.DORotate(new Vector3(0, _enemy.eulerAngles.y + (eulerAngle * 1.6f), 0), 0.3f);
         yield return new WaitForSeconds(0.5f);
-        Rigidbody newPrefab = Instantiate(_throwPrefab, _erisePosition.position, Quaternion.identity).GetComponent<Rigidbody>();
-        vectorDirection = target.position - newPrefab.transform.position;
-        vectorDirection.z += 3f;
-        vectorDirection.y = 0;
-        newPrefab.AddForce(vectorDirection.normalized * 10, ForceMode.Impulse);
+        if (!_isDie)
+        {
+            Rigidbody newPrefab = Instantiate(_throwPrefab, _erisePosition.position, Quaternion.identity).GetComponent<Rigidbody>();
+            vectorDirection = target.position - newPrefab.transform.position;
+            vectorDirection.z += 3f;
+            vectorDirection.y = 0;
+            newPrefab.AddForce(vectorDirection.normalized * 10, ForceMode.Impulse);
+        }
     }
     private void GranadeMove(Transform target)
     {

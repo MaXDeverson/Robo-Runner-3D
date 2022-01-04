@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a6bb8ce8cddd4429d86643cb37bcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedYRotation: 4
+  _speed: 0
+  _axis: 0
 --- !u!65 &4089675539969664697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -230,6 +231,18 @@ PrefabInstance:
     - target: {fileID: 354965280214355999, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 354965280233755999, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.011764688
+      objectReference: {fileID: 0}
+    - target: {fileID: 354965280233755999, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.83582884
+      objectReference: {fileID: 0}
+    - target: {fileID: 354965280233755999, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dc0fc88fa0b58e44a42218d38db38af, type: 3}

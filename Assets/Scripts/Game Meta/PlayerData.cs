@@ -9,7 +9,8 @@ public class PlayerData
     private Action<int> _changeCountElectroCrystalAction;
     private int _countUsualCrystals;
     private int _countElectroCrystals;
-    private int _maxCountLifes;//in future;
+    public int CountUsualCrystals { get => _countUsualCrystals; }
+    public int CountElectroCrystals { get => _countElectroCrystals; }
 
     public void SetChangeCounUCystal(Action<int> action)
     {
@@ -21,11 +22,10 @@ public class PlayerData
         _changeCountElectroCrystalAction += action;
         _changeCountElectroCrystalAction?.Invoke(_countElectroCrystals);
     }
-    private PlayerData(int countUCrystals,int countECrystal,int maxCountLifes)
+    private PlayerData(int countUCrystals,int countECrystal)
     {
         _countUsualCrystals = countUCrystals;
         _countElectroCrystals = countECrystal;
-        _maxCountLifes = maxCountLifes;
         _changeCountUsualCrystalAction?.Invoke(_countUsualCrystals);
     }
     public void AddUsualCrystals()
@@ -50,21 +50,32 @@ public class PlayerData
             _changeCountElectroCrystalAction.Invoke(_countElectroCrystals);
             return true;
         }
-        
+    }
+    public bool SpendUsualCrystals(int count)
+    {
+        if (_countUsualCrystals < count)
+        {
+            return false;
+        }
+        else
+        {
+            _countUsualCrystals -= count;
+            _changeCountUsualCrystalAction?.Invoke(_countUsualCrystals);
+            return true;
+        }
     }
 
     public void SaveResult()
     {
-        Serializator.SetData(DataName.CountCrystals, _countUsualCrystals);
-        Serializator.SetData(DataName.CountECrystals, _countElectroCrystals);
+        Serializator.Serialize(DataName.CountCrystals, _countUsualCrystals);
+        Serializator.Serialize(DataName.CountECrystals, _countElectroCrystals);
     }
 
     public static PlayerData GetPlayerData()
     {
-        int countUCrystals = Serializator.GetData(DataName.CountCrystals);
-        int countECrystals = Serializator.GetData(DataName.CountECrystals);
-        int maxCountLifes = Serializator.GetData(DataName.MaxCounLives);
+        int countUCrystals = Serializator.DeSerialize(DataName.CountCrystals);
+        int countECrystals = Serializator.DeSerialize(DataName.CountECrystals);
         //Geting data with seraialization;
-        return new PlayerData(countUCrystals,countECrystals,maxCountLifes);
+        return new PlayerData(countUCrystals,countECrystals);
     }
 }

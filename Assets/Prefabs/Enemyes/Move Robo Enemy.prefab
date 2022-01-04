@@ -4949,6 +4949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aim: {fileID: 0}
   _speed: 2
+  _shiftX: 0.5
 --- !u!1 &1212919447580558655
 GameObject:
   m_ObjectHideFlags: 0
@@ -5005,7 +5006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212919448782632991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 2.42}
+  m_LocalPosition: {x: 0.114, y: 0, z: 2.42}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 1212919447580558654}
@@ -5227,7 +5228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6108522522794510631}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.17, y: 5, z: 91.4}
+  m_LocalPosition: {x: -0.17, y: 5, z: 70}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children: []
   m_Father: {fileID: 1212919447557269282}
@@ -5405,7 +5406,7 @@ PrefabInstance:
         by Humanoid clips.\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
         'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform 'Headgear_Right'\n\tTransform
         'Headgear_Left'\n\tFrom animation clip 'Reload'\n\tFrom animation clip 'Die'\n\tFrom
-        animation clip 'Shoot_SingleShot_AR'\n\tFrom animation clip 'Idle_Guard_AR'\n\tFrom
+        animation clip 'Shoot_SingleShot_AR'\n\tFrom animation clip 'Idle_Shoot_Ar'\n\tFrom
         animation clip 'WalkLeft_Shoot_AR'\n\tFrom animation clip 'WalkRight_Shoot_AR'"
       objectReference: {fileID: 0}
     - target: {fileID: 2836004475591197023, guid: f432554f564e69242897607d34218939, type: 3}

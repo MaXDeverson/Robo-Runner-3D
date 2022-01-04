@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Game Meta\Level.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ResizePanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\ShieldFollower.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
     <Compile Include="Assets\Scripts\UI\BossHitPointsUI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Trigger.cs" />
@@ -80,11 +82,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ThingsCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Menu\CameraBuy.cs" />
     <Compile Include="Assets\Scripts\Game Meta\AnimationType.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyShooter.cs" />
-    <Compile Include="Assets\Scripts\UI\UpgradeUI.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Scripts\UI\BuyUI.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDestroyer.cs" />
@@ -92,25 +97,31 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\BossBehavior_1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMoveAnimator.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneMover.cs" />
     <Compile Include="Assets\Scripts\Triggerable.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\StayEnemyController.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\UI\UpgradeUI.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ManagerAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\UI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Game Meta\Initializator.cs" />
     <Compile Include="Assets\Beautiful Progress Bar\Scripts\SliderScripts.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
-    <Compile Include="Assets\StylizedExplosion\scripts\destroyMe.cs" />
+    <Compile Include="Assets\Effects\StylizedExplosion\scripts\destroyMe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Weapon\Gun.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\FallBoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\StylizedExplosion\scripts\particleColorChanger.cs" />
+    <Compile Include="Assets\Effects\StylizedExplosion\scripts\particleColorChanger.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\Game Meta\Serializator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -121,7 +132,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\Shield.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneShooter.cs" />
-    <Compile Include="Assets\StylizedExplosion\scripts\instantiateEffectCaller.cs" />
+    <Compile Include="Assets\Effects\StylizedExplosion\scripts\instantiateEffectCaller.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Game Meta\HeroData.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ShootLogic.cs" />
@@ -143,14 +154,15 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\BossManagerAniamtion_1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\GetAnimation.cs" />
     <Compile Include="Assets\Scripts\Game Meta\Tag.cs" />
     <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\BuyUppLogic.cs" />
-    <Compile Include="Assets\Scripts\Enemy Scripts\StayEnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -164,7 +176,9 @@
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\SciFiHeroPBR\Textures\PBRMaskTint.shader" />
@@ -179,10 +193,11 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\StylizedExplosion\shader\alphaBlend_glow.shader" />
+     <None Include="Assets\Effects\StylizedExplosion\shader\alphaBlend_glow.shader" />
      <None Include="Assets\Materials\Shaders\Skybox Gradient.shader" />
      <None Include="Assets\Materials\Shaders\FPSGlowAdditive.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Models\Warrior\From Artru\shader\alphaBlend_glow.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
@@ -382,9 +397,6 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -393,9 +405,6 @@
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Boxophobic.Utils.Editor">
       <HintPath>Library\ScriptAssemblies\Boxophobic.Utils.Editor.dll</HintPath>
@@ -417,6 +426,12 @@
     </Reference>
     <Reference Include="Boxophobic.SkyboxCubemapExtended.Editor">
       <HintPath>Library\ScriptAssemblies\Boxophobic.SkyboxCubemapExtended.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
@@ -775,11 +790,11 @@
     <Reference Include="Unity.ProBuilder">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProGrids">
-      <HintPath>Library\ScriptAssemblies\Unity.ProGrids.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>Library\ScriptAssemblies\Unity.ProGrids.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

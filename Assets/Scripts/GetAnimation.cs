@@ -27,7 +27,7 @@ public class GetAnimation : MonoBehaviour
     private void PlayGetAnimation()
     {
         _particleSystem.transform.parent = null;
-        //_particleSystem.Play();
+        _particleSystem.Play();
         ///Here Destroy aniamtion;
         Destroy(gameObject);
         Destroy(_particleSystem.gameObject, 1);

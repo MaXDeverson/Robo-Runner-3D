@@ -11,11 +11,35 @@ public static class Serializator
     private const string FILE_NAME = "/gamedata.dat";
     private static List<HeroData> _initData = new List<HeroData>
     {
-            new HeroData(true,true,0,1,1,new int[]{2,3,4},new int[]{1,2,3}),
-            new HeroData(false,false,100,0,0,new int[]{4,5},new int[]{4,5,6}),
-            new HeroData(false,false,200,0,0,new int[]{6,7,8},new int[]{7,8,9}),
-            new HeroData(false,false,300,0,0,new int[]{9,10,12},new int[]{12,13,15})
+            new HeroData(true,true,0, 0,0,0,0),
+            new HeroData(false,false,100,0,0,0,0),
+            new HeroData(false,false,250,0,0,0,0),
+            new HeroData(false,false,400,0,0,0,0)
     };
+    public static void InitializeHeroDataUpdates()
+    {
+        Debug.Log("Initialize");
+        _initData[0].SetUpgradeData(
+            new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 100), new UpgradeLevel(5,100), new UpgradeLevel(6,200)}, //Lifes data
+            new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(2, 200)}, //Damage data
+            new UpgradeLevel[] { new UpgradeLevel(4, 0), new UpgradeLevel(5, 300), new UpgradeLevel(6, 300), }, //Shield data
+            new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(2, 150), new UpgradeLevel(3, 100), });//Rate Data
+        _initData[1].SetUpgradeData(
+          new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(6, 100), new UpgradeLevel(7, 100), new UpgradeLevel(8,200) }, //Lifes data
+          new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 200), new UpgradeLevel(5, 100), }, //Damage data
+          new UpgradeLevel[] { new UpgradeLevel(6, 0), new UpgradeLevel(8, 300), new UpgradeLevel(10, 100), }, //Shield data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 400), new UpgradeLevel(1, 100), });//Rate Data
+        _initData[2].SetUpgradeData(
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Lifes data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Damage data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Shield data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), });//Rate Data
+        _initData[3].SetUpgradeData(
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Lifes data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Damage data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Shield data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), });//Rate Data
+    }
     public static int DeSerialize(DataName name)
     {
         int value = PlayerPrefs.GetInt(Names[(int)name]);
@@ -51,7 +75,7 @@ public static class Serializator
                 bformatter.Serialize(stream, herosData);
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Debug.Log(ex.Message);
         }

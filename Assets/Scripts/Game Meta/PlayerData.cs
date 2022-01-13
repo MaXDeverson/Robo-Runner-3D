@@ -75,7 +75,6 @@ public class PlayerData
     {
         int countUCrystals = Serializator.DeSerialize(DataName.CountCrystals);
         int countECrystals = Serializator.DeSerialize(DataName.CountECrystals);
-        //Geting data with seraialization;
         return new PlayerData(countUCrystals,countECrystals);
     }
 }

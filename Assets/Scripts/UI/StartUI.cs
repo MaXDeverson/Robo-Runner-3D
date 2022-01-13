@@ -41,8 +41,6 @@ public class StartUI : MonoBehaviour
         PlayerData data = PlayerData.GetPlayerData();
         _textUsualCrystals.text = data.CountUsualCrystals + "";
         _textElectroCrystals.text = data.CountElectroCrystals + "";
-
-
     }
     public void AddActionPlay(Action action) => _playButton.onClick.AddListener(() => action?.Invoke());
     public void AddActionUpgrade(Action action) => _upgradeButton.onClick.AddListener(() => action?.Invoke());

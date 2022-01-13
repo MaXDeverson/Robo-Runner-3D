@@ -9,9 +9,10 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] private EnemyAnimator _animator;
     [SerializeField] private ShootEventListener _shootEvent;
     private bool _isShoot;
+    private bool _isDie;
     void Start()
     {
-        _enemyDestroyer.ActionDie += () => _gun.ShootWait(false);
+        _enemyDestroyer.ActionDie += () => _isDie = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,7 +20,9 @@ public class EnemyShooter : MonoBehaviour
         if (_isShoot) return;
         if (other.CompareTag(Tag.Player) && !other.isTrigger)
         {
-            _shootEvent.ShootAction += () => _gun.ShootOnce();
+            _shootEvent.ShootAction += () => {
+               if(!_isDie)_gun.ShootOnce();
+            };
             _animator.PlayAnimation(AnimationType.Shoot);
             _isShoot = true;
         }

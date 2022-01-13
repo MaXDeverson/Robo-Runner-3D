@@ -13,6 +13,14 @@ public class BuyUppLogic : MonoBehaviour
     private PlayerData _palyerData;
     private int _selectedHeroIndex;
     private int _currentHeroIndex;
+    //
+    private UpgradeType _upgradeType;
+
+    private void Awake()
+    {
+        Serializator.InitializeHeroDataUpdates();
+    }
+
     void Start()
     {
         _startUI.gameObject.SetActive(true);////fortesting
@@ -25,23 +33,25 @@ public class BuyUppLogic : MonoBehaviour
         InitializationDataOfHero();
 
         InitializationUI();
-        _camera.SetTarget(_visualHeroes[_selectedHeroIndex],false);
+        _camera.SetTarget(_visualHeroes[_selectedHeroIndex], false);
         _palyerData.SetChangeCounUCystal((usualCont) => _startUI.UpdateUsualCrystals(usualCont));
         _palyerData.SetChangeCounECrystal((count) => _startUI.UpdateElectroCrysals(count));
     }
     private void InitializationUI()
     {
         _buyUI.AddActionNext(NextHero);
-        _buyUI.AddActionSelect(()=>SelectHero());
+        _buyUI.AddActionSelect(() => SelectHero());
         _buyUI.AddActionBack(BackToUI);
         _buyUI.AddActionPrevious(PreviousHero);
         _buyUI.AddActionBuy(BuyHero);
-        _buyUI.AddActionUpgrade(UpgradeHero);
+        _buyUI.AddActionUpgrade(UpgradeHeroMode);
+        _buyUI.AddActionUpgrade(() => _camera.AnimateRotate());
 
         _startUI.AddActionUpgrade(() => _buyUI.SetActive(true));
         _startUI.AddActionUpgrade(() => _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]));
         _startUI.AddActionUpgrade(_camera.AnimatePositionNear);
-        _startUI.AddActionResset(() => {
+        _startUI.AddActionResset(() =>
+        {
             Serializator.ResetValues();//Serialization initial data
             _dataHeroes = Serializator.DeSerialize();
             _selectedHeroIndex = 0;
@@ -54,15 +64,38 @@ public class BuyUppLogic : MonoBehaviour
         });
         InitializationUpgradeUI();
     }
-
     private void InitializationUpgradeUI()
     {
         _upgradeUI.AddActionBack(BackToBuyMode);
+        _upgradeUI.AddActionBack(() => _camera.AnimateRotateOut());
+        ///Select buttons initialize
+        _upgradeUI.AddActionLifesSelect(() =>
+        {
+            _upgradeType = UpgradeType.Lifes;
+            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex],_upgradeType);
+        });
+        _upgradeUI.AddActionDamageSelect(() =>
+        {
+            _upgradeType = UpgradeType.Damage;
+            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
+        });
+        _upgradeUI.AddActionShieldSelect(() =>
+        {
+            _upgradeType = UpgradeType.Shield;
+            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
+        });
+        _upgradeUI.AddActionRateSelect(() =>
+        {
+            _upgradeType = UpgradeType.Rate;
+            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
+        });
+        ///
+        _upgradeUI.AddActionUpgrade(() => UpgradeHero());
     }
     private void InitializationDataOfHero()
     {
         _dataHeroes = Serializator.DeSerialize();
-        for(int i = 0; i < _dataHeroes.Count; i++)
+        for (int i = 0; i < _dataHeroes.Count; i++)
         {
             if (_dataHeroes[i].IsSelect)
             {
@@ -90,7 +123,7 @@ public class BuyUppLogic : MonoBehaviour
     }
     private void PreviousHero()
     {
-        if(--_currentHeroIndex < 0)
+        if (--_currentHeroIndex < 0)
         {
             _currentHeroIndex = _visualHeroes.Count - 1;
         }
@@ -121,15 +154,35 @@ public class BuyUppLogic : MonoBehaviour
         Level.SetHeroIndex(_currentHeroIndex);
         Serializator.Serialize(_dataHeroes);
     }
-    private void UpgradeHero()
+    private void UpgradeHeroMode()
     {
         _buyUI.SetActive(false);
         _upgradeUI.SetActive(true);
-        _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+        _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
+    }
+    private void UpgradeHero()
+    {
+        switch (_upgradeType)
+        {
+            case UpgradeType.Lifes:
+                Debug.Log("Upgrade Lifes");
+                break;
+            case UpgradeType.Damage:
+                Debug.Log("Upgrade damage");
+                break;
+        }
     }
     private void BackToBuyMode()
     {
         _upgradeUI.SetActive(false);
         _buyUI.SetActive(true);
+        _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
     }
+}
+public enum UpgradeType
+{
+    Lifes,
+    Damage,
+    Shield,
+    Rate,
 }

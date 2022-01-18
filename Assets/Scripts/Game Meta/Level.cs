@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +15,15 @@ public class Level : MonoBehaviour
     [SerializeField] private Transform _startHero;
     [SerializeField] private CameraController _camera;
     public static Level CurrentLevel;
+    private HeroData _heroData;
     public Transform Hero { get; private set; }
+    public void SetDestroyAction(Action action)
+    {
+        _heroDestroyer.DieAction += action;
+    }
+    public HeroData HeroData => _heroData;
     private PlayerData _playerData;
+
     private int currentLevelIndex;
     private bool _nextLoading;
     private static int _indexHero;
@@ -24,6 +32,7 @@ public class Level : MonoBehaviour
     {
         InitHero();
         _playerData = PlayerData.GetPlayerData();
+        _heroData = Serializator.DeSerialize()[_indexHero];
         UIInitialization();
         _thingsCounter.SetListener(_playerData);
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
@@ -51,7 +60,6 @@ public class Level : MonoBehaviour
                 _heroShield.SetActive(true);
         });
     }
-
     public void Restart()
     {
         Serializator.Serialize(DataName.CountCrystals, _playerData.CountUsualCrystals);
@@ -59,7 +67,6 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene(currentLevelIndex);
 
     }
-
     private void OnTriggerEnter(Collider other)
     {
 
@@ -74,7 +81,7 @@ public class Level : MonoBehaviour
         {
             _nextLoading = true;
             _playerData.SaveResult();
-            
+            _ui.ShowLoadView();
             SceneManager.LoadScene(++currentLevelIndex);
         }
     }

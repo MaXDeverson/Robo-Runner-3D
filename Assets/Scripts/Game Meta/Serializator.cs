@@ -12,33 +12,32 @@ public static class Serializator
     private static List<HeroData> _initData = new List<HeroData>
     {
             new HeroData(true,true,0, 0,0,0,0),
-            new HeroData(false,false,100,0,0,0,0),
-            new HeroData(false,false,250,0,0,0,0),
-            new HeroData(false,false,400,0,0,0,0)
+            new HeroData(false,false,5000,0,0,0,0),
+            new HeroData(false,false,1500,0,0,0,0),
+            new HeroData(false,false,30000,0,0,0,0)
     };
     public static void InitializeHeroDataUpdates()
     {
-        Debug.Log("Initialize");
         _initData[0].SetUpgradeData(
-            new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 100), new UpgradeLevel(5,100), new UpgradeLevel(6,200)}, //Lifes data
-            new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(2, 200)}, //Damage data
-            new UpgradeLevel[] { new UpgradeLevel(4, 0), new UpgradeLevel(5, 300), new UpgradeLevel(6, 300), }, //Shield data
-            new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(2, 150), new UpgradeLevel(3, 100), });//Rate Data
+            new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 200), new UpgradeLevel(5,500), new UpgradeLevel(6,700)}, //Lifes data
+            new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(2, 550)}, //Damage data
+            new UpgradeLevel[] { new UpgradeLevel(4, 0), new UpgradeLevel(5, 300), new UpgradeLevel(6, 450), }, //Shield data
+            new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(2, 400), new UpgradeLevel(3, 700), });//Rate Data
         _initData[1].SetUpgradeData(
-          new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(6, 100), new UpgradeLevel(7, 100), new UpgradeLevel(8,200) }, //Lifes data
-          new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 200), new UpgradeLevel(5, 100), }, //Damage data
-          new UpgradeLevel[] { new UpgradeLevel(6, 0), new UpgradeLevel(8, 300), new UpgradeLevel(10, 100), }, //Shield data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 400), new UpgradeLevel(1, 100), });//Rate Data
+          new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(6, 800), new UpgradeLevel(7, 900), new UpgradeLevel(8,1000) }, //Lifes data
+          new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 1000), new UpgradeLevel(5, 1200), }, //Damage data
+          new UpgradeLevel[] { new UpgradeLevel(6, 0), new UpgradeLevel(8, 500), new UpgradeLevel(10, 600), }, //Shield data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 700), new UpgradeLevel(1, 800), });//Rate Data
         _initData[2].SetUpgradeData(
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Lifes data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Damage data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Shield data
+          new UpgradeLevel[] { new UpgradeLevel(9, 0),new UpgradeLevel(10,1200), new UpgradeLevel(11, 1500), new UpgradeLevel(12, 2000), }, //Lifes data
+          new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(6, 1500), new UpgradeLevel(7, 2000), }, //Damage data
+          new UpgradeLevel[] { new UpgradeLevel(8, 0), new UpgradeLevel(9, 1450), new UpgradeLevel(10, 2100), }, //Shield data
           new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), });//Rate Data
         _initData[3].SetUpgradeData(
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Lifes data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Damage data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), }, //Shield data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), });//Rate Data
+          new UpgradeLevel[] { new UpgradeLevel(12, 0), new UpgradeLevel(13, 3000), new UpgradeLevel(14, 5000), }, //Lifes data
+          new UpgradeLevel[] { new UpgradeLevel(8, 0), new UpgradeLevel(10, 4000),new UpgradeLevel(12,7000), new UpgradeLevel(15, 10000), }, //Damage data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 5000), new UpgradeLevel(1, 1), }, //Shield data
+          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 5000), new UpgradeLevel(1, 6000), });//Rate Data
     }
     public static int DeSerialize(DataName name)
     {

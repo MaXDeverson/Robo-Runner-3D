@@ -12,7 +12,6 @@ public class HeroDestroyer : MonoBehaviour
     [SerializeField] private ManagerAnimation _managerAnimation;
     private float _maxCounLefes;
     private bool _isIgnoreDamage;
-
     public void SetGetDamageAction(Action<int> action,bool invoke)
     {
         getDamageAction += action;
@@ -20,6 +19,7 @@ public class HeroDestroyer : MonoBehaviour
     }
     void Start()
     {
+        _countLifes = Level.CurrentLevel.HeroData.LifesCount;
         _maxCounLefes = _countLifes;
     }
 

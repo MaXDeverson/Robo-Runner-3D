@@ -20,6 +20,7 @@ public class UpgradeUI : MonoBehaviour
     [Header("Update View")]
     [SerializeField] private List<GameObject> _viewBoxesUpdate;
     [SerializeField] private List<GameObject> _useViewBoxesUpdate;
+    [SerializeField] private TextMeshProUGUI _textUpgradeInformation;
     private List<Button> _upgradeButtons;
     private ColorBlock _selectColorBlock;
     private ColorBlock _defaultColorBlock;
@@ -105,32 +106,84 @@ public class UpgradeUI : MonoBehaviour
                 for(int i = 0; i < _viewBoxesUpdate.Count; i++)
                 {
                    _viewBoxesUpdate[i].SetActive(i<maxUpgrade);
+                    _useViewBoxesUpdate[i].SetActive(i <= data.LifesLevel);
                 }
-                _priceUpgrade.text = data.GetLifesLevelsData[data.LifesLevel + 1].GetPrice() + " <>";
+                if(maxUpgrade - 1 == data.LifesLevel)
+                {
+                    _upgradeButton.gameObject.SetActive(false);
+                    _priceUpgrade.text = "Full";
+                    _textUpgradeInformation.text = "Upgrade lifes is full";
+                }
+                else
+                {
+                    _upgradeButton.gameObject.SetActive(true);
+                    _priceUpgrade.text = data.GetLifesLevelsData[data.LifesLevel + 1].GetPrice() + " <>";
+                    _textUpgradeInformation.text = "Upgrade lifes count from " + data.GetLifesLevelsData[data.LifesLevel].GetValue() +
+                        " to " + data.GetLifesLevelsData[data.LifesLevel + 1].GetValue();
+                }
                 break;
             case UpgradeType.Damage:
                 maxUpgrade = data.GetDamageLevelsData.Length;
                 for (int i = 0; i < _viewBoxesUpdate.Count; i++)
                 {
                     _viewBoxesUpdate[i].SetActive(i < maxUpgrade);
+                    _useViewBoxesUpdate[i].SetActive(i <= data.DamageLevel);
                 }
-                _priceUpgrade.text = data.GetDamageLevelsData[data.DamageLevel + 1].GetPrice() + " <>";
+                if (maxUpgrade -1 == data.DamageLevel)
+                {
+                    _upgradeButton.gameObject.SetActive(false);
+                    _priceUpgrade.text = "Full";
+                    _textUpgradeInformation.text = "Upgrade damage is full";
+                }
+                else
+                {
+                    _upgradeButton.gameObject.SetActive(true);
+                    _priceUpgrade.text = data.GetDamageLevelsData[data.DamageLevel + 1].GetPrice() + " <>";
+                    _textUpgradeInformation.text = "Upgrade damage from " + data.GetDamageLevelsData[data.DamageLevel].GetValue() +
+                        " to " + data.GetDamageLevelsData[data.DamageLevel + 1].GetValue();
+                }
                 break;
             case UpgradeType.Shield:
                 maxUpgrade = data.GetShieldTimeLevelsData.Length;
                 for (int i = 0; i < _viewBoxesUpdate.Count; i++)
                 {
                     _viewBoxesUpdate[i].SetActive(i < maxUpgrade);
+                    _useViewBoxesUpdate[i].SetActive(i <= data.ShieldTimeLevel);
                 }
-                _priceUpgrade.text = data.GetShieldTimeLevelsData[data.ShieldTimeLevel + 1].GetPrice() + " <>";
+                if (maxUpgrade -1 == data.ShieldTimeLevel)
+                {
+                    _upgradeButton.gameObject.SetActive(false);
+                    _priceUpgrade.text = "Full";
+                    _textUpgradeInformation.text = "Upgrade time shield is full";
+                }
+                else
+                {
+                    _upgradeButton.gameObject.SetActive(true);
+                    _priceUpgrade.text = data.GetShieldTimeLevelsData[data.ShieldTimeLevel + 1].GetPrice() + " <>";
+                    _textUpgradeInformation.text = "Upgrade shield time from " + data.GetShieldTimeLevelsData[data.ShieldTimeLevel].GetValue() +
+                  " to " + data.GetShieldTimeLevelsData[data.ShieldTimeLevel + 1].GetValue();
+                }
                 break;
             case UpgradeType.Rate:
                 maxUpgrade = data.GetDamageLevelsData.Length;
                 for (int i = 0; i < _viewBoxesUpdate.Count; i++)
                 {
                     _viewBoxesUpdate[i].SetActive(i < maxUpgrade);
+                    _useViewBoxesUpdate[i].SetActive(i <= data.RateLevel);
                 }
-                _priceUpgrade.text = data.GetRateLevelsData[data.RateLevel + 1].GetPrice() + " <>";
+                if (maxUpgrade -1 == data.RateLevel)
+                {
+                    _upgradeButton.gameObject.SetActive(false);
+                    _priceUpgrade.text = "Full";
+                    _textUpgradeInformation.text = "Upgrade a rate is full";
+                }
+                else
+                {
+                    _upgradeButton.gameObject.SetActive(true);
+                    _priceUpgrade.text = data.GetRateLevelsData[data.RateLevel + 1].GetPrice() + " <>";
+                    _textUpgradeInformation.text = "Upgrade rate from " + data.GetRateLevelsData[data.RateLevel].GetValue() +
+                        " to " + data.GetRateLevelsData[data.RateLevel + 1].GetValue();
+                }
                 break;
         }
     }

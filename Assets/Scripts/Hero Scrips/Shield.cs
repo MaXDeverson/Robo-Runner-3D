@@ -20,9 +20,9 @@ public class Shield : MonoBehaviour
 
     public void SetShieldTimeActive(int timeInSeconds) => _shieldScaleValue = timeInSeconds;
     public bool ShieldIsActive() => _shieldIsActive;
-
     void Start()
     {
+        _shieldTimeActive = Level.CurrentLevel.HeroData.ShieldTimeCount;
         _shieldObj.transform.localScale = new Vector3(MIN_SCALE_SHIELD, MIN_SCALE_SHIELD, MIN_SCALE_SHIELD);
     }
 

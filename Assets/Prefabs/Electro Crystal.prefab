@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7d0008afd6cc3b5409b3332ac6fe650a, type: 2}
+      objectReference: {fileID: 2100000, guid: 77fab5546b47d044a951218db93cacc7, type: 2}
     - target: {fileID: 919132149155446097, guid: a4db68ebf0816a74cb149609cd0a44aa, type: 3}
       propertyPath: m_Name
       value: Mash

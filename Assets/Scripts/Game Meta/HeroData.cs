@@ -46,7 +46,7 @@ public class HeroData
 }
 
 [Serializable]
-public class UpgradeLevel
+public struct UpgradeLevel
 {
     private byte _value;
     private int _price;

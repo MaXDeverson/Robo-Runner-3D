@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Green Shield
   m_Shader: {fileID: 4800000, guid: 587ee841abd1a3440add653fbc24c428, type: 3}
-  m_ShaderKeywords: USE_CUBEMAP_NO USE_GLOW USE_SPECULAR
+  m_ShaderKeywords: USE_CUBEMAP_NO USE_FOG USE_GLOW USE_SPECULAR
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -87,7 +87,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _UseCC: 0
-    - _UseFog: 0
+    - _UseFog: 1
     - _UseGlow: 1
     - _UseSpecular: 1
     - _UseTexture: 0

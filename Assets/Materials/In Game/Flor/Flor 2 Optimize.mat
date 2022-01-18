@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Flor 2 Optimize
   m_Shader: {fileID: 4800000, guid: f0cccdafb395d2b468b5224d11ce5985, type: 3}
-  m_ShaderKeywords: USE_CUBEMAP_NO USE_FOG_NO USE_TEXTURE
+  m_ShaderKeywords: USE_CC USE_CUBEMAP_NO USE_FOG_NO USE_TEXTURE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -87,7 +87,7 @@ Material:
     - _SpecularMultiplier: 2.57
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseCC: 0
+    - _UseCC: 1
     - _UseCubemap: 0
     - _UseFog: 0
     - _UseGlow: 0

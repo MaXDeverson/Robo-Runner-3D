@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerData
 {
+    private static PlayerData _playerData;
     private Action<int> _changeCountUsualCrystalAction;
     private Action<int> _changeCountElectroCrystalAction;
     private int _countUsualCrystals;
@@ -28,9 +29,9 @@ public class PlayerData
         _countElectroCrystals = countECrystal;
         _changeCountUsualCrystalAction?.Invoke(_countUsualCrystals);
     }
-    public void AddUsualCrystals()
+    public void AddUsualCrystals(int count = 1)
     {
-        _countUsualCrystals ++;
+        _countUsualCrystals += count;
         _changeCountUsualCrystalAction.Invoke(_countUsualCrystals);
     }
     public void AddElectroCrystal()
@@ -64,17 +65,24 @@ public class PlayerData
             return true;
         }
     }
-
     public void SaveResult()
     {
         Serializator.Serialize(DataName.CountCrystals, _countUsualCrystals);
         Serializator.Serialize(DataName.CountECrystals, _countElectroCrystals);
     }
-
     public static PlayerData GetPlayerData()
     {
-        int countUCrystals = Serializator.DeSerialize(DataName.CountCrystals);
-        int countECrystals = Serializator.DeSerialize(DataName.CountECrystals);
-        return new PlayerData(countUCrystals,countECrystals);
+        if(_playerData == null)
+        {
+            int countUCrystals = Serializator.DeSerialize(DataName.CountCrystals);
+            int countECrystals = Serializator.DeSerialize(DataName.CountECrystals);
+            _playerData = new PlayerData(countUCrystals, countECrystals);
+            return _playerData;
+        }
+        else
+        {
+            return _playerData;
+        }
+
     }
 }

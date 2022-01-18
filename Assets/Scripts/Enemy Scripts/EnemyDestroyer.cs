@@ -10,6 +10,12 @@ public class EnemyDestroyer : MonoBehaviour
     [SerializeField] private int _countLifes;
     [SerializeField] protected EnemyAnimator _animator;
     private float _startCountLifes;
+    private int _heroDamage;
+
+    private void Awake()
+    {
+        _heroDamage = Level.CurrentLevel.HeroData.DamageCount;
+    }
 
     private void Start()
     {
@@ -24,7 +30,7 @@ public class EnemyDestroyer : MonoBehaviour
             {
                 if (_countLifes > 0)
                 {
-                    _countLifes--;
+                    _countLifes-=_heroDamage;
                     ActionGetDamage?.Invoke(_countLifes,_countLifes / _startCountLifes);
                     if (_animator != null) _animator.PlayAnimation(AnimationType.GetDamage);
                     if (_countLifes <= 0)

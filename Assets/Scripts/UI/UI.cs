@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UI : MonoBehaviour
 {
@@ -14,9 +15,24 @@ public class UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textCountUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textCountElectricCrystal;
     [SerializeField] private Button _replyButton;
-    [SerializeField] private Button _menuButton;
     [SerializeField] private Button _shieldMode;
     [SerializeField] private Image _damageEffect;
+    [Header("Menu")]
+    [SerializeField] private Transform _menuBoard;
+    [SerializeField] private Button _menuButton;
+    [SerializeField] private Transform _startPosition;
+    [SerializeField] private Transform _finishPosition;
+    [SerializeField] private Button _continue;
+    [SerializeField] private Button _replay;
+    [SerializeField] private Button _exit;
+    [SerializeField] private GameObject _loadWindow;
+    [Header("Loose")]
+    [SerializeField] private Transform _looseBoard;
+    [SerializeField] private Button _looseReplay;
+    [SerializeField] private Button _looseMainMenu;
+    [SerializeField] private GameObject _panel;
+
+    private Transform _animatiedObj;
 
     private HeroDestroyer _heroDestroyer;
     //damage animation
@@ -24,7 +40,7 @@ public class UI : MonoBehaviour
     private bool _playDamageAniamtion;
     private bool _valueToUp;
     private float _transparentValue;
-
+    public void ShowLoadView() => _loadWindow.SetActive(true);
     public void SetHeroDestroyer(HeroDestroyer heroDestroyer) => _heroDestroyer = heroDestroyer;
     public void SetUpdateDataUsualCrystal(PlayerData data)
     {
@@ -43,10 +59,7 @@ public class UI : MonoBehaviour
     }
     private void Start()
     {
-        _replyButton.onClick.AddListener(() =>
-        {
-            Level.CurrentLevel.Restart();
-        });
+        _replyButton.onClick.AddListener(Level.CurrentLevel.Restart);
         _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count + "",true);
         _heroDestroyer.SetGetDamageAction(count =>
         {
@@ -56,10 +69,35 @@ public class UI : MonoBehaviour
         {
             _lifesSlider.value = procent;
         };
+        InitilizationMenu();
+        InitializeationLoose();
+    }
+    private void InitilizationMenu()
+    {
+        _menuBoard.gameObject.SetActive(false);
         _menuButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(0);
+            _panel.SetActive(true);
+            Show(_menuBoard);
         });
+        _continue.onClick.AddListener(() =>
+        {
+            _panel.SetActive(false);
+            HideMenu();
+        });
+        _exit.onClick.AddListener(Exit);
+        _replay.onClick.AddListener(Replay);
+    }
+    private void InitializeationLoose()
+    {
+        Level.CurrentLevel.SetDestroyAction(() =>
+        {
+            _panel.SetActive(true);
+
+            Show(_looseBoard,false);
+        });
+        _looseReplay.onClick.AddListener(Replay);
+        _looseMainMenu.onClick.AddListener(Exit);
     }
     private void FixedUpdate()
     {
@@ -68,7 +106,6 @@ public class UI : MonoBehaviour
             StartCoroutine(DamageAnimation());
         }
     }
-
     private void PlayDamageAnimation()
     {
         _playDamageAniamtion = true;
@@ -77,7 +114,6 @@ public class UI : MonoBehaviour
         StartCoroutine(DamageAnimation());
 
     }
-
     private IEnumerator DamageAnimation()
     {
         _damageAnimationIsPlayed = true;
@@ -98,5 +134,43 @@ public class UI : MonoBehaviour
         }
         yield return new WaitForSeconds(0.005f);
         _damageAnimationIsPlayed = false;
+    }
+    //Menu animation
+    private void Show(Transform obj,bool stop = true)
+    {
+        obj.gameObject.SetActive(true);
+        obj.DOMove(_finishPosition.position, 0.3f);
+        if (stop)
+        {
+            StartCoroutine(Stop());
+        }
+    }
+    private IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(0.31f);
+        Time.timeScale = 0;
+    }
+    private void HideMenu()
+    {
+        Time.timeScale = 1;
+        _menuBoard.transform.DOMove(_startPosition.position, 0.2f);
+        StartCoroutine(InvizibleMenu());
+    }
+    private IEnumerator InvizibleMenu()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _menuBoard.gameObject.SetActive(false);
+    }
+    private void Replay()
+    {
+        Time.timeScale = 1;
+        _loadWindow.SetActive(true);
+        Level.CurrentLevel.Restart();
+    }
+    private void Exit()
+    {
+        Time.timeScale = 1;
+        _loadWindow.SetActive(true);
+        SceneManager.LoadScene(0);
     }
 }

@@ -20,8 +20,7 @@ public class BuyUppLogic : MonoBehaviour
     {
         Serializator.InitializeHeroDataUpdates();
     }
-
-    void Start()
+    private void Start()
     {
         _startUI.gameObject.SetActive(true);////fortesting
         _upgradeUI.gameObject.SetActive(true);
@@ -142,8 +141,62 @@ public class BuyUppLogic : MonoBehaviour
         }
         else
         {
-
+            _startUI.ShowNotification("You need " + price + " money");
         }
+    }
+    private void UpgradeHero()
+    {
+        int price = 0;
+        HeroData currentHero = _dataHeroes[_currentHeroIndex];
+        switch (_upgradeType)
+        {
+            case UpgradeType.Lifes:
+                price = currentHero.GetLifesLevelsData[currentHero.LifesLevel + 1].GetPrice();
+                if (_palyerData.SpendUsualCrystals(price))
+                {
+                    currentHero.LifesLevel++;
+                }
+                else
+                {
+                    _startUI.ShowNotification("You need " + price + " money");
+                }
+                break;
+            case UpgradeType.Damage:
+                price = currentHero.GetDamageLevelsData[currentHero.DamageLevel + 1].GetPrice();
+                if (_palyerData.SpendUsualCrystals(price))
+                {
+                    currentHero.DamageLevel++;
+                }
+                else
+                {
+                    _startUI.ShowNotification("You need " + price + " money");
+                }
+                break;
+            case UpgradeType.Shield:
+                price = currentHero.GetShieldTimeLevelsData[currentHero.ShieldTimeLevel + 1].GetPrice();
+                if (_palyerData.SpendUsualCrystals(price))
+                {
+                    currentHero.ShieldTimeLevel++;
+                }
+                else
+                {
+                    _startUI.ShowNotification("You need " + price + " money");
+                }
+                break;
+            case UpgradeType.Rate:
+                price = currentHero.GetRateLevelsData[currentHero.RateLevel + 1].GetPrice();
+                if (_palyerData.SpendUsualCrystals(price))
+                {
+                    currentHero.RateLevel++;
+                }
+                else
+                {
+                    _startUI.ShowNotification("You need " + price + " money");
+                }
+                break;
+        }
+        Serializator.Serialize(_dataHeroes);
+        _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
     }
     private void SelectHero()
     {
@@ -160,18 +213,7 @@ public class BuyUppLogic : MonoBehaviour
         _upgradeUI.SetActive(true);
         _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
     }
-    private void UpgradeHero()
-    {
-        switch (_upgradeType)
-        {
-            case UpgradeType.Lifes:
-                Debug.Log("Upgrade Lifes");
-                break;
-            case UpgradeType.Damage:
-                Debug.Log("Upgrade damage");
-                break;
-        }
-    }
+  
     private void BackToBuyMode()
     {
         _upgradeUI.SetActive(false);

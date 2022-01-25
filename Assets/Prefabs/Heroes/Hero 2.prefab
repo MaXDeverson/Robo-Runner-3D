@@ -9835,6 +9835,7 @@ MonoBehaviour:
   _dieParticles: {fileID: 6952893929544470765}
   _flyAnimation: {fileID: 7246488862157193906}
   _animatetTransformForCatchBullet: {fileID: 964514547265582847}
+  _speedShoot: 1
 --- !u!114 &6165828867338606051
 MonoBehaviour:
   m_ObjectHideFlags: 0

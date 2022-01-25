@@ -10,15 +10,19 @@ public class ManagerAnimation : MonoBehaviour
     [SerializeField] private ParticleSystem _dieParticles;
     [SerializeField] private ParticleSystem _flyAnimation;
     [SerializeField] private Transform _animatetTransformForCatchBullet;
+    [SerializeField] private float _speedShoot;
     private const string MAIN_LAYER_NAME = "MainLayer";
     private const string HAND_LAYER_NAME = "HandLayer";
     private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
+    private const string SPEED_SHOOT_MULTIPLIER = "SpeedShoot";
     private Rigidbody _rigidbody;
     private bool _palyDieAnimation;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.2f);
+        _animator.SetFloat(SPEED_SHOOT_MULTIPLIER, _speedShoot);
+
     }
     public async void SetMainAnimation(AnimationType type,LayerType layerType)
     {
@@ -59,7 +63,10 @@ public class ManagerAnimation : MonoBehaviour
         string layerName = layerType.Equals(LayerType.MainLayer) ? MAIN_LAYER_NAME : HAND_LAYER_NAME;
         _animator.SetInteger(layerName, (int)type);
     }
-
+    public void SetRateValue(float value)
+    {
+        _speedShoot = value;
+    }
     private IEnumerator SlowJumpAnimation()
     {
         _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.8f);

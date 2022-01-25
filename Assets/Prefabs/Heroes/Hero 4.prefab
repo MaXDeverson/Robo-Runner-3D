@@ -14502,6 +14502,7 @@ MonoBehaviour:
   _dieParticles: {fileID: 6844649441693997392}
   _flyAnimation: {fileID: 6489690833065642767}
   _animatetTransformForCatchBullet: {fileID: 2655343552307373652}
+  _speedShoot: 1
 --- !u!114 &7715190594655083614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24495,8 +24496,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2896937, y: 1, z: 38.294483}
-  m_Center: {x: 0.03342622, y: 0, z: 18.647242}
+  m_Size: {x: 1.2896937, y: 1, z: 60}
+  m_Center: {x: 0.03342622, y: 0, z: 30}
 --- !u!1001 &562644004229826597
 PrefabInstance:
   m_ObjectHideFlags: 0

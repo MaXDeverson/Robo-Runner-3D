@@ -7,10 +7,8 @@ public class MoverLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 {
     [SerializeField] private float _multiplyer;
      public float PositionX { get; private set; }
-    void Start()
-    {
-        
-    }
+    [Header("Start Hand Animation")]
+    [SerializeField] private GameObject _handAnimation;
     void FixedUpdate()
     {
         PositionX = 0;
@@ -18,6 +16,10 @@ public class MoverLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (_handAnimation.activeSelf)
+        {
+            _handAnimation.SetActive(false);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

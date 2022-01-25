@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds.Api;
 
 public class BuyUppLogic : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class BuyUppLogic : MonoBehaviour
 
     private void Awake()
     {
+        MobileAds.Initialize(x => { });
         Serializator.InitializeHeroDataUpdates();
     }
     private void Start()
@@ -213,7 +215,6 @@ public class BuyUppLogic : MonoBehaviour
         _upgradeUI.SetActive(true);
         _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
     }
-  
     private void BackToBuyMode()
     {
         _upgradeUI.SetActive(false);

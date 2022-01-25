@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.33187968, g: 0.6226415, b: 0.49453464, a: 1}
+  m_FogColor: {r: 0.5575828, g: 0.6603774, b: 0.6145365, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.003
   m_LinearFogStart: 0
@@ -29082,6 +29082,10 @@ PrefabInstance:
       propertyPath: _moverLogic
       value: 
       objectReference: {fileID: 533324164}
+    - target: {fileID: 5171306989979998347, guid: 4fafa92f354fba74f8cd2b330e5cb13d, type: 3}
+      propertyPath: _speedShoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5171306990979920199, guid: 4fafa92f354fba74f8cd2b330e5cb13d, type: 3}
       propertyPath: _heroDestroyer
       value: 

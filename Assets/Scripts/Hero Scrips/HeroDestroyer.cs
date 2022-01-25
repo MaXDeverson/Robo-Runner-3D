@@ -12,15 +12,20 @@ public class HeroDestroyer : MonoBehaviour
     [SerializeField] private ManagerAnimation _managerAnimation;
     private float _maxCounLefes;
     private bool _isIgnoreDamage;
-    public void SetGetDamageAction(Action<int> action,bool invoke)
+    public void SetGetDamageAction(Action<int> action, bool invoke)
     {
         getDamageAction += action;
-        if(invoke) getDamageAction.Invoke(_countLifes);
+        if (invoke) getDamageAction.Invoke(_countLifes);
     }
-    void Start()
+    //void Start()
+    //{
+    //    _countLifes = Level.CurrentLevel.HeroData.LifesCount;
+    //    _maxCounLefes = _countLifes;
+    //}
+    public void SetCountLifes(int count)
     {
-        _countLifes = Level.CurrentLevel.HeroData.LifesCount;
-        _maxCounLefes = _countLifes;
+        _countLifes = count;
+        _maxCounLefes = count;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,14 +34,14 @@ public class HeroDestroyer : MonoBehaviour
         switch (other.tag)
         {
             case Tag.EnemyBullet:
-                GetDamage(1,AnimationType.GetDamage);
+                GetDamage(1, AnimationType.GetDamage);
                 break;
             case Tag.Mine:
-                GetDamage(1,AnimationType.GetDamageMine);
+                GetDamage(1, AnimationType.GetDamageMine);
                 break;
         }
     }
-    private void GetDamage(int count,AnimationType typeAnimation)
+    private void GetDamage(int count, AnimationType typeAnimation)
     {
         _countLifes -= count;
         if (_countLifes >= 0)
@@ -55,7 +60,6 @@ public class HeroDestroyer : MonoBehaviour
             DieAction?.Invoke();
         }
     }
-
     public void IgnoreDamage(bool input)
     {
         _isIgnoreDamage = input;

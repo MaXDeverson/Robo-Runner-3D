@@ -27,17 +27,17 @@ public static class Serializator
           new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(6, 800), new UpgradeLevel(7, 900), new UpgradeLevel(8,1000) }, //Lifes data
           new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 1000), new UpgradeLevel(5, 1200), }, //Damage data
           new UpgradeLevel[] { new UpgradeLevel(6, 0), new UpgradeLevel(8, 500), new UpgradeLevel(10, 600), }, //Shield data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 700), new UpgradeLevel(1, 800), });//Rate Data
+          new UpgradeLevel[] { new UpgradeLevel(3, 0), new UpgradeLevel(4, 700), new UpgradeLevel(5, 800), });//Rate Data
         _initData[2].SetUpgradeData(
           new UpgradeLevel[] { new UpgradeLevel(9, 0),new UpgradeLevel(10,1200), new UpgradeLevel(11, 1500), new UpgradeLevel(12, 2000), }, //Lifes data
           new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(6, 1500), new UpgradeLevel(7, 2000), }, //Damage data
           new UpgradeLevel[] { new UpgradeLevel(8, 0), new UpgradeLevel(9, 1450), new UpgradeLevel(10, 2100), }, //Shield data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 1), new UpgradeLevel(1, 1), });//Rate Data
+          new UpgradeLevel[] { new UpgradeLevel(4, 0), new UpgradeLevel(5, 1), new UpgradeLevel(6, 1), });//Rate Data
         _initData[3].SetUpgradeData(
           new UpgradeLevel[] { new UpgradeLevel(12, 0), new UpgradeLevel(13, 3000), new UpgradeLevel(14, 5000), }, //Lifes data
           new UpgradeLevel[] { new UpgradeLevel(8, 0), new UpgradeLevel(10, 4000),new UpgradeLevel(12,7000), new UpgradeLevel(15, 10000), }, //Damage data
           new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 5000), new UpgradeLevel(1, 1), }, //Shield data
-          new UpgradeLevel[] { new UpgradeLevel(1, 0), new UpgradeLevel(1, 5000), new UpgradeLevel(1, 6000), });//Rate Data
+          new UpgradeLevel[] { new UpgradeLevel(5, 0), new UpgradeLevel(7, 5000), new UpgradeLevel(9, 6000), });//Rate Data
     }
     public static int DeSerialize(DataName name)
     {
@@ -82,6 +82,7 @@ public static class Serializator
 
     public static List<HeroData> DeSerialize()
     {
+        Debug.Log(Application.persistentDataPath + FILE_NAME);
         List<HeroData> serialize = _initData;
         try
         {

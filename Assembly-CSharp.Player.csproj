@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\BossBehavior_1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
+    <Compile Include="Assets\Scripts\UI\BossUI.cs" />
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMoveAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\BuyUppLogic.cs" />
-    <Compile Include="Assets\Scripts\UI\BossUI.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -161,17 +161,22 @@
      <None Include="Assets\Effects\JMO Particles\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Materials\Shaders\Universal.shader" />
      <None Include="Assets\Materials\Shaders\Flexus.cginc" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Common.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX\CartoonFX Free.txt" />
      <None Include="Assets\Skybox\Skybox Cubemap Extended.shader" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.dll" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.iOS.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Core.dll" />
      <None Include="Assets\SciFiHeroPBR\Textures\PBRMaskTint.shader" />
+     <None Include="Assets\GoogleMobileAds\link.xml" />
      <None Include="Assets\Materials\Shaders\UniversalOutlined.shader" />
      <None Include="Assets\Beautiful Skyboxes\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Blend.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -189,10 +194,13 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll" />
      <None Include="Assets\Models\Warrior\From Artru\shader\alphaBlend_glow.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Android.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\GoogleMobileAds\GoogleMobileAds_version-6.0.0_manifest.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
@@ -423,8 +431,26 @@
     <Reference Include="Boxophobic.SkyboxCubemapExtended.Editor">
       <HintPath>Library\ScriptAssemblies\Boxophobic.SkyboxCubemapExtended.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleMobileAds.Editor">
+      <HintPath>Library\ScriptAssemblies\GoogleMobileAds.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Core">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Android">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Common">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

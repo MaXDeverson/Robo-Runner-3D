@@ -41,14 +41,19 @@ public class Level : MonoBehaviour
     }
     private void InitHero()
     {
-            Transform hero = Instantiate(_heroes[_indexHero], _startHero.position, Quaternion.identity);
-            Hero = hero;
+            Hero = Instantiate(_heroes[_indexHero], _startHero.position, Quaternion.identity);
             Destroy(_startHero.gameObject);
-            hero.GetComponent<HeroMover>().SetMoverLogic(_moverLogic);
-            _camera.SetFollowObj(hero);
-            _heroDestroyer = hero.GetComponent<HeroDestroyer>();
-            _thingsCounter = hero.GetComponent<ThingsCounter>();
-            _heroShield = hero.GetComponent<Shield>();
+            Hero.GetComponent<HeroMover>().SetMoverLogic(_moverLogic);
+            _camera.SetFollowObj(Hero);
+            _heroDestroyer = Hero.GetComponent<HeroDestroyer>();
+            _thingsCounter = Hero.GetComponent<ThingsCounter>();
+            _heroShield = Hero.GetComponent<Shield>();
+        
+    }
+    private void Start()
+    {
+        _heroDestroyer.SetCountLifes(HeroData.LifesCount);
+        Hero.GetComponent<ManagerAnimation>().SetRateValue(HeroData.RateCount);
     }
     private void UIInitialization()
     {

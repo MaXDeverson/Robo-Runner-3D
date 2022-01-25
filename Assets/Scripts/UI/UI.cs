@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using GoogleMobileAds.Api;
 
 public class UI : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class UI : MonoBehaviour
     [Header("For crystals")]
     [SerializeField] private TextMeshProUGUI _textCountUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textCountElectricCrystal;
-    [SerializeField] private Button _replyButton;
     [SerializeField] private Button _shieldMode;
     [SerializeField] private Image _damageEffect;
     [Header("Menu")]
@@ -29,8 +29,12 @@ public class UI : MonoBehaviour
     [Header("Loose")]
     [SerializeField] private Transform _looseBoard;
     [SerializeField] private Button _looseReplay;
-    [SerializeField] private Button _looseMainMenu;
     [SerializeField] private GameObject _panel;
+    [SerializeField] private Button _contiuneButton;
+
+    private InterstitialAd _add;
+    private string _addId = "ca-app-pub-3940256099942544/1033173712";
+
 
     private Transform _animatiedObj;
 
@@ -57,9 +61,14 @@ public class UI : MonoBehaviour
     {
         _shieldMode.onClick.AddListener(action);
     }
-    private void Start()
+    private void Awake()
     {
-        _replyButton.onClick.AddListener(Level.CurrentLevel.Restart);
+        _add = new InterstitialAd(_addId);
+        AdRequest request = new AdRequest.Builder().Build();
+        _add.LoadAd(request);
+    }
+    private void Start()
+    {  
         _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count + "",true);
         _heroDestroyer.SetGetDamageAction(count =>
         {
@@ -93,12 +102,18 @@ public class UI : MonoBehaviour
         Level.CurrentLevel.SetDestroyAction(() =>
         {
             _panel.SetActive(true);
-
             Show(_looseBoard,false);
         });
         _looseReplay.onClick.AddListener(Replay);
-        _looseMainMenu.onClick.AddListener(Exit);
+        _contiuneButton.onClick.AddListener(Contiune);
+        _add.OnAdClosed += _add_OnAdClosed;
     }
+
+    private void _add_OnAdClosed(object sender, System.EventArgs e)
+    {
+        Debug.Log("Reload with one HP");
+    }
+
     private void FixedUpdate()
     {
         if (!_damageAnimationIsPlayed && _playDamageAniamtion)
@@ -172,5 +187,16 @@ public class UI : MonoBehaviour
         Time.timeScale = 1;
         _loadWindow.SetActive(true);
         SceneManager.LoadScene(0);
+    }
+    private void Contiune()
+    {
+        if (_add.IsLoaded())
+        {
+            _add.Show();
+        }
+        else
+        {
+            Debug.Log("No load");
+        }
     }
 }

@@ -28,6 +28,7 @@ public class BuyUI : MonoBehaviour
     public void UpdateUI(HeroData data)
     {
         _selectButton.gameObject.SetActive(data.IsBuy && !data.IsSelect);
+        _upgradeButton.gameObject.SetActive(data.IsBuy);
         _buyButton.gameObject.SetActive(!data.IsBuy);
         _price.text = data.IsBuy ? data.IsSelect?"Selected" : "Available": data.Price + "";
         //UpdateStats;

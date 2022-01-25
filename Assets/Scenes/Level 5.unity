@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.18039216, g: 0.93333334, b: 0.47843137, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.003
+  m_FogDensity: 0.004
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -24646,27 +24646,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 780
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 958.0803
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3586220767197495726, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_Name

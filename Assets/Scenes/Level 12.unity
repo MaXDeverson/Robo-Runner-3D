@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 9b62cd68318da8f46878d21226c9f80b
+  m_OcclusionCullingData: {fileID: 36300000, guid: 1b76fc8b4e17c50478da9b9ac7d65b3d, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   triggerables:
   - {fileID: 586741295}
   - {fileID: 852586033}
+  index: 0
 --- !u!65 &10689859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1280,7 +1281,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &297666478
 PrefabInstance:
@@ -6530,6 +6531,7 @@ MonoBehaviour:
   triggerables:
   - {fileID: 1102887110}
   - {fileID: 1122919843}
+  index: 0
 --- !u!65 &1284809514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8514,6 +8516,7 @@ MonoBehaviour:
   triggerables:
   - {fileID: 317152751}
   - {fileID: 1743918100}
+  index: 0
 --- !u!65 &1543146524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9196,6 +9199,10 @@ PrefabInstance:
     - target: {fileID: 3586220767197495727, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133238516888675457, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8683667724020829699, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10557,7 +10564,7 @@ Transform:
   - {fileID: 255447575}
   - {fileID: 1103299617}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2053755909
 PrefabInstance:

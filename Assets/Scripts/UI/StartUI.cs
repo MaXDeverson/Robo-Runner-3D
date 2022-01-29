@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StartUI : INotifible
 {
-    [SerializeField] private Initializator _initializator;
     [SerializeField] private Button _playButton;
     [SerializeField] private Button _reset;
     [SerializeField] private GameObject _loadObjects;
@@ -21,6 +21,7 @@ public class StartUI : INotifible
     [SerializeField] private Button _addMoney;
     [SerializeField] private Text _moneyCount;
     [SerializeField] private GameObject _cheatObj;
+    [SerializeField] private Text _currentLevel;
     [Header("Notification")]
     [SerializeField] private TextMeshProUGUI _notificationText;
     [SerializeField] private GameObject _notifiWindow;
@@ -42,12 +43,19 @@ public class StartUI : INotifible
         {
             if(DateTime.Now < new DateTime(2022,2,14))
             {
-                _initializator.Play();
-                _loadObjects.SetActive(true);
+                if(int.TryParse(_currentLevel.text,out int result))
+                {
+                    SceneManager.LoadScene(result);
+                }
+                else
+                {
+                    SceneManager.LoadScene(Serializator.DeSerialize(DataName.CurrentLevel));
+                    _loadObjects.SetActive(true);
+                }
             }
             else
             {
-                _text.text = "Срок дії закінчився, напишіть в інстаграм waisempai (Власнику ігри)";
+                _text.text = "Game need upgrade";
             }
         });
         _upgradeButton.onClick.AddListener(() => {

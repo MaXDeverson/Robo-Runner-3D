@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class Serializator
 {
-    private static string[] Names = { "CurrentLevel", "00dfdfdsfftddpdaccd45_nonf@1idable3$kk22", "023jjjdifnvdsd2%fisjj5ss1pjl^^f2iarddmad", "MaxContLives" };
+    private static string[] Names = { "CurrentLevel", "Count cryst", "Count El Cyst", "MaxContLives","Is first launching","CurrentGuideIndex"};
     private const string FILE_NAME = "/gamedata.dat";
     private static List<HeroData> _initData = new List<HeroData>
     {
@@ -55,7 +55,22 @@ public static class Serializator
         }
         return value;
     }
-    public static void Serialize(DataName name, int value) => PlayerPrefs.SetInt(Names[(int)name], value);
+    public static bool IsFirstLaunching()
+    {
+        if(PlayerPrefs.GetInt(Names[(int)DataName.IsFirstLaunching]) != 1)
+        {
+            PlayerPrefs.SetInt(Names[(int)DataName.IsFirstLaunching],1);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static void Serialize(DataName name, int value)
+    {
+        PlayerPrefs.SetInt(Names[(int)name], value);
+    }
     public static void ResetValues()
     {
         for (int i = 0; i < Names.Length; i++)
@@ -79,10 +94,9 @@ public static class Serializator
             Debug.Log(ex.Message);
         }
     }
-
     public static List<HeroData> DeSerialize()
     {
-        Debug.Log(Application.persistentDataPath + FILE_NAME);
+
         List<HeroData> serialize = _initData;
         try
         {
@@ -105,4 +119,6 @@ public enum DataName
     CountCrystals,
     CountECrystals,
     MaxCounLives,
+    IsFirstLaunching,
+    CurrentGuideIndex,
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using System;
+using UnityEngine.SceneManagement;
 
 public class BuyUppLogic : MonoBehaviour
 {
@@ -19,11 +21,18 @@ public class BuyUppLogic : MonoBehaviour
 
     private void Awake()
     {
-        MobileAds.Initialize(x => { });
         Serializator.InitializeHeroDataUpdates();
     }
     private void Start()
     {
+        //try
+        //{
+        //    MobileAds.Initialize(x => { });
+        //}
+        //catch (Exception exception)
+        //{
+        //    _startUI.ShowNotification(exception.Message);
+        //}
         _startUI.gameObject.SetActive(true);////fortesting
         _upgradeUI.gameObject.SetActive(true);
         _buyUI.gameObject.SetActive(true);
@@ -51,18 +60,7 @@ public class BuyUppLogic : MonoBehaviour
         _startUI.AddActionUpgrade(() => _buyUI.SetActive(true));
         _startUI.AddActionUpgrade(() => _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]));
         _startUI.AddActionUpgrade(_camera.AnimatePositionNear);
-        _startUI.AddActionResset(() =>
-        {
-            Serializator.ResetValues();//Serialization initial data
-            _dataHeroes = Serializator.DeSerialize();
-            _selectedHeroIndex = 0;
-            _currentHeroIndex = 0;
-            Level.SetHeroIndex(_currentHeroIndex);
-            _startUI.UpdateElectroCrysals(0);
-            _startUI.UpdateUsualCrystals(0);
-            _buyUI.UpdateUI(_dataHeroes[0]);
-            _camera.SetTarget(_visualHeroes[_selectedHeroIndex]);
-        });
+        _startUI.AddActionResset(Resset);
         InitializationUpgradeUI();
     }
     private void InitializationUpgradeUI()
@@ -73,7 +71,7 @@ public class BuyUppLogic : MonoBehaviour
         _upgradeUI.AddActionLifesSelect(() =>
         {
             _upgradeType = UpgradeType.Lifes;
-            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex],_upgradeType);
+            _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
         });
         _upgradeUI.AddActionDamageSelect(() =>
         {
@@ -220,6 +218,18 @@ public class BuyUppLogic : MonoBehaviour
         _upgradeUI.SetActive(false);
         _buyUI.SetActive(true);
         _buyUI.UpdateUI(_dataHeroes[_currentHeroIndex]);
+    }
+    private void Resset()
+    {
+        //_dataHeroes = Serializator.DeSerialize();
+        //_selectedHeroIndex = 0;
+        //_currentHeroIndex = 0;
+        //Level.SetHeroIndex(_currentHeroIndex);
+        //_startUI.UpdateElectroCrysals(0);
+        //_startUI.UpdateUsualCrystals(0);
+        //_buyUI.UpdateUI(_dataHeroes[0]);
+        Serializator.ResetValues();
+        //_camera.SetTarget(_visualHeroes[_selectedHeroIndex]);
     }
 }
 public enum UpgradeType

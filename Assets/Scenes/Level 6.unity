@@ -4157,6 +4157,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990016386}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712564442994618, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_Name
       value: Robo Enemy (1)
@@ -4489,6 +4493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990016386}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712564442994618, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_Name
       value: Robo Enemy (4)
@@ -8786,6 +8794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Move Robo Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2314753654811252643, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
 --- !u!4 &655543425 stripped
@@ -11498,6 +11510,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990016386}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712564442994618, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_Name
       value: Robo Enemy
@@ -15017,6 +15033,10 @@ PrefabInstance:
     - target: {fileID: 1212919447557269283, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
       propertyPath: m_Name
       value: Move Robo Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314753654811252643, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
+      propertyPath: _countLifes
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
@@ -19930,6 +19950,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990016386}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712564442994618, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_Name
       value: Robo Enemy (2)
@@ -21758,6 +21782,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990016386}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712564442994618, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_Name
       value: Robo Enemy (6)
@@ -25466,6 +25494,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990016386}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712564442994618, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_Name
       value: Robo Enemy (3)

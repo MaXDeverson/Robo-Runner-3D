@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 using GoogleMobileAds.Api;
+using System;
 
 public class UI : MonoBehaviour
 {
@@ -32,7 +33,9 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject _panel;
     [SerializeField] private Button _contiuneButton;
 
-    private InterstitialAd _add;
+    private Action _exitAction;
+
+   // private InterstitialAd _add;
     private string _addId = "ca-app-pub-3940256099942544/1033173712";
 
 
@@ -63,9 +66,9 @@ public class UI : MonoBehaviour
     }
     private void Awake()
     {
-        _add = new InterstitialAd(_addId);
-        AdRequest request = new AdRequest.Builder().Build();
-        _add.LoadAd(request);
+        //_add = new InterstitialAd(_addId);
+       // AdRequest request = new AdRequest.Builder().Build();
+        //_add.LoadAd(request);
     }
     private void Start()
     {  
@@ -106,7 +109,7 @@ public class UI : MonoBehaviour
         });
         _looseReplay.onClick.AddListener(Replay);
         _contiuneButton.onClick.AddListener(Contiune);
-        _add.OnAdClosed += _add_OnAdClosed;
+        //_add.OnAdClosed += _add_OnAdClosed;
     }
 
     private void _add_OnAdClosed(object sender, System.EventArgs e)
@@ -186,17 +189,19 @@ public class UI : MonoBehaviour
     {
         Time.timeScale = 1;
         _loadWindow.SetActive(true);
+        _exitAction?.Invoke();
         SceneManager.LoadScene(0);
     }
+    public void AddActionExit(Action action) => _exitAction += action;
     private void Contiune()
     {
-        if (_add.IsLoaded())
-        {
-            _add.Show();
-        }
-        else
-        {
-            Debug.Log("No load");
-        }
+        //if (_add.IsLoaded())
+        //{
+        //    _add.Show();
+        //}
+        //else
+        //{
+        //    Debug.Log("No load");
+        //}
     }
 }

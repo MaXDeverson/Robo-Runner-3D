@@ -37,8 +37,15 @@ public class Level : MonoBehaviour
         _thingsCounter.SetListener(_playerData);
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Serializator.Serialize(DataName.CurrentLevel, currentLevelIndex);
+        _ui.AddActionExit(OnApplicationQuit);
         CurrentLevel = this;
     }
+
+    private void OnApplicationQuit()
+    {
+        _playerData.SaveData();
+    }
+
     private void InitHero()
     {
             Hero = Instantiate(_heroes[_indexHero], _startHero.position, Quaternion.identity);
@@ -85,9 +92,10 @@ public class Level : MonoBehaviour
         if (!_nextLoading)
         {
             _nextLoading = true;
-            _playerData.SaveResult();
+            _playerData.SaveData();
             _ui.ShowLoadView();
             SceneManager.LoadScene(++currentLevelIndex);
         }
     }
+
 }

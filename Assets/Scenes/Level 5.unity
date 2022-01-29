@@ -6290,6 +6290,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712562949195909, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.23
@@ -14782,6 +14786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Move Robo Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2314753654811252643, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4003318284397965611, guid: 061c3ebd0e0b19d4b9a42599f0140271, type: 3}
       propertyPath: m_WarningMessage
       value: "\nBinding warning: Some generic clip(s) animate transforms that are
@@ -16939,6 +16947,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712562949195909, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.23
@@ -31230,6 +31242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1500169447515891514, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
+      propertyPath: _countLifes
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2601712562949195909, guid: 9b346757fd313ac468c8f4d750f8380a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.23

@@ -65,7 +65,7 @@ public class PlayerData
             return true;
         }
     }
-    public void SaveResult()
+    public void SaveData()
     {
         Serializator.Serialize(DataName.CountCrystals, _countUsualCrystals);
         Serializator.Serialize(DataName.CountECrystals, _countElectroCrystals);
@@ -74,8 +74,16 @@ public class PlayerData
     {
         if(_playerData == null)
         {
-            int countUCrystals = Serializator.DeSerialize(DataName.CountCrystals);
-            int countECrystals = Serializator.DeSerialize(DataName.CountECrystals);
+            bool isFirstLaunch = Serializator.IsFirstLaunching();
+            Debug.Log("Is first " + isFirstLaunch);
+            int countUCrystals = isFirstLaunch?1000: Serializator.DeSerialize(DataName.CountCrystals);
+            int countECrystals = isFirstLaunch?10: Serializator.DeSerialize(DataName.CountECrystals);
+            if (isFirstLaunch)
+            {
+              
+                Serializator.Serialize(DataName.CountCrystals, countUCrystals);
+                Serializator.Serialize(DataName.CountECrystals, countECrystals);
+            }
             _playerData = new PlayerData(countUCrystals, countECrystals);
             return _playerData;
         }

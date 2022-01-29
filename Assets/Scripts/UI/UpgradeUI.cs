@@ -165,7 +165,7 @@ public class UpgradeUI : MonoBehaviour
                 }
                 break;
             case UpgradeType.Rate:
-                maxUpgrade = data.GetDamageLevelsData.Length;
+                maxUpgrade = data.GetRateLevelsData.Length;
                 for (int i = 0; i < _viewBoxesUpdate.Count; i++)
                 {
                     _viewBoxesUpdate[i].SetActive(i < maxUpgrade);

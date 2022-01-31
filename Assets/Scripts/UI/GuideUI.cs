@@ -13,6 +13,9 @@ public class GuideUI :Triggerable
     [SerializeField] private GuideUI _nextGuide;
     [SerializeField] private int _guideIndex;
     [SerializeField] private bool _startinAwake;
+
+    private const float FIXED_DELTA_TIME = 0.02f;
+    private const float DELTA_TIME_SLOW = 0.01f;
     private void Start()
     {
         //if(_lockPanel != null && _nextGuide == null) _lockPanel.SetActive(false);
@@ -27,6 +30,7 @@ public class GuideUI :Triggerable
             if(_guideIndex == Serializator.DeSerialize(DataName.CurrentGuideIndex))
             {
                 Time.timeScale = 1;
+                Time.fixedDeltaTime = FIXED_DELTA_TIME;
                 _clickAnimation.gameObject.SetActive(false);
                 if (_lockPanel != null)
                 {
@@ -43,6 +47,7 @@ public class GuideUI :Triggerable
                 else
                 {
                     Time.timeScale = 1;
+                    Time.fixedDeltaTime = FIXED_DELTA_TIME;
                 }
             }
         });
@@ -67,7 +72,6 @@ public class GuideUI :Triggerable
     {
         if (_guideIndex == Serializator.DeSerialize(DataName.CurrentGuideIndex))
         {
-            Debug.Log( "Play Guide " + Serializator.DeSerialize(DataName.CurrentGuideIndex));
             _clickAnimation.gameObject.SetActive(true);
             _guideButton.gameObject.SetActive(true);
             if (_lockPanel != null)
@@ -77,7 +81,11 @@ public class GuideUI :Triggerable
                 _clickAnimation.transform.SetParent(_lockPanel.transform, false);
                 _lockPanel.transform.SetParent(_firstParent.transform, false);
             }
-            if (isTimeScale) Time.timeScale = _timeScale;
+            if (isTimeScale)
+            {
+                Time.timeScale = _timeScale;
+                Time.fixedDeltaTime = DELTA_TIME_SLOW;
+            }
         }
     }
 }

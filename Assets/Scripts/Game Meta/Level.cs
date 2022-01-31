@@ -78,6 +78,7 @@ public class Level : MonoBehaviour
         Serializator.Serialize(DataName.CountECrystals, _playerData.CountElectroCrystals);
         SceneManager.LoadScene(currentLevelIndex);
 
+
     }
     private void OnTriggerEnter(Collider other)
     {

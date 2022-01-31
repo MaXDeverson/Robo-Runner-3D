@@ -14,7 +14,7 @@ public class EnemyDestroyer : MonoBehaviour
 
     private void Start()
     {
-        _heroDamage = Level.CurrentLevel.HeroData.DamageCount;
+        _heroDamage = Level.CurrentLevel == null?0:Level.CurrentLevel.HeroData.DamageCount;
         _startCountLifes = _countLifes;
     }
     // Update is called once per frame

@@ -32,6 +32,13 @@ public class UI : MonoBehaviour
     [SerializeField] private Button _looseReplay;
     [SerializeField] private GameObject _panel;
     [SerializeField] private Button _contiuneButton;
+    [Header("Shield")]
+    [SerializeField] private Image _shieldImage;
+    [SerializeField] private GameObject _shieldBackground;
+    [SerializeField] private TextMeshProUGUI _shieldTimeText;
+    private float _shieldImageFillCoeficient;
+    private bool _shieldAnimatinIsPlaying;
+    private float _waitTime;
 
     private Action _exitAction;
 
@@ -112,11 +119,6 @@ public class UI : MonoBehaviour
         //_add.OnAdClosed += _add_OnAdClosed;
     }
 
-    private void _add_OnAdClosed(object sender, System.EventArgs e)
-    {
-        Debug.Log("Reload with one HP");
-    }
-
     private void FixedUpdate()
     {
         if (!_damageAnimationIsPlayed && _playDamageAniamtion)
@@ -179,6 +181,25 @@ public class UI : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         _menuBoard.gameObject.SetActive(false);
     }
+    //Shield Viewer
+    public void ShowShieldTime(int seconds)
+    {
+        _shieldBackground.SetActive(true);
+        _shieldImage.gameObject.SetActive(true);
+        _shieldTimeText.gameObject.SetActive(true);
+        _shieldTimeText.text = seconds + "";
+        _shieldImageFillCoeficient = 1;
+        _waitTime = 0.02f;
+        //Show
+    }
+    private IEnumerator PlayShieldAnimationFrame()
+    {
+        _shieldAnimatinIsPlaying = true;
+        _shieldImageFillCoeficient -= 0.03f;
+        yield return new WaitForSeconds(_waitTime);//waitTime;
+        _shieldImage.fillAmount = _shieldImageFillCoeficient;
+    }
+
     private void Replay()
     {
         Time.timeScale = 1;

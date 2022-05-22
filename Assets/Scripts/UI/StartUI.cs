@@ -32,7 +32,8 @@ public class StartUI : INotifible
     void Start()
     {
         PlayerData data = PlayerData.GetPlayerData();
-        _addMoney.onClick.AddListener(() => {
+        _addMoney.onClick.AddListener(() =>
+        {
             data.AddUsualCrystals(int.Parse(_moneyCount.text));
             _textUsualCrystals.text = data.CountUsualCrystals + "";
             Serializator.Serialize(DataName.CountCrystals, data.CountUsualCrystals);
@@ -41,35 +42,29 @@ public class StartUI : INotifible
         _upgradeUI.gameObject.SetActive(false);
         _playButton.onClick.AddListener(() =>
         {
-            if(DateTime.Now < new DateTime(2022,2,14))
+            if (int.TryParse(_currentLevel.text, out int result))
             {
-                if(int.TryParse(_currentLevel.text,out int result))
-                {
-                    SceneManager.LoadScene(result);
-                }
-                else
-                {
-                    SceneManager.LoadScene(Serializator.DeSerialize(DataName.CurrentLevel));
-                    _loadObjects.SetActive(true);
-                }
+                SceneManager.LoadScene(result);
             }
             else
             {
-                _text.text = "Game need upgrade";
+                SceneManager.LoadScene(Serializator.DeSerialize(DataName.CurrentLevel));
+                _loadObjects.SetActive(true);
             }
         });
-        _upgradeButton.onClick.AddListener(() => {
+        _upgradeButton.onClick.AddListener(() =>
+        {
             _upgradeUI.gameObject.SetActive(true);
-             SetActiveUI(false);
+            SetActiveUI(false);
         });
         //player data initialization;
-      
+
         _textUsualCrystals.text = data.CountUsualCrystals + "";
         _textElectroCrystals.text = data.CountElectroCrystals + "";
     }
     public void AddActionPlay(Action action) => _playButton.onClick.AddListener(() => action?.Invoke());
     public void AddActionUpgrade(Action action) => _upgradeButton.onClick.AddListener(() => action?.Invoke());
-    public void AddActionResset(Action action) => _reset.onClick.AddListener(()=>action?.Invoke());
+    public void AddActionResset(Action action) => _reset.onClick.AddListener(() => action?.Invoke());
     public void SetActiveUI(bool isActive)
     {
         _upgradeButton.gameObject.SetActive(isActive);
@@ -82,11 +77,11 @@ public class StartUI : INotifible
 
     }
     public void UpdateUsualCrystals(int countUsualCrystals) => _textUsualCrystals.text = countUsualCrystals + "";
-    public void UpdateElectroCrysals(int countCrystals)=> _textElectroCrystals.text = countCrystals + "";
+    public void UpdateElectroCrysals(int countCrystals) => _textElectroCrystals.text = countCrystals + "";
     //Notification logic;
     public override void ShowNotification(string text)
     {
-        if(_inProcess)
+        if (_inProcess)
         {
             _notificationText.text = text;
             return;

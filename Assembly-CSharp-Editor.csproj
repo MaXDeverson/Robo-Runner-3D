@@ -59,7 +59,6 @@
     <Compile Include="Assets\Effects\JMO Particles\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\Effects\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll" />
      <None Include="Assets\ExternalDependencyManager\Editor\Google.VersionHandlerImpl_v1.2.165.dll" />
      <None Include="Assets\ExternalDependencyManager\Editor\Google.PackageManagerResolver_v1.2.165.dll" />
      <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.165_manifest.txt" />
@@ -335,9 +334,6 @@
     </Reference>
     <Reference Include="GoogleMobileAds.Common">
       <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>Assets\Effects\JMO Particles\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

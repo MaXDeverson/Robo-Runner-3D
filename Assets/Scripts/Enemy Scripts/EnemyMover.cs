@@ -7,14 +7,20 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private EnemyMoverLogic _moverLogic;
     [SerializeField] private EnemyAnimator _animator;
+    [SerializeField] private EnemyDestroyer _destroyer;
     [SerializeField] private float _speed = 1;
     private Rigidbody _rigidbody;
     private bool CanAnimated;
     private bool Pause;
+    private bool _isDIe;
     private const float NoAnimatedDistance = 0.2f; 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _destroyer.ActionDie += () =>
+        {
+            _isDIe = true;
+        };
     }
 
     // Update is called once per frame
@@ -25,7 +31,7 @@ public class EnemyMover : MonoBehaviour
             Pause = true;
             PlayMoveAnimation();
         }
-        if (CanAnimated)
+        if (CanAnimated && !_isDIe)
         {
             if (_moverLogic.PositionX > transform.position.x + NoAnimatedDistance)
             {

@@ -20,22 +20,28 @@ public class EnemyDestroyer : MonoBehaviour
     // Update is called once per frame
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(Tag.Bullet))
+        switch (other.tag)
         {
-            if (!other.GetComponent<Bullet>().IsEnemy())
-            {
-                if (_countLifes > 0)
+            case Tag.Bullet:
+                if (!other.GetComponent<Bullet>().IsEnemy())
                 {
-                    _countLifes-=_heroDamage;
-                    ActionGetDamage?.Invoke(_countLifes,_countLifes / _startCountLifes);
-                    if (_animator != null) _animator.PlayAnimation(AnimationType.GetDamage);
-                    if (_countLifes <= 0)
+                    if (_countLifes > 0)
                     {
-                        if (_animator != null)_animator.PlayAnimation(AnimationType.Die);
-                        ActionDie?.Invoke();
+                        _countLifes -= _heroDamage;
+                        ActionGetDamage?.Invoke(_countLifes, _countLifes / _startCountLifes);
+                        if (_animator != null) _animator.PlayAnimation(AnimationType.GetDamage);
+                        if (_countLifes <= 0)
+                        {
+                            if (_animator != null) _animator.PlayAnimation(AnimationType.Die);
+                            ActionDie?.Invoke();
+                        }
                     }
                 }
-            }
+                break;
+            case Tag.Player:
+                if (_animator != null) _animator.PlayAnimation(AnimationType.Die);
+                ActionDie?.Invoke();
+                break;
         }
     }
 }

@@ -6,6 +6,7 @@ public class Shield : MonoBehaviour
 {
     [SerializeField] private HeroDestroyer _destroyer;
     [SerializeField] private GameObject _shieldObj;
+    public int ShieldTimeActive { get => _shieldTimeActive;}
     private const int MAX_SCALE_SHIELD = 6;
     private const int MIN_SCALE_SHIELD = 1;
     private float _shieldScaleValue = 1;

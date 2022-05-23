@@ -221,15 +221,9 @@ public class BuyUppLogic : MonoBehaviour
     }
     private void Resset()
     {
-        //_dataHeroes = Serializator.DeSerialize();
-        //_selectedHeroIndex = 0;
-        //_currentHeroIndex = 0;
-        //Level.SetHeroIndex(_currentHeroIndex);
-        //_startUI.UpdateElectroCrysals(0);
-        //_startUI.UpdateUsualCrystals(0);
-        //_buyUI.UpdateUI(_dataHeroes[0]);
         Serializator.ResetValues();
-        //_camera.SetTarget(_visualHeroes[_selectedHeroIndex]);
+        PlayerData.ResetValues();
+        SceneManager.LoadScene(0);
     }
 }
 public enum UpgradeType

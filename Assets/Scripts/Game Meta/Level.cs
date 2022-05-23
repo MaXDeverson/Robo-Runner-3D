@@ -69,7 +69,11 @@ public class Level : MonoBehaviour
         _ui.SetShieldModeEvent(() =>
         {
             if(!_heroShield.ShieldIsActive() && _playerData.SpendElectroCrystals(1))
+            {
                 _heroShield.SetActive(true);
+                _ui.ShowShieldTime(_heroShield.ShieldTimeActive);
+            }
+                
         });
     }
     public void Restart()

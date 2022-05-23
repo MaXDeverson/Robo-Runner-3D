@@ -12,16 +12,17 @@ public class HeroDestroyer : MonoBehaviour
     [SerializeField] private ManagerAnimation _managerAnimation;
     private float _maxCounLefes;
     private bool _isIgnoreDamage;
-    public void SetGetDamageAction(Action<int> action, bool invoke)
+    private bool _isDie;
+
+    private void Start()
+    {
+        DieAction += () => _isDie = true;
+    }
+    public void SetGetDamageAction(Action<int> action, bool invoke = false)
     {
         getDamageAction += action;
         if (invoke) getDamageAction.Invoke(_countLifes);
     }
-    //void Start()
-    //{
-    //    _countLifes = Level.CurrentLevel.HeroData.LifesCount;
-    //    _maxCounLefes = _countLifes;
-    //}
     public void SetCountLifes(int count)
     {
         _countLifes = count;
@@ -39,12 +40,16 @@ public class HeroDestroyer : MonoBehaviour
             case Tag.Mine:
                 GetDamage(1, AnimationType.GetDamageMine);
                 break;
+            case Tag.Barrel:
+                GetDamage(5, AnimationType.GetDamage);
+                break;
         }
     }
     private void GetDamage(int count, AnimationType typeAnimation)
     {
+
         _countLifes -= count;
-        if (_countLifes >= 0)
+        if (!_isDie)
         {
             getDamageAction?.Invoke(_countLifes);
             GetDamageActionProcent?.Invoke(_countLifes / _maxCounLefes);
@@ -55,7 +60,7 @@ public class HeroDestroyer : MonoBehaviour
         }
         else
         {
-            _managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
+            //_managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
             _managerAnimation.SetMainAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);
             DieAction?.Invoke();
         }
@@ -64,4 +69,5 @@ public class HeroDestroyer : MonoBehaviour
     {
         _isIgnoreDamage = input;
     }
+
 }

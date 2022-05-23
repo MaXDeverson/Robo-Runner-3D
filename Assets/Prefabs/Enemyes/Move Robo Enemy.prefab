@@ -4934,6 +4934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moverLogic: {fileID: 8137127365568720127}
   _animator: {fileID: 1212919447557269286}
+  _destroyer: {fileID: 2314753654811252643}
   _speed: 3
 --- !u!114 &8137127365568720127
 MonoBehaviour:

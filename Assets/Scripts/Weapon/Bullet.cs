@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     public bool IsEnemy() => _isEnemy;
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.isTrigger && !other.CompareTag(Tag.Bullet))
+        if ((!other.isTrigger && !other.CompareTag(Tag.Bullet)) || other.CompareTag(Tag.Barrel))
         {
             //if(_destroyObj!=null) Destroy(_destroyObj);
             if (_mainParticles != null)

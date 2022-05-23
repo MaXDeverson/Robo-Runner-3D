@@ -11,6 +11,8 @@ TagManager:
   - JumpPlace
   - Crystal
   - ElectroCrystal
+  - FxTemporaire
+  - Barrel
   layers:
   - Default
   - TransparentFX

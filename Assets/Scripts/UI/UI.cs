@@ -13,10 +13,10 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textLifes;
     [SerializeField] private Slider _lifesSlider;
+    [SerializeField] private Button _shieldMode;
     [Header("For crystals")]
     [SerializeField] private TextMeshProUGUI _textCountUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textCountElectricCrystal;
-    [SerializeField] private Button _shieldMode;
     [SerializeField] private Image _damageEffect;
     [Header("Menu")]
     [SerializeField] private Transform _menuBoard;
@@ -36,9 +36,12 @@ public class UI : MonoBehaviour
     [SerializeField] private Image _shieldImage;
     [SerializeField] private GameObject _shieldBackground;
     [SerializeField] private TextMeshProUGUI _shieldTimeText;
+    [SerializeField] private Text _fpsValue;
     private float _shieldImageFillCoeficient;
+    private float _shieldFillingDelta;
     private bool _shieldAnimatinIsPlaying;
-    private float _waitTime;
+    private bool _shieldUIIsShowing;
+    private const float SHIELD_WAIT_TIME = 0.1f;
 
     private Action _exitAction;
 
@@ -79,7 +82,7 @@ public class UI : MonoBehaviour
     }
     private void Start()
     {  
-        _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count + "",true);
+        _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count > 0? count + "":"0",true);
         _heroDestroyer.SetGetDamageAction(count =>
         {
             PlayDamageAnimation();
@@ -121,9 +124,32 @@ public class UI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //damage
         if (!_damageAnimationIsPlayed && _playDamageAniamtion)
         {
             StartCoroutine(DamageAnimation());
+        }
+        //shield
+        if (_shieldUIIsShowing && !_shieldAnimatinIsPlaying)
+        {
+            StartCoroutine(PlayShieldAnimationFrame());
+        }
+    }
+    void Update()
+    {
+        //show fps
+        int fps = (int)(1.0f / Time.deltaTime);
+        if (fps % 2 == 0)
+        {
+            _fpsValue.text = "FPS:" + fps;
+            if (fps < 20)
+            {
+                _fpsValue.color = Color.red;
+            }
+            else
+            {
+                _fpsValue.color = Color.yellow;
+            }
         }
     }
     private void PlayDamageAnimation()
@@ -182,22 +208,41 @@ public class UI : MonoBehaviour
         _menuBoard.gameObject.SetActive(false);
     }
     //Shield Viewer
+    float _seconds;
     public void ShowShieldTime(int seconds)
     {
+        _seconds = seconds;
         _shieldBackground.SetActive(true);
         _shieldImage.gameObject.SetActive(true);
         _shieldTimeText.gameObject.SetActive(true);
         _shieldTimeText.text = seconds + "";
         _shieldImageFillCoeficient = 1;
-        _waitTime = 0.02f;
-        //Show
+        float countCycles = seconds / SHIELD_WAIT_TIME;
+        _shieldFillingDelta = 1 / countCycles;
+        //Showing
+        _shieldUIIsShowing = true;
+        StartCoroutine(PlayShieldAnimationFrame());
     }
     private IEnumerator PlayShieldAnimationFrame()
     {
         _shieldAnimatinIsPlaying = true;
-        _shieldImageFillCoeficient -= 0.03f;
-        yield return new WaitForSeconds(_waitTime);//waitTime;
-        _shieldImage.fillAmount = _shieldImageFillCoeficient;
+        _shieldImageFillCoeficient -= _shieldFillingDelta;
+        yield return new WaitForSeconds(SHIELD_WAIT_TIME - (SHIELD_WAIT_TIME * 0.25f));//waitTime;I don't know why we need 0.25 value );
+        if (_shieldImageFillCoeficient <= 0)
+        {
+            _shieldUIIsShowing = false;
+            _shieldBackground.SetActive(false);
+            _shieldImage.gameObject.SetActive(false);
+            _shieldTimeText.gameObject.SetActive(false);
+        }
+        else
+        {
+            _shieldImage.fillAmount = _shieldImageFillCoeficient;
+            _shieldAnimatinIsPlaying = false;
+            float visualSeconds = (float)Math.Round(_seconds -= SHIELD_WAIT_TIME, 1);
+            _shieldTimeText.text = visualSeconds + (visualSeconds.ToString().Split('.').Length > 1 ? "" : ".0");
+        }
+
     }
 
     private void Replay()

@@ -32,6 +32,8 @@ public class EnemyDestroyer : MonoBehaviour
                         if (_animator != null) _animator.PlayAnimation(AnimationType.GetDamage);
                         if (_countLifes <= 0)
                         {
+                            //Die is here
+                            GetComponent<BoxCollider>().enabled = false;
                             if (_animator != null) _animator.PlayAnimation(AnimationType.Die);
                             ActionDie?.Invoke();
                         }

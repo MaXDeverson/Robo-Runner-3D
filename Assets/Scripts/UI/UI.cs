@@ -32,6 +32,7 @@ public class UI : MonoBehaviour
     [SerializeField] private Button _looseReplay;
     [SerializeField] private GameObject _panel;
     [SerializeField] private Button _contiuneButton;
+    private Vector3 _startPositionLooseBoard;
     [Header("Shield")]
     [SerializeField] private Image _shieldImage;
     [SerializeField] private GameObject _shieldBackground;
@@ -76,6 +77,7 @@ public class UI : MonoBehaviour
     }
     private void Awake()
     {
+        _startPositionLooseBoard = _looseBoard.position;
         //_add = new InterstitialAd(_addId);
        // AdRequest request = new AdRequest.Builder().Build();
         //_add.LoadAd(request);
@@ -87,10 +89,10 @@ public class UI : MonoBehaviour
         {
             PlayDamageAnimation();
         },false);
-        _heroDestroyer.GetDamageActionProcent += (procent) =>
+        _heroDestroyer.SetGetDamageActionProcent((procent) =>
         {
             _lifesSlider.value = procent;
-        };
+        },true);
         InitilizationMenu();
         InitializeationLoose();
     }
@@ -112,12 +114,13 @@ public class UI : MonoBehaviour
     }
     private void InitializeationLoose()
     {
-        Level.CurrentLevel.SetDestroyAction(() =>
+        Level.CurrentLevel.SetDieAction(() =>
         {
             _panel.SetActive(true);
             Show(_looseBoard,false);
         });
         _looseReplay.onClick.AddListener(Replay);
+        _contiuneButton.onClick.RemoveAllListeners();
         _contiuneButton.onClick.AddListener(Contiune);
         //_add.OnAdClosed += _add_OnAdClosed;
     }
@@ -187,6 +190,24 @@ public class UI : MonoBehaviour
         obj.gameObject.SetActive(true);
         obj.DOMove(_finishPosition.position, 0.3f);
         if (stop)
+        {
+            StartCoroutine(Stop());
+        }
+    }
+    private IEnumerator Animate(Transform obj,Vector3 position,bool hide, bool stopGame = true)
+    {
+        if(hide)
+        {
+            obj.DOMove(position, 0.3f);
+            yield return new WaitForSeconds(0.3f);
+            obj.gameObject.SetActive(false);
+        }
+        else
+        {
+            obj.gameObject.SetActive(true);
+            obj.DOMove(position, 0.3f);
+        }
+        if (stopGame)
         {
             StartCoroutine(Stop());
         }
@@ -269,5 +290,10 @@ public class UI : MonoBehaviour
         //{
         //    Debug.Log("No load");
         //}
+        //IF ADD WAS SHOWED
+        Level.CurrentLevel.Contiune();
+        Start();
+        StartCoroutine(Animate(_looseBoard, _startPositionLooseBoard, true, false));
+        _panel.SetActive(false);
     }
 }

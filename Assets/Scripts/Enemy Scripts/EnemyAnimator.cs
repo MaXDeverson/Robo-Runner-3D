@@ -10,6 +10,9 @@ public class EnemyAnimator : MonoBehaviour
     [Header("For Die")]
     [SerializeField] protected ParticleSystem _boomParticles;
     [SerializeField] protected GameObject _destroyObj;
+    [Header("For Ragdoll")]
+    [SerializeField] private bool _isRagdoll;
+    [SerializeField] private List<Transform> _bones;
     public AnimationType CurrentAnimation { get; protected set; }
     protected Rigidbody _rigidbody;
     protected const string MAIN_LAYER_NAME = "MainLayer";
@@ -17,9 +20,15 @@ public class EnemyAnimator : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        if (_isRagdoll)
+        {
+            foreach(Transform bone in _bones)
+            {
+                bone.GetComponent<BoxCollider>().enabled = false;
+                bone.GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
     }
-
-
     public virtual async void PlayAnimation(AnimationType animation)
     {
         if (_isDie)
@@ -31,11 +40,20 @@ public class EnemyAnimator : MonoBehaviour
         switch (animation)
         {
             case AnimationType.Die:
+                System.Random random = new System.Random();
+                if (_isRagdoll)
+                {
+                    RagdollDie();
+                    int randomValue = random.Next(0, 6);
+                    _bones.ForEach((x) => x.GetComponent<Rigidbody>().AddForce(new Vector3(5 * (randomValue > 3 ? 1 : -1), 7 + randomValue, 17 + randomValue), ForceMode.Impulse));
+                }
+                else
+                {
+                    _rigidbody.constraints = RigidbodyConstraints.None;
+                    _rigidbody.AddForce(new Vector3(random.Next((int)_pushForce, (int)-_pushForce), _pushForce, -_pushForce * 3), ForceMode.Impulse);
+                }
                 _isDie = true;
                 _animator.SetInteger(MAIN_LAYER_NAME,(int)animation);
-                _rigidbody.constraints = RigidbodyConstraints.None;
-                System.Random random = new System.Random();
-                _rigidbody.AddForce(new Vector3(random.Next((int)_pushForce,(int)-_pushForce), _pushForce, -_pushForce * 3), ForceMode.Impulse);
                  await Task.Delay(1100);
                 if (Application.isPlaying)
                 {
@@ -56,4 +74,14 @@ public class EnemyAnimator : MonoBehaviour
         _animator.SetInteger(MAIN_LAYER_NAME, (int)animation);
     }
 
+    private void RagdollDie()
+    {
+        _animator.enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        foreach (Transform bone in _bones)
+        {
+            bone.GetComponent<BoxCollider>().enabled = true ;
+            bone.GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
 }

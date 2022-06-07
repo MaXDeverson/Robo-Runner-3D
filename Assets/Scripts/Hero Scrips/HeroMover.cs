@@ -7,6 +7,7 @@ public class HeroMover : Triggerable
     [SerializeField] private float _velocity;
     [SerializeField] private ManagerAnimation _managerAnimation;
     [SerializeField] private HeroDestroyer _destroyer;
+    private float _maxVelocity = 50;
     private Rigidbody _rigidbody;
     private const float _moveXRestriction = 2.7F;
     private bool _isDie;
@@ -16,6 +17,8 @@ public class HeroMover : Triggerable
     private GameObject _jumpGameObject;
     //for start animation;
     private bool _startAnimationWillPlayed;
+
+    //private float _maxValue = 0;
     void Start()
     {
         _jumpGameObject = gameObject;
@@ -43,6 +46,18 @@ public class HeroMover : Triggerable
         {
             _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
         }
+
+        ////////////////////////
+        //float speed = _rigidbody.velocity.y;
+        //if (_maxValue < speed)
+        //{
+        //    _maxValue = speed;
+        //    Debug.Log(_maxValue);
+        //}
+        //if (_rigidbody.velocity.y > _maxVelocity)
+        //{
+        //    _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _maxVelocity, _rigidbody.velocity.z);
+        //}
     }
     public void SetMoverLogic(MoverLogic logic) => _moverLogic = logic;
     public float GetZVelocity() => _velocity;

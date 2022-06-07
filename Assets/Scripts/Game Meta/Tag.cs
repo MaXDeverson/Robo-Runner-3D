@@ -10,6 +10,7 @@ public class Tag : MonoBehaviour
     public const string EnemyBullet = "EnemyBullet";
     public const string Player = "Player";
     public const string Jump = "JumpPlace";
+    public const string Dead = "Dead";
     //Crystals
     public const string Crystal = "Crystal";
     public const string ElectroCrystal = "ElectroCrystal";

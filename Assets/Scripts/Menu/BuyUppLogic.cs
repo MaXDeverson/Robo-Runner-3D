@@ -54,7 +54,7 @@ public class BuyUppLogic : MonoBehaviour
         _buyUI.AddActionBack(BackToUI);
         _buyUI.AddActionPrevious(PreviousHero);
         _buyUI.AddActionBuy(BuyHero);
-        _buyUI.AddActionUpgrade(UpgradeHeroMode);
+        _buyUI.AddActionUpgrade(() => StartCoroutine(UpgradeHeroMode()));
         _buyUI.AddActionUpgrade(() => _camera.AnimateRotate());
 
         _startUI.AddActionUpgrade(() => _buyUI.SetActive(true));
@@ -207,9 +207,10 @@ public class BuyUppLogic : MonoBehaviour
         Level.SetHeroIndex(_currentHeroIndex);
         Serializator.Serialize(_dataHeroes);
     }
-    private void UpgradeHeroMode()
+    private IEnumerator UpgradeHeroMode()
     {
         _buyUI.SetActive(false);
+        yield return new WaitForSeconds(0.5f);//0.5 = camera animation time
         _upgradeUI.SetActive(true);
         _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
     }

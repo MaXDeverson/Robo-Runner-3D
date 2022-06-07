@@ -16,12 +16,21 @@ public class HeroDestroyer : MonoBehaviour
 
     private void Start()
     {
-        DieAction += () => _isDie = true;
+        DieAction += () =>
+        {
+            _isDie = true;
+            GetComponent<Collider>().material = null;
+        };
     }
     public void SetGetDamageAction(Action<int> action, bool invoke = false)
     {
         getDamageAction += action;
         if (invoke) getDamageAction.Invoke(_countLifes);
+    }
+    public void SetGetDamageActionProcent(Action<float> action, bool invoke = false)
+    {
+        GetDamageActionProcent += action;
+        if (invoke) GetDamageActionProcent.Invoke(_countLifes / _maxCounLefes);
     }
     public void SetCountLifes(int count)
     {
@@ -31,6 +40,7 @@ public class HeroDestroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("Eneter " + other.tag);
         if (_isIgnoreDamage) return;
         switch (other.tag)
         {
@@ -42,6 +52,9 @@ public class HeroDestroyer : MonoBehaviour
                 break;
             case Tag.Barrel:
                 GetDamage(5, AnimationType.GetDamage);
+                break;
+            case Tag.Dead:
+                GetDamage(50, AnimationType.Die);
                 break;
         }
     }
@@ -58,7 +71,7 @@ public class HeroDestroyer : MonoBehaviour
         {
             _managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
         }
-        else
+        else if(!_isDie)
         {
             //_managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
             _managerAnimation.SetMainAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);

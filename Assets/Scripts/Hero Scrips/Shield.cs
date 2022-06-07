@@ -68,6 +68,22 @@ public class Shield : MonoBehaviour
         }
     }
 
+    public void Activate(int time)
+    {
+        _destroyer.IgnoreDamage(true);
+        _shieldObj.SetActive(true);
+        int currentTime = _shieldTimeActive;
+        _shieldTimeActive = time;
+        _shieldIsActive = true;
+        _shieldObj.transform.localScale = new Vector3(MIN_SCALE_SHIELD, MIN_SCALE_SHIELD, MIN_SCALE_SHIELD);
+        _shieldObj.gameObject.SetActive(true);
+        _shieldScaleValue = 1;
+        _isAnimatedScaleUP = false;
+        StartScaleUpAniamtion();
+        StartCoroutine(TurnOff());
+        _shieldTimeActive = currentTime;
+    }
+
     private void StartScaleUpAniamtion()
     {
         _animationUPIsActive = true;

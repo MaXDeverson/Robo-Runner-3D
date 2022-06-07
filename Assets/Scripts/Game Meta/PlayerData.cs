@@ -94,8 +94,7 @@ public class PlayerData
     }
     public static void ResetValues()
     {
-        _playerData._countElectroCrystals = 10;
-        _playerData._countUsualCrystals = 1000;
+        _playerData = null;
         ///1000 and 10 start values of crustals
     }
 

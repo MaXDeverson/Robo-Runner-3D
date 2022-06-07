@@ -13,7 +13,7 @@ public class GuideUI :Triggerable
     [SerializeField] private GuideUI _nextGuide;
     [SerializeField] private int _guideIndex;
     [SerializeField] private bool _startinAwake;
-
+    [SerializeField] private bool _setInvizible;
     private const float FIXED_DELTA_TIME = 0.02f;
     private const float DELTA_TIME_SLOW = 0.01f;
     private void Start()
@@ -55,8 +55,7 @@ public class GuideUI :Triggerable
         {
             PlayGyide();
         }
-        int guideIndex = Serializator.DeSerialize(DataName.CurrentGuideIndex);
-        if (_guideIndex != Serializator.DeSerialize(DataName.CurrentGuideIndex))
+        if (!_setInvizible && _guideIndex != Serializator.DeSerialize(DataName.CurrentGuideIndex))
         {
             _guideButton.gameObject.SetActive(true);
         }

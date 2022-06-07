@@ -13,6 +13,7 @@ TagManager:
   - ElectroCrystal
   - FxTemporaire
   - Barrel
+  - Dead
   layers:
   - Default
   - TransparentFX

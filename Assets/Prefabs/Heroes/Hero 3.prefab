@@ -9761,6 +9761,9 @@ MonoBehaviour:
   _managerAniamtion: {fileID: 2655057019194379356}
   _heroDestroyer: {fileID: 5023001696877664585}
   _shootEvent: {fileID: 9149890777504962296}
+  _raycastStart1: {fileID: 0}
+  _raycastStart2: {fileID: 0}
+  _shootTriggerLenght: 0
 --- !u!65 &2655057018412836255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14964,7 +14967,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2655057019194379345}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d8bb294cfbbfffd49b97f696581566d2, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.43

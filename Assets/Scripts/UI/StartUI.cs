@@ -87,6 +87,7 @@ public class StartUI : INotifible
             return;
         }
         _notificationText.text = text;
+        _notifiWindow.SetActive(true);
         _notifiWindow.transform.DOMove(_finishAniamtionPosition.position, 0.5f);
         _inProcess = true;
         StartCoroutine(HideWindow());
@@ -100,6 +101,7 @@ public class StartUI : INotifible
     private IEnumerator FinishProcess()
     {
         yield return new WaitForSeconds(0.5f);
+        _notifiWindow.SetActive(false);
         _inProcess = false;
     }
 

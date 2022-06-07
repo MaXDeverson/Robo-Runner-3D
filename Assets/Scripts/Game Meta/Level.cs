@@ -17,20 +17,38 @@ public class Level : MonoBehaviour
     public static Level CurrentLevel;
     private HeroData _heroData;
     public Transform Hero { get; private set; }
-    public void SetDestroyAction(Action action)
+    public void SetDieAction(Action action)
     {
         _heroDestroyer.DieAction += action;
     }
+    public void Contiune()
+    {
+        Vector3 previousHeroPosition = Hero.position;
+        InitHero(previousHeroPosition + new Vector3(0, 5, -2)); 
+        _playerData = PlayerData.GetPlayerData();
+        _heroData = Serializator.DeSerialize()[_indexHero];
+        _thingsCounter.SetListener(_playerData);
+        Debug.Log("Lifes count: " + _heroData.LifesCount);
+        currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        ////
+        ///
+        _heroDestroyer.SetCountLifes(1);
+        Hero.GetComponent<ManagerAnimation>().SetRateValue(HeroData.RateCount);
+        ///
+        _ui.AddActionExit(OnApplicationQuit);
+        UIInitialization();
+        _heroShield.Activate(2);
+    }
     public HeroData HeroData => _heroData;
     private PlayerData _playerData;
-
     private int currentLevelIndex;
     private bool _nextLoading;
     private static int _indexHero;
     public static void SetHeroIndex(int index) => _indexHero = index;
     private void Awake()
     {
-        InitHero();
+        Destroy(_startHero.gameObject);
+        InitHero(_startHero.position);
         _playerData = PlayerData.GetPlayerData();
         _heroData = Serializator.DeSerialize()[_indexHero];
         UIInitialization();
@@ -40,16 +58,13 @@ public class Level : MonoBehaviour
         _ui.AddActionExit(OnApplicationQuit);
         CurrentLevel = this;
     }
-
     private void OnApplicationQuit()
     {
         _playerData.SaveData();
     }
-
-    private void InitHero()
+    private void InitHero(Vector3 heroPosition)
     {
-            Hero = Instantiate(_heroes[_indexHero], _startHero.position, Quaternion.identity);
-            Destroy(_startHero.gameObject);
+            Hero = Instantiate(_heroes[_indexHero], heroPosition, Quaternion.identity);
             Hero.GetComponent<HeroMover>().SetMoverLogic(_moverLogic);
             _camera.SetFollowObj(Hero);
             _heroDestroyer = Hero.GetComponent<HeroDestroyer>();

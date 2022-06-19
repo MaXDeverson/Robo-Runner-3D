@@ -17,6 +17,8 @@ public class HeroMover : Triggerable
     private GameObject _jumpGameObject;
     //for start animation;
     private bool _startAnimationWillPlayed;
+    //for stay animation
+    private bool _stay;
 
     //private float _maxValue = 0;
     void Start()
@@ -41,8 +43,8 @@ public class HeroMover : Triggerable
             xVelocity = 0;
         }
         if (_isDie) return;
-        _rigidbody.velocity = new Vector3(xVelocity, _rigidbody.velocity.y, _velocity);
-        if (!_isJump && _startAnimationWillPlayed)
+        _rigidbody.velocity = new Vector3(xVelocity, _rigidbody.velocity.y, _stay?_velocity * 0.4f:_velocity);
+        if (!_isJump && !_stay && _startAnimationWillPlayed)
         {
             _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
         }
@@ -61,7 +63,6 @@ public class HeroMover : Triggerable
     }
     public void SetMoverLogic(MoverLogic logic) => _moverLogic = logic;
     public float GetZVelocity() => _velocity;
-
     private void OnCollisionStay(Collision collision)
     {
         if (_canAbortJump)
@@ -73,19 +74,31 @@ public class HeroMover : Triggerable
     }
     public async override void OnTrigger(Collider inputCollider, int index)
     {
-        if (inputCollider.CompareTag(Tag.Jump))
+        switch (inputCollider.tag)
         {
-            if (!_jumpGameObject.Equals(inputCollider.gameObject))
-            {
-                _jumpGameObject = inputCollider.gameObject;
-                _isJump = true;
-                _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
-                _rigidbody.AddForce(new Vector3(0, 3, 0), ForceMode.Impulse);
-                await Task.Delay(500);
-                _canAbortJump = true;
-              
-            }
-
+            case Tag.Jump:
+                if (!_jumpGameObject.Equals(inputCollider.gameObject))
+                {
+                    _jumpGameObject = inputCollider.gameObject;
+                    _isJump = true;
+                    _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
+                    _rigidbody.AddForce(new Vector3(0, 3, 0), ForceMode.Impulse);
+                    await Task.Delay(500);
+                    _canAbortJump = true;
+                }
+                break;
+            case Tag.StopSpot:
+                _stay = true;
+                _managerAnimation.SetMainAnimation(AnimationType.Stay, ManagerAnimation.LayerType.MainLayer);
+                break;
+        }
+    }
+    public override void TriggerExit(Collider exitCollider, int triggerIndex)
+    {
+        if (exitCollider.CompareTag(Tag.StopSpot))
+        {
+            _stay = false;
+            _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
         }
     }
 }

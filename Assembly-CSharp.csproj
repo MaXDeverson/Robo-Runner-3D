@@ -56,10 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\DronBossMover.cs" />
     <Compile Include="Assets\Scripts\Game Meta\Level.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\ShieldFollower.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\Scripts\Teleport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\UI\BossHitPointsUI.cs" />
@@ -114,6 +116,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\ObjectMover.cs" />
+    <Compile Include="Assets\Scripts\SoundList.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\Shield.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneShooter.cs" />
     <Compile Include="Assets\Effects\StylizedExplosion\scripts\instantiateEffectCaller.cs" />
@@ -144,7 +148,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\BuyUppLogic.cs" />
     <Compile Include="Assets\Scripts\UI\GuideUI.cs" />
-    <Compile Include="Assets\Scripts\ObjectMover.cs" />
+    <Compile Include="Assets\Scripts\AudioSourses.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &699958905225442744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3387207695367755887}
+  - component: {fileID: 6472629027548898297}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3387207695367755887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699958905225442744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.8369, y: 2.0121837, z: 67.51142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6472629027548898297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699958905225442744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c195746de4de24b4f8f9ed8cd91f1660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CrystalCrush: {fileID: 8300000, guid: 0dc987857b98678479ba5289652b5108, type: 3}
+  MineExplosion: {fileID: 8300000, guid: 28296e86c6bee8b478d067b0c1ce0fbb, type: 3}
+  BulletHit: {fileID: 8300000, guid: 9816ea0ce39c99a458d373092b172e5e, type: 3}
+  Notification: {fileID: 8300000, guid: e596918618cfe534592390b8078ae5d4, type: 3}
+  Button: {fileID: 8300000, guid: dc5b07df51e78124bbf140cc72597113, type: 3}
+  Teleport: {fileID: 8300000, guid: 74c274379ad77a144aeec748d03de5d7, type: 3}
+  HeroShoot: {fileID: 8300000, guid: 5a97176c221c1e546a9c50de08e734db, type: 3}
+  HeroJump: {fileID: 8300000, guid: 623c5755049fec8458443c989f43617b, type: 3}
+  HeroFall: {fileID: 8300000, guid: ef06248499b31a04d85af3419448c60c, type: 3}
+  HeroRun: {fileID: 8300000, guid: e0fd92ee66958fd46a9d1f64d51dfd2f, type: 3}
+  AppearanceShield: {fileID: 8300000, guid: 641df7b6d6100c644ac3ec37ac259b13, type: 3}
+  DisappearanceShield: {fileID: 8300000, guid: a50987146a7589e4d97615eb597bd49d, type: 3}
+  EnemyExplosion: {fileID: 8300000, guid: 47e9f6f9a22a03949819c7009c3d3b43, type: 3}
+  EnemyShoot: {fileID: 8300000, guid: 36d3e6cb6f6972f41a20667742c8e59e, type: 3}

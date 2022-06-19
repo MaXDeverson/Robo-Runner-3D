@@ -9,7 +9,7 @@ using DG.Tweening;
 using GoogleMobileAds.Api;
 using System;
 
-public class UI : MonoBehaviour
+public class UI : INotifible
 {
     [SerializeField] private TextMeshProUGUI _textLifes;
     [SerializeField] private Slider _lifesSlider;
@@ -32,7 +32,9 @@ public class UI : MonoBehaviour
     [SerializeField] private Button _looseReplay;
     [SerializeField] private GameObject _panel;
     [SerializeField] private Button _contiuneButton;
+    [SerializeField] private TextMeshProUGUI _crystalCount;
     private Vector3 _startPositionLooseBoard;
+    private bool _canReward = true;
     [Header("Shield")]
     [SerializeField] private Image _shieldImage;
     [SerializeField] private GameObject _shieldBackground;
@@ -43,13 +45,17 @@ public class UI : MonoBehaviour
     private bool _shieldAnimatinIsPlaying;
     private bool _shieldUIIsShowing;
     private const float SHIELD_WAIT_TIME = 0.1f;
-
+    [Header("Notification")]
+    [SerializeField] private TextMeshProUGUI _notificationText;
+    [SerializeField] private GameObject _notifiWindow;
+    [SerializeField] private Transform _startPositon;
+    [SerializeField] private Transform _finishAniamtionPosition;
+    [SerializeField] private AudioSource _notificationSource;
+    private bool _inProcess;
     private Action _exitAction;
 
    // private InterstitialAd _add;
     private string _addId = "ca-app-pub-3940256099942544/1033173712";
-
-
     private Transform _animatiedObj;
 
     private HeroDestroyer _heroDestroyer;
@@ -102,11 +108,17 @@ public class UI : MonoBehaviour
         _menuButton.onClick.AddListener(() =>
         {
             _panel.SetActive(true);
+            _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);
+            Level.CurrentLevel.Hero.GetComponent<ManagerAnimation>().Audio.mute = true;
+            Level.CurrentLevel.AudioSourses.SourceLevel.mute = true;
             Show(_menuBoard);
         });
         _continue.onClick.AddListener(() =>
         {
+            _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);
             _panel.SetActive(false);
+            Level.CurrentLevel.Hero.GetComponent<ManagerAnimation>().Audio.mute = false;
+            Level.CurrentLevel.AudioSourses.SourceLevel.mute = false;
             HideMenu();
         });
         _exit.onClick.AddListener(Exit);
@@ -114,17 +126,24 @@ public class UI : MonoBehaviour
     }
     private void InitializeationLoose()
     {
-        Level.CurrentLevel.SetDieAction(() =>
+        Level.CurrentLevel.SetDieAction((x) =>
         {
             _panel.SetActive(true);
+            _crystalCount.text = "-" + x;
             Show(_looseBoard,false);
+            _contiuneButton.gameObject.SetActive(_canReward);
+            if (!_canReward)
+            {
+                _replay.transform.position = _continue.transform.position;
+               // _replay.gameObject.AddComponent();
+            }
         });
         _looseReplay.onClick.AddListener(Replay);
         _contiuneButton.onClick.RemoveAllListeners();
         _contiuneButton.onClick.AddListener(Contiune);
         //_add.OnAdClosed += _add_OnAdClosed;
-    }
 
+    }
     private void FixedUpdate()
     {
         //damage
@@ -265,15 +284,16 @@ public class UI : MonoBehaviour
         }
 
     }
-
     private void Replay()
     {
+        _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);
         Time.timeScale = 1;
         _loadWindow.SetActive(true);
         Level.CurrentLevel.Restart();
     }
     private void Exit()
     {
+        _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);   
         Time.timeScale = 1;
         _loadWindow.SetActive(true);
         _exitAction?.Invoke();
@@ -295,5 +315,33 @@ public class UI : MonoBehaviour
         Start();
         StartCoroutine(Animate(_looseBoard, _startPositionLooseBoard, true, false));
         _panel.SetActive(false);
+    }
+
+    //Notification logic
+    public override void ShowNotification(string text)
+    {
+        if (_inProcess)
+        {
+            _notificationText.text = text;
+            return;
+        }
+        _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Notification);
+        _notificationText.text = text;
+        _notifiWindow.SetActive(true);
+        _notifiWindow.transform.DOMove(_finishAniamtionPosition.position, 0.5f);
+        _inProcess = true;
+        StartCoroutine(HideWindow());
+    }
+    private IEnumerator HideWindow()
+    {
+        yield return new WaitForSeconds(3f);
+        _notifiWindow.transform.DOMove(_startPositon.position, 0.5f);
+        StartCoroutine(FinishProcess());
+    }
+    private IEnumerator FinishProcess()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _notifiWindow.SetActive(false);
+        _inProcess = false;
     }
 }

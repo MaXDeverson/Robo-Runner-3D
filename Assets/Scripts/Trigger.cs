@@ -13,4 +13,9 @@ public class Trigger : MonoBehaviour
             if (triggerables[i] != null) triggerables[i].OnTrigger(other,index);
         
     }
+    private void OnTriggerExit(Collider other)
+    {
+        for (int i = 0; i < triggerables.Length; i++)
+            if (triggerables[i] != null) triggerables[i].TriggerExit(other, index);
+    }
 }

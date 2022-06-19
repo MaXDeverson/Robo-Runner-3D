@@ -14,6 +14,7 @@ public class StartUI : INotifible
     [SerializeField] private Text _text;
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private BuyUI _upgradeUI;
+    [SerializeField] private Button _info;
     [Header("Crystals")]
     [SerializeField] private TextMeshProUGUI _textUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textElectroCrystals;
@@ -27,6 +28,9 @@ public class StartUI : INotifible
     [SerializeField] private GameObject _notifiWindow;
     [SerializeField] private Transform _startPositon;
     [SerializeField] private Transform _finishAniamtionPosition;
+    [Header("Sound")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private SoundList _soundList;
     private bool _inProcess;
 
     void Start()
@@ -58,9 +62,15 @@ public class StartUI : INotifible
             SetActiveUI(false);
         });
         //player data initialization;
-
         _textUsualCrystals.text = data.CountUsualCrystals + "";
         _textElectroCrystals.text = data.CountElectroCrystals + "";
+        SoundInit();
+    }
+
+    private void SoundInit()
+    {
+        _playButton.onClick.AddListener(() => _audioSource.Play());
+        _upgradeButton.onClick.AddListener(() => _audioSource.Play());
     }
     public void AddActionPlay(Action action) => _playButton.onClick.AddListener(() => action?.Invoke());
     public void AddActionUpgrade(Action action) => _upgradeButton.onClick.AddListener(() => action?.Invoke());
@@ -70,6 +80,7 @@ public class StartUI : INotifible
         _upgradeButton.gameObject.SetActive(isActive);
         _playButton.gameObject.SetActive(isActive);
         _reset.gameObject.SetActive(isActive);
+        _info.gameObject.SetActive(isActive);
         //cheat
         _addMoney.gameObject.SetActive(isActive);
         _moneyCount.gameObject.SetActive(isActive);
@@ -86,6 +97,7 @@ public class StartUI : INotifible
             _notificationText.text = text;
             return;
         }
+        _audioSource.PlayOneShot(_soundList.Notification);
         _notificationText.text = text;
         _notifiWindow.SetActive(true);
         _notifiWindow.transform.DOMove(_finishAniamtionPosition.position, 0.5f);

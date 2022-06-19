@@ -17,6 +17,7 @@ public class Mine : MonoBehaviour
         {
             _boomParticle.Play();
             _collider.enabled = false;
+            Level.CurrentLevel.AudioSourses.SourseMine.PlayOneShot(Level.CurrentLevel.SoundList.MineExplosion);
             if (_destroyMineMash != null) Destroy(_destroyMineMash.gameObject);
         }
         //if(!other.CompareTag(Tag.Player)) this.tag = Tag.Untagged;

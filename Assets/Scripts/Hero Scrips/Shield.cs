@@ -41,7 +41,6 @@ public class Shield : MonoBehaviour
 
     public void SetActive(bool enable)
     {
-
         _destroyer.IgnoreDamage(enable);
         _shieldObj.SetActive(enable);
         if (enable)
@@ -55,10 +54,12 @@ public class Shield : MonoBehaviour
                 _isAnimatedScaleUP = false;
                 StartScaleUpAniamtion();
                 StartCoroutine(TurnOff());
+                Level.CurrentLevel.AudioSourses.SourceShield.PlayOneShot(Level.CurrentLevel.SoundList.AppearanceShield);
             }
         }
         else
         {
+            Level.CurrentLevel.AudioSourses.SourceShield.PlayOneShot(Level.CurrentLevel.SoundList.DisappearanceShield);
             _shieldObj.transform.localScale = new Vector3(6, 6, 6);
             _shieldObj.gameObject.SetActive(true);
             _shieldScaleValue = 6;

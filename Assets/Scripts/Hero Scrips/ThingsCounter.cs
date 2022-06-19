@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ThingsCounter : MonoBehaviour
 {
+    public Action GetECrystalAction;
     private PlayerData _playerData;
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,7 @@ public class ThingsCounter : MonoBehaviour
                 break;
             case Tag.ElectroCrystal:
                 _playerData.AddElectroCrystal();
+                GetECrystalAction?.Invoke();
                 break;
         }
     }

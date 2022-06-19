@@ -10,6 +10,7 @@ public class EnemyAnimator : MonoBehaviour
     [Header("For Die")]
     [SerializeField] protected ParticleSystem _boomParticles;
     [SerializeField] protected GameObject _destroyObj;
+    [SerializeField] protected AudioSource _sourseExplouseion;
     [Header("For Ragdoll")]
     [SerializeField] private bool _isRagdoll;
     [SerializeField] private List<Transform> _bones;
@@ -54,11 +55,16 @@ public class EnemyAnimator : MonoBehaviour
                 }
                 _isDie = true;
                 _animator.SetInteger(MAIN_LAYER_NAME,(int)animation);
-                 await Task.Delay(1100);
+                await Task.Delay(1100);
                 if (Application.isPlaying)
                 {
                     _boomParticles.transform.parent = null;
+                    _sourseExplouseion.transform.parent = null;
                     Destroy(_destroyObj, 0.1f);
+                    if(_sourseExplouseion != null)
+                    {
+                        _sourseExplouseion.PlayOneShot(Level.CurrentLevel.SoundList.EnemyExplosion);
+                    }
                     _boomParticles.Play();
                 }
                 return;
@@ -73,7 +79,6 @@ public class EnemyAnimator : MonoBehaviour
         }
         _animator.SetInteger(MAIN_LAYER_NAME, (int)animation);
     }
-
     private void RagdollDie()
     {
         _animator.enabled = false;

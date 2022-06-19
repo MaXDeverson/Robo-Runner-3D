@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossManagerAniamtion_1 : EnemyAnimator
 {
     [SerializeField] private ParticleSystem _flyAnimation;
+    [SerializeField]
     private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
     private bool _isJump;
     void Start()

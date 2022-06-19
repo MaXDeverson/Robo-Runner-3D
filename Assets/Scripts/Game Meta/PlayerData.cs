@@ -76,7 +76,7 @@ public class PlayerData
         {
             bool isFirstLaunch = Serializator.IsFirstLaunching();
             int countUCrystals = isFirstLaunch?1000: Serializator.DeSerialize(DataName.CountCrystals);
-            int countECrystals = isFirstLaunch?10: Serializator.DeSerialize(DataName.CountECrystals);
+            int countECrystals = isFirstLaunch?1: Serializator.DeSerialize(DataName.CountECrystals);
             if (isFirstLaunch)
             {
               

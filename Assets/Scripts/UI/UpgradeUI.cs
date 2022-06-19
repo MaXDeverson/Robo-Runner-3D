@@ -21,6 +21,8 @@ public class UpgradeUI : MonoBehaviour
     [SerializeField] private List<GameObject> _viewBoxesUpdate;
     [SerializeField] private List<GameObject> _useViewBoxesUpdate;
     [SerializeField] private TextMeshProUGUI _textUpgradeInformation;
+    [Header("Sound")]
+    [SerializeField] private AudioSource _buttonSource;
     private List<Button> _upgradeButtons;
     private ColorBlock _selectColorBlock;
     private ColorBlock _defaultColorBlock;
@@ -28,6 +30,17 @@ public class UpgradeUI : MonoBehaviour
     void Start()
     {
         InitializationSelectUpdateButtons();
+        SoundInit();
+    }
+
+    private void SoundInit()
+    {
+        _backButton.onClick.AddListener(() => _buttonSource.Play());
+        _upgradeButton.onClick.AddListener(() => _buttonSource.Play());
+        _lifesSelectButton.onClick.AddListener(() => _buttonSource.Play());
+        _damageSelectButton.onClick.AddListener(() => _buttonSource.Play());
+        _rateSelectButton.onClick.AddListener(() => _buttonSource.Play());
+        _shieldSelectButton.onClick.AddListener(() => _buttonSource.Play());
     }
     private void InitializationSelectUpdateButtons()
     {

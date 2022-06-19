@@ -14,17 +14,25 @@ public class Level : MonoBehaviour
     [SerializeField] private List<Transform> _heroes;
     [SerializeField] private Transform _startHero;
     [SerializeField] private CameraController _camera;
+    [SerializeField] public SoundList SoundList;
+    [SerializeField] public AudioSourses AudioSourses;
     public static Level CurrentLevel;
     private HeroData _heroData;
     public Transform Hero { get; private set; }
-    public void SetDieAction(Action action)
+    private int _countECrystalsOnLevel;
+
+    /// <summary>
+    /// The int parameter in action is for collected electro crystals
+    /// </summary>
+    /// <param name="action"></param>
+    public void SetDieAction(Action<int> action)
     {
-        _heroDestroyer.DieAction += action;
+        _heroDestroyer.DieAction += () => action?.Invoke(_countECrystalsOnLevel);
     }
     public void Contiune()
     {
         Vector3 previousHeroPosition = Hero.position;
-        InitHero(previousHeroPosition + new Vector3(0, 5, -2)); 
+        InitHero(previousHeroPosition + new Vector3(0, 5, -2));
         _playerData = PlayerData.GetPlayerData();
         _heroData = Serializator.DeSerialize()[_indexHero];
         _thingsCounter.SetListener(_playerData);
@@ -64,18 +72,54 @@ public class Level : MonoBehaviour
     }
     private void InitHero(Vector3 heroPosition)
     {
-            Hero = Instantiate(_heroes[_indexHero], heroPosition, Quaternion.identity);
-            Hero.GetComponent<HeroMover>().SetMoverLogic(_moverLogic);
-            _camera.SetFollowObj(Hero);
-            _heroDestroyer = Hero.GetComponent<HeroDestroyer>();
-            _thingsCounter = Hero.GetComponent<ThingsCounter>();
-            _heroShield = Hero.GetComponent<Shield>();
-        
+        Hero = Instantiate(_heroes[_indexHero], heroPosition, Quaternion.identity);
+        Hero.GetComponent<HeroMover>().SetMoverLogic(_moverLogic);
+        _camera.SetFollowObj(Hero);
+        _heroDestroyer = Hero.GetComponent<HeroDestroyer>();
+        _thingsCounter = Hero.GetComponent<ThingsCounter>();
+        _heroShield = Hero.GetComponent<Shield>();
+
     }
     private void Start()
     {
         _heroDestroyer.SetCountLifes(HeroData.LifesCount);
         Hero.GetComponent<ManagerAnimation>().SetRateValue(HeroData.RateCount);
+        _thingsCounter.GetECrystalAction += () =>
+        {
+            _countECrystalsOnLevel++;
+        };
+        //Upgrade Notification
+        StartCoroutine(CheckUpgrade());
+    }
+
+    private IEnumerator CheckUpgrade()
+    {
+        yield return new WaitForSeconds(1f);
+        if (currentLevelIndex > 3)
+        {
+            if (_heroData.RateLevel + 1 < _heroData.GetRateLevelsData.Length &&
+                _playerData.CountUsualCrystals >= _heroData.GetRateLevelsData[_heroData.RateLevel + 1].GetPrice())
+            {
+                _ui.ShowNotification("You can upgrade a level of shoot RATE! for " + _heroData.GetRateLevelsData[_heroData.RateLevel + 1].GetPrice());
+            }
+            else if (_heroData.DamageLevel + 1 < _heroData.GetDamageLevelsData.Length &&
+                _playerData.CountUsualCrystals >= _heroData.GetDamageLevelsData[_heroData.DamageLevel + 1].GetPrice())
+            {
+                _ui.ShowNotification("You can upgrade a level of DAMAGE! for " + _heroData.GetDamageLevelsData[_heroData.DamageLevel + 1].GetPrice());
+            }
+            else if (_heroData.LifesLevel + 1 < _heroData.GetLifesLevelsData.Length &&
+                _playerData.CountUsualCrystals >= _heroData.GetLifesLevelsData[_heroData.LifesLevel + 1].GetPrice())
+            {
+
+                _ui.ShowNotification("You can upgrade a level of count LIFES! for " + _heroData.GetLifesLevelsData[_heroData.LifesLevel + 1].GetPrice());
+
+            }
+            else if (_heroData.ShieldTimeLevel + 1 < _heroData.GetShieldTimeLevelsData.Length && _playerData.CountUsualCrystals >= _heroData.GetShieldTimeLevelsData[_heroData.ShieldTimeLevel + 1].GetPrice())
+            {
+
+                _ui.ShowNotification("You can upgrade a level of SHIELD time for " + _heroData.GetShieldTimeLevelsData[_heroData.ShieldTimeLevel + 1].GetPrice());
+            }
+        }
     }
     private void UIInitialization()
     {
@@ -83,16 +127,17 @@ public class Level : MonoBehaviour
         _ui.SetUpdateDataUsualCrystal(_playerData);
         _ui.SetShieldModeEvent(() =>
         {
-            if(!_heroShield.ShieldIsActive() && _playerData.SpendElectroCrystals(1))
+            if (!_heroShield.ShieldIsActive() && _playerData.SpendElectroCrystals(1))
             {
                 _heroShield.SetActive(true);
                 _ui.ShowShieldTime(_heroShield.ShieldTimeActive);
             }
-                
+
         });
     }
     public void Restart()
     {
+        _playerData.SpendElectroCrystals(_countECrystalsOnLevel);
         Serializator.Serialize(DataName.CountCrystals, _playerData.CountUsualCrystals);
         Serializator.Serialize(DataName.CountECrystals, _playerData.CountElectroCrystals);
         SceneManager.LoadScene(currentLevelIndex);

@@ -21,9 +21,22 @@ public class BuyUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textShieldTime;
     [SerializeField] private TextMeshProUGUI _textRate;
     [SerializeField] private GameObject _statsBoard;
+    [Header("Sound")]
+    [SerializeField] private AudioSource _buttonSource;
     void Start()
     {
         _back.onClick.AddListener(() => SetActive(false));
+        SoundInit();
+    }
+
+    private void SoundInit()
+    {
+        _nextHeroButton.onClick.AddListener(() => _buttonSource.Play());
+        _previousHeroButton.onClick.AddListener(() => _buttonSource.Play());
+        _selectButton.onClick.AddListener(() => _buttonSource.Play());
+        _buyButton.onClick.AddListener(() => _buttonSource.Play());
+        _upgradeButton.onClick.AddListener(() => _buttonSource.Play());
+        _back.onClick.AddListener(() => _buttonSource.Play());
     }
     public void UpdateUI(HeroData data)
     {

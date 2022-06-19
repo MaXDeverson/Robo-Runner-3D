@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
             {
                 _finishParticles.Play();
                 _rigidbody.velocity = Vector3.zero;
+                Level.CurrentLevel.AudioSourses.SourseBullet.PlayOneShot(Level.CurrentLevel.SoundList.BulletHit);
                 Destroy(_finishParticles, 0.5f);
                 _finishParticles.transform.parent = null;
                 Destroy(this.gameObject);

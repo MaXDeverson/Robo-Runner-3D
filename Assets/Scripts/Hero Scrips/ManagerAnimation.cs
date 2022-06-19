@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class ManagerAnimation : MonoBehaviour
 {
+    public AudioSource Audio { get => _audio; }
     [SerializeField] private Animator _animator;
     [SerializeField] private float _upForce;
     [SerializeField] private ParticleSystem _dieParticles;
     [SerializeField] private ParticleSystem _flyAnimation;
     [SerializeField] private Transform _animatetTransformForCatchBullet;
     [SerializeField] private float _speedShoot;
+    [SerializeField] private AudioSource _audio;
     private const string MAIN_LAYER_NAME = "MainLayer";
     private const string HAND_LAYER_NAME = "HandLayer";
     private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
@@ -22,6 +24,7 @@ public class ManagerAnimation : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.2f);
         _animator.SetFloat(SPEED_SHOOT_MULTIPLIER, _speedShoot);
+        _audio.clip = Level.CurrentLevel.SoundList.HeroRun;
 
     }
     public async void SetMainAnimation(AnimationType type,LayerType layerType)
@@ -54,9 +57,11 @@ public class ManagerAnimation : MonoBehaviour
                 _rigidbody.AddForce(new Vector3(0, _upForce, 0), ForceMode.Impulse);
                 break;
             case AnimationType.Jump:
+                _audio.PlayOneShot(Level.CurrentLevel.SoundList.HeroJump);
                 StartCoroutine(SlowJumpAnimation());
                 break;
             case AnimationType.Run:
+                if(!_audio.isPlaying) _audio.Play();
                 _flyAnimation.Stop();
                 break;
         }
@@ -74,7 +79,6 @@ public class ManagerAnimation : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _animator.SetFloat(SPEED_JUMP_MULTIPLIER,0.1f);
     }
-
     public enum LayerType
     {
         MainLayer,

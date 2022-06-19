@@ -5,11 +5,6 @@ using UnityEngine;
 public class GetAnimation : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _particleSystem;
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +21,7 @@ public class GetAnimation : MonoBehaviour
 
     private void PlayGetAnimation()
     {
+        Level.CurrentLevel.AudioSourses.SourceCrystal.PlayOneShot(Level.CurrentLevel.SoundList.CrystalCrush);
         _particleSystem.transform.parent = null;
         _particleSystem.Play();
         ///Here Destroy aniamtion;

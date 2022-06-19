@@ -14,4 +14,5 @@ public enum AnimationType
    MoveLeft,
    MoveRight,
    Throw,
+   Queue,
 }

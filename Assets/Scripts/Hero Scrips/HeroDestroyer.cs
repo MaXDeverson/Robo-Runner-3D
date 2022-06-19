@@ -41,6 +41,10 @@ public class HeroDestroyer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Eneter " + other.tag);
+        if (other.CompareTag(Tag.Dead))
+        {
+            GetDamage(50, AnimationType.Die);
+        }
         if (_isIgnoreDamage) return;
         switch (other.tag)
         {
@@ -52,9 +56,6 @@ public class HeroDestroyer : MonoBehaviour
                 break;
             case Tag.Barrel:
                 GetDamage(5, AnimationType.GetDamage);
-                break;
-            case Tag.Dead:
-                GetDamage(50, AnimationType.Die);
                 break;
         }
     }

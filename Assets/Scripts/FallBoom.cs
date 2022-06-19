@@ -4,6 +4,7 @@ using UnityEngine;
 public class FallBoom : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _fallParticlesEffect;
+    [SerializeField] private AudioSource _audio;
     private Rigidbody _rigidbody;
     private bool _canAnimated;
     private void Start()
@@ -23,6 +24,7 @@ public class FallBoom : MonoBehaviour
             ParticleSystem newEffect = Instantiate(_fallParticlesEffect, transform.position, Quaternion.identity);
             newEffect.transform.parent = null;
             newEffect.Play();
+            _audio.PlayOneShot(Level.CurrentLevel.SoundList.HeroFall);
             Destroy(newEffect, 10);
             _canAnimated = false;
         }

@@ -14,6 +14,7 @@ public class GuideUI :Triggerable
     [SerializeField] private int _guideIndex;
     [SerializeField] private bool _startinAwake;
     [SerializeField] private bool _setInvizible;
+    [SerializeField] private bool _fluentOnSound = true;
     private const float FIXED_DELTA_TIME = 0.02f;
     private const float DELTA_TIME_SLOW = 0.01f;
     private void Start()
@@ -47,6 +48,7 @@ public class GuideUI :Triggerable
                 else
                 {
                     Time.timeScale = 1;
+                   if(_fluentOnSound)  Level.CurrentLevel.Hero.GetComponent<ManagerAnimation>().Audio.pitch = 1;
                     Time.fixedDeltaTime = FIXED_DELTA_TIME;
                 }
             }
@@ -83,6 +85,7 @@ public class GuideUI :Triggerable
             if (isTimeScale)
             {
                 Time.timeScale = _timeScale;
+               if(_fluentOnSound) Level.CurrentLevel.Hero.GetComponent<ManagerAnimation>().Audio.pitch = _timeScale;
                 Time.fixedDeltaTime = DELTA_TIME_SLOW;
             }
         }

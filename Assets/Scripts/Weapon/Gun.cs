@@ -21,17 +21,14 @@ public class Gun : Weapon
     [SerializeField] private bool _ignoreZAxis;
     private bool isActive;
     private bool isShoot;
-
-
     private void FixedUpdate()
     {
         if (isActive && !isShoot)
         {
-            _audio.Play();
+           
             StartCoroutine(WaitShoot());
         }
     }
-
     private IEnumerator WaitShoot()
     {
         isShoot = true;
@@ -44,7 +41,6 @@ public class Gun : Weapon
         yield return new WaitForSeconds(_rateFire);
         isShoot = false;
     }
-
     /// <summary>
     /// true: weapon shoot
     /// falce: weapon stop shoot;
@@ -56,6 +52,7 @@ public class Gun : Weapon
     }
     public override void ShootOnce()
     {
+        if (_audio != null) _audio.Play();
         _muzzleFlash.Play();
         Vector3 directionShoot = _muzzlePoint.position - _backPoint.position;
         Rigidbody newBullet = Instantiate(_bullet, _backPoint.position, transform.rotation);
@@ -65,12 +62,10 @@ public class Gun : Weapon
             directionShoot.y = 0;
         }
         newBullet.velocity = directionShoot.normalized * _bulletVelocity;
-
         //directionShoot = new Vector3(newBullet.transform.position.x, directionShoot.y, newBullet.transform.position.z);
-
         Destroy(newBullet.gameObject, _bulletLifeTime);
     }
-
+    public void SetAudioClip(AudioClip clip) => _audio.clip = clip;
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

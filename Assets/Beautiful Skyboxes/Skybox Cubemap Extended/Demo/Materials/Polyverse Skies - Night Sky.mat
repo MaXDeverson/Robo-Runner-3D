@@ -35,11 +35,11 @@ Material:
     - _EnableRotation: 1
     - _Exposure: 0.8
     - _FogFill: 0.5
-    - _FogHeight: 1
+    - _FogHeight: 0.689
     - _FogIntensity: 1
     - _FogMessage: 0
     - _FogPosition: 0
-    - _FogSmoothness: 0.01
+    - _FogSmoothness: 0.622
     - _Fogg: 1
     - _Rotation: 1
     - _RotationSpeed: 0.5

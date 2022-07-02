@@ -33,8 +33,9 @@ public class UI : INotifible
     [SerializeField] private GameObject _panel;
     [SerializeField] private Button _contiuneButton;
     [SerializeField] private TextMeshProUGUI _crystalCount;
+    [SerializeField] private GameObject _bachGround;
     private Vector3 _startPositionLooseBoard;
-    private bool _canReward = true;
+    [SerializeField] private bool _canReward = true;
     [Header("Shield")]
     [SerializeField] private Image _shieldImage;
     [SerializeField] private GameObject _shieldBackground;
@@ -134,9 +135,11 @@ public class UI : INotifible
             _contiuneButton.gameObject.SetActive(_canReward);
             if (!_canReward)
             {
-                _replay.transform.position = _continue.transform.position;
-               // _replay.gameObject.AddComponent();
+                _bachGround.SetActive(false);
+                _looseReplay.transform.localPosition = new Vector3(_looseReplay.transform.localPosition.x, -90, _looseReplay.transform.localPosition.z);
+                _looseReplay.GetComponent<Animation>().Play();
             }
+            _canReward = false;
         });
         _looseReplay.onClick.AddListener(Replay);
         _contiuneButton.onClick.RemoveAllListeners();

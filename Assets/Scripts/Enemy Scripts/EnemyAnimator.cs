@@ -45,8 +45,8 @@ public class EnemyAnimator : MonoBehaviour
                 if (_isRagdoll)
                 {
                     RagdollDie();
-                    int randomValue = random.Next(0, 6);
-                    _bones.ForEach((x) => x.GetComponent<Rigidbody>().AddForce(new Vector3(5 * (randomValue > 3 ? 1 : -1), 7 + randomValue, 17 + randomValue), ForceMode.Impulse));
+                    int randomValue = random.Next(-6, 6);
+                    _bones.ForEach((x) => x.GetComponent<Rigidbody>().AddForce(new Vector3(randomValue, 11 + randomValue, 19 + randomValue) * _pushForce, ForceMode.Impulse));
                 }
                 else
                 {

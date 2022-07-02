@@ -13,8 +13,10 @@ public class StartUI : INotifible
     [SerializeField] private GameObject _loadObjects;
     [SerializeField] private Text _text;
     [SerializeField] private Button _upgradeButton;
-    [SerializeField] private BuyUI _upgradeUI;
+    [SerializeField] private BuyUI _buyUI;
     [SerializeField] private Button _info;
+    [SerializeField] private Button _hideInfo;
+    [SerializeField] private GameObject _informationObj;
     [Header("Crystals")]
     [SerializeField] private TextMeshProUGUI _textUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textElectroCrystals;
@@ -43,7 +45,7 @@ public class StartUI : INotifible
             Serializator.Serialize(DataName.CountCrystals, data.CountUsualCrystals);
         });
         //cheat
-        _upgradeUI.gameObject.SetActive(false);
+        _buyUI.gameObject.SetActive(false);
         _playButton.onClick.AddListener(() =>
         {
             if (int.TryParse(_currentLevel.text, out int result))
@@ -56,9 +58,11 @@ public class StartUI : INotifible
                 _loadObjects.SetActive(true);
             }
         });
-        _upgradeButton.onClick.AddListener(() =>
+        _info.onClick.AddListener(() => _informationObj.SetActive(true));
+        _hideInfo.onClick.AddListener(() => _informationObj.SetActive(false));
+        AddActionUpgrade(() =>
         {
-            _upgradeUI.gameObject.SetActive(true);
+            _buyUI.gameObject.SetActive(true);
             SetActiveUI(false);
         });
         //player data initialization;
@@ -73,7 +77,20 @@ public class StartUI : INotifible
         _upgradeButton.onClick.AddListener(() => _audioSource.Play());
     }
     public void AddActionPlay(Action action) => _playButton.onClick.AddListener(() => action?.Invoke());
-    public void AddActionUpgrade(Action action) => _upgradeButton.onClick.AddListener(() => action?.Invoke());
+    public void AddActionUpgrade(Action action)
+    {
+        _upgradeButton.onClick.AddListener(() =>
+        {
+            //if (Serializator.DeSerialize(DataName.CurrentLevel) > 2)
+            //{
+                action?.Invoke();
+            //}
+            //else
+            //{
+            //    ShowNotification("Will be availible after 2 level");
+            //}
+        });
+    }
     public void AddActionResset(Action action) => _reset.onClick.AddListener(() => action?.Invoke());
     public void SetActiveUI(bool isActive)
     {
@@ -97,7 +114,7 @@ public class StartUI : INotifible
             _notificationText.text = text;
             return;
         }
-        _audioSource.PlayOneShot(_soundList.Notification);
+        _audioSource.PlayOneShot(_soundList.NoMoney);
         _notificationText.text = text;
         _notifiWindow.SetActive(true);
         _notifiWindow.transform.DOMove(_finishAniamtionPosition.position, 0.5f);

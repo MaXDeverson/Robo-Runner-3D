@@ -10,6 +10,7 @@ public class SoundList : MonoBehaviour
     [SerializeField] public AudioClip BulletHit;
     [SerializeField] public AudioClip Notification;
     [SerializeField] public AudioClip Button;
+    [SerializeField] public AudioClip NoMoney;
     [SerializeField] public AudioClip Teleport;
     [Header("Hero sounds")]
     [SerializeField] public AudioClip HeroShoot;

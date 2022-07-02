@@ -77,12 +77,14 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneDestroyer.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\HeroDestroyer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Scripts\UI\StartUI_2.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ThingsCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Menu\CameraBuy.cs" />
     <Compile Include="Assets\Scripts\Game Meta\AnimationType.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyShooter.cs" />
+    <Compile Include="Assets\Scripts\BrightnesChanger.cs" />
     <Compile Include="Assets\Scripts\UI\BuyUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDestroyer.cs" />
@@ -127,9 +129,11 @@
     <Compile Include="Assets\Scripts\Hero Scrips\HeroMover.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\AudioSourses.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\ShootEventListener.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\AchieveItem.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMover.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -146,14 +150,15 @@
     <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Menu\BuyUppLogic.cs" />
+    <Compile Include="Assets\Scripts\Menu\UILogic.cs" />
     <Compile Include="Assets\Scripts\UI\GuideUI.cs" />
-    <Compile Include="Assets\Scripts\AudioSourses.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\AchieveItemData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Effects\JMO Particles\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\SciFiHeroHP\Shader\HPMaskTint.shader" />
      <None Include="Assets\Shaders\Universal.shader" />
      <None Include="Assets\Shaders\Flexus.cginc" />
      <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Common.dll" />
@@ -165,10 +170,9 @@
      <None Include="Assets\GoogleMobileAds\GoogleMobileAds.iOS.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-     <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+     <None Include="Assets\UI\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Core.dll" />
-     <None Include="Assets\SciFiHeroPBR\Textures\PBRMaskTint.shader" />
      <None Include="Assets\GoogleMobileAds\link.xml" />
      <None Include="Assets\Shaders\UniversalOutlined.shader" />
      <None Include="Assets\Beautiful Skyboxes\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Blend.shader" />
@@ -185,7 +189,7 @@
      <None Include="Assets\Shaders\Skybox Gradient.shader" />
      <None Include="Assets\Shaders\FPSGlowAdditive.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
+     <None Include="Assets\UI\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll" />
      <None Include="Assets\Particles\From Artru\shader\alphaBlend_glow.shader" />

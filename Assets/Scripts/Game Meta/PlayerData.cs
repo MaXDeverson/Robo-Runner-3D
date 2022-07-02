@@ -10,9 +10,15 @@ public class PlayerData
     private Action<int> _changeCountElectroCrystalAction;
     private int _countUsualCrystals;
     private int _countElectroCrystals;
+    private int _killsCount;
+    private int _shieldUseCount;
+    private int _continueCount;
+    private List<AchieveItemData> _achieveItemDatas;
     public int CountUsualCrystals { get => _countUsualCrystals; }
     public int CountElectroCrystals { get => _countElectroCrystals; }
-
+    public int KillsCount { get => _killsCount; }
+    public int ShieldUseCount { get => _shieldUseCount; }
+    public int ContiuneCount { get => _continueCount; }
     public void SetChangeCounUCystal(Action<int> action)
     {
         _changeCountUsualCrystalAction += action;
@@ -23,11 +29,15 @@ public class PlayerData
         _changeCountElectroCrystalAction += action;
         _changeCountElectroCrystalAction?.Invoke(_countElectroCrystals);
     }
-    private PlayerData(int countUCrystals,int countECrystal)
+    private PlayerData(int countUCrystals, int countECrystal, int countKills,int shieldUseCount, int contiuneUseCount, List<AchieveItemData> achieveItemDatas)
     {
         _countUsualCrystals = countUCrystals;
         _countElectroCrystals = countECrystal;
         _changeCountUsualCrystalAction?.Invoke(_countUsualCrystals);
+        _killsCount = countKills;
+        _achieveItemDatas = achieveItemDatas;
+        _shieldUseCount = shieldUseCount;
+        _continueCount = contiuneUseCount;
     }
     public void AddUsualCrystals(int count = 1)
     {
@@ -69,6 +79,11 @@ public class PlayerData
     {
         Serializator.Serialize(DataName.CountCrystals, _countUsualCrystals);
         Serializator.Serialize(DataName.CountECrystals, _countElectroCrystals);
+        Serializator.Serialize(DataName.KillsCount, _killsCount);
+        Serializator.Serialize(DataName.ContiuneCount, _continueCount);
+        Serializator.Serialize(DataName.ShieldUseCount, _shieldUseCount);
+        Serializator.SerializeAchievement();
+        Debug.Log("Save contiune count:" + _continueCount + " shield count:" + _shieldUseCount);
     }
     public static PlayerData GetPlayerData()
     {
@@ -77,13 +92,18 @@ public class PlayerData
             bool isFirstLaunch = Serializator.IsFirstLaunching();
             int countUCrystals = isFirstLaunch?1000: Serializator.DeSerialize(DataName.CountCrystals);
             int countECrystals = isFirstLaunch?1: Serializator.DeSerialize(DataName.CountECrystals);
+            int killsCount = Serializator.DeSerialize(DataName.KillsCount);
+            int shieldUseCount = Serializator.DeSerialize(DataName.ShieldUseCount);
+            int contiuneUseCount = Serializator.DeSerialize(DataName.ContiuneCount);
+           
             if (isFirstLaunch)
             {
               
                 Serializator.Serialize(DataName.CountCrystals, countUCrystals);
                 Serializator.Serialize(DataName.CountECrystals, countECrystals);
+               
             }
-            _playerData = new PlayerData(countUCrystals, countECrystals);
+            _playerData = new PlayerData(countUCrystals, countECrystals,killsCount,shieldUseCount,contiuneUseCount,Serializator.AchievementItemsInitData);
             return _playerData;
         }
         else
@@ -97,5 +117,7 @@ public class PlayerData
         _playerData = null;
         ///1000 and 10 start values of crustals
     }
-
+    public void AddKill() => _killsCount++;
+    public void CountShieldUse() => _shieldUseCount++;
+    public void CountContiuneUse() => _continueCount++;
 }

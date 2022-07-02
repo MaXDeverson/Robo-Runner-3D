@@ -6,6 +6,12 @@ public class HeroData
     public int DamageCount { get => _damageLevelsData[DamageLevel].GetValue(); }
     public int ShieldTimeCount { get => _shieldTimeLevelsData[ShieldTimeLevel].GetValue(); }
     public int RateCount { get => _rateLevelsData[RateLevel].GetValue();}
+    //max
+    public int MaxLifesCount { get => _lifesLevelsData[_lifesLevelsData.Length - 1].GetValue(); }
+    public int MaxDamageCount { get => _damageLevelsData[_damageLevelsData.Length - 1].GetValue(); }
+    public int MaxShieldTime { get => _shieldTimeLevelsData[_shieldTimeLevelsData.Length - 1].GetValue(); }
+    public int MaxRateValue { get => _rateLevelsData[_rateLevelsData.Length - 1].GetValue(); }
+
     //stats
     public bool IsSelect { get; set; }
     public bool IsBuy {get; set; }
@@ -43,6 +49,11 @@ public class HeroData
     public UpgradeLevel[] GetDamageLevelsData => _damageLevelsData;
     public UpgradeLevel[] GetShieldTimeLevelsData => _shieldTimeLevelsData;
     public UpgradeLevel[] GetRateLevelsData => _rateLevelsData;
+
+    public override string ToString()
+    {
+        return "Lifes:" + LifesCount + " Damage:" + DamageCount;
+    }
 }
 
 [Serializable]

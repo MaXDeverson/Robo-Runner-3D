@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Robo Runner 3D
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.40784314, g: 0.62122846, b: 0.62352943, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.22739409, g: 0.6603774, b: 0.6201663, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 0.5
@@ -29,10 +29,10 @@ PlayerSettings:
   m_SplashScreenBackgroundPortraitAspect: 1
   m_SplashScreenBackgroundLandscapeUvs:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.18518518
+    y: 0.17760417
+    width: 0.6824074
+    height: 0.6994792
   m_SplashScreenBackgroundPortraitUvs:
     serializedVersion: 2
     x: 0

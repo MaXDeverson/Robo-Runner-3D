@@ -9,7 +9,7 @@ public class CameraBuy : MonoBehaviour
     [SerializeField] private float _smoothValue;
     private Transform _target;
     private Vector3 _rotateAnimationPosition = new Vector3(0.6f, -0.2f, 0.3f);
-    private Vector3 _rotateAnimationAngle = new Vector3(5, 13, 0);
+    private Vector3 _rotateAnimationAngle = new Vector3(5, 9, 0);
     void Start()
     {
 

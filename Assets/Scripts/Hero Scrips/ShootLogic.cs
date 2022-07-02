@@ -8,8 +8,6 @@ public class ShootLogic : Triggerable
     [SerializeField] private ManagerAnimation _managerAniamtion;
     [SerializeField] private HeroDestroyer _heroDestroyer;
     [SerializeField] private ShootEventListener _shootEvent;//Event from animation
-    [SerializeField] private Transform _raycastStart1;
-    [SerializeField] private Transform _raycastStart2;
     [SerializeField] private int _shootTriggerLenght;
     private bool _enemyIsInZone;
     private bool _isDie;
@@ -20,18 +18,8 @@ public class ShootLogic : Triggerable
         _shootEvent.ShootAction += () => _gun.ShootOnce();
         _gun.SetAudioClip(Level.CurrentLevel.SoundList.HeroShoot);
     }
-
     private void FixedUpdate()
     {
-        //RaycastHit hit;
-        //if(Physics.Raycast(_raycastStart1.position,new Vector3(0,0,1), out hit, _shootTriggerLenght))
-        //{
-        //    Debug.Log(hit.collider.tag);
-        //    if (hit.collider.CompareTag(Tag.Enemy))
-        //    {
-                
-        //    }
-        //}
         if (!_isDie)
         {
             _managerAniamtion.SetMainAnimation(_enemyIsInZone && !_isInStopZone ? AnimationType.Shoot : AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
@@ -65,6 +53,7 @@ public class ShootLogic : Triggerable
     {
         if (exitCollider.CompareTag(Tag.StopSpot))
         {
+            Debug.Log("Exit");
             _isInStopZone = false;
         }
         

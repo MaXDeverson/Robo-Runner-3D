@@ -55,6 +55,7 @@ public class Shield : MonoBehaviour
                 StartScaleUpAniamtion();
                 StartCoroutine(TurnOff());
                 Level.CurrentLevel.AudioSourses.SourceShield.PlayOneShot(Level.CurrentLevel.SoundList.AppearanceShield);
+                PlayerData.GetPlayerData().CountShieldUse();
             }
         }
         else

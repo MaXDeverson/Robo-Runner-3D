@@ -41962,6 +41962,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b971547ee15ef4f92b53067d6f218b, type: 3}
+--- !u!1001 &1962845070
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.028102577
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.42731708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.0993505
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515873, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445267787714515879, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
+      propertyPath: m_Name
+      value: Brightnes Changer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be1ffff041f9e434ca8b5ba37c7484ee, type: 3}
 --- !u!1001 &1963320786
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Drone_Albedo
-  m_Shader: {fileID: 4800000, guid: 66fef665171a2e04ea9f161873ec6cb1, type: 3}
+  m_Shader: {fileID: 4800000, guid: f05ac093b4f76fc4086e83eb51d0f913, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -47,12 +47,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: 77c248590f28d53429203128a48142f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 2800000, guid: 77c248590f28d53429203128a48142f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 7526a412b323ee34282f01164a641d7d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
-        m_Texture: {fileID: 2800000, guid: 7526a412b323ee34282f01164a641d7d, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6a2eb6ad0d99f14d81094a17b32ffdf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -81,17 +85,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _Color01Power: 2
+    - _Color02Power: 2
+    - _Color03Power: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EmissionPower: 2
+    - _EmissionPower: 3.33
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NormalPower: 2
     - _OcclusionStrength: 1
+    - _OverallPower: 1.39
     - _Parallax: 0.02
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -100,8 +110,9 @@ Material:
     - __dirty: 1
     m_Colors:
     - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-    - _Color01: {r: 0.6415094, g: 0.24070887, b: 0.13011748, a: 0}
-    - _Color02: {r: 1, g: 0.3192777, b: 0.023584902, a: 0}
-    - _Color03: {r: 1, g: 0.51179546, b: 0, a: 0}
-    - _EmissionColor: {r: 0.36711234, g: 0.36209506, b: 0.745283, a: 1}
+    - _Color01: {r: 0.81960785, g: 0, b: 0.23456946, a: 0}
+    - _Color02: {r: 1, g: 0.46557516, b: 0.02352941, a: 0}
+    - _Color03: {r: 1, g: 0.427451, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0.7195444, b: 1, a: 1}
+    - _Specular: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

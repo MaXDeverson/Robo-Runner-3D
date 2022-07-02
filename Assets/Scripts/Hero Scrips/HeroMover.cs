@@ -44,6 +44,8 @@ public class HeroMover : Triggerable
         }
         if (_isDie) return;
         _rigidbody.velocity = new Vector3(xVelocity, _rigidbody.velocity.y, _stay?_velocity * 0.4f:_velocity);
+        //float newXPosition = transform.position.x + (xVelocity / 70);
+        //transform.position = new Vector3(newXPosition> _moveXRestriction? _moveXRestriction:(newXPosition< -_moveXRestriction?-_moveXRestriction:newXPosition), transform.position.y, transform.position.z);
         if (!_isJump && !_stay && _startAnimationWillPlayed)
         {
             _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);

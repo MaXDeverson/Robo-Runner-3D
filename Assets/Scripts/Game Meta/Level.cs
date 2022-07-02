@@ -16,10 +16,13 @@ public class Level : MonoBehaviour
     [SerializeField] private CameraController _camera;
     [SerializeField] public SoundList SoundList;
     [SerializeField] public AudioSourses AudioSourses;
+    private List<EnemyMoverLogic> _enemyMoverLogics = new List<EnemyMoverLogic>();
     public static Level CurrentLevel;
     private HeroData _heroData;
     public Transform Hero { get; private set; }
     private int _countECrystalsOnLevel;
+    private bool _hadRestart;
+    private bool _levelIsFinish;
 
     /// <summary>
     /// The int parameter in action is for collected electro crystals
@@ -46,7 +49,10 @@ public class Level : MonoBehaviour
         _ui.AddActionExit(OnApplicationQuit);
         UIInitialization();
         _heroShield.Activate(2);
+        _enemyMoverLogics.ForEach(x => x.SetAim(Hero));
+        _playerData.CountContiuneUse();
     }
+    public void AddEnemyMoverLogic(EnemyMoverLogic logic) => _enemyMoverLogics.Add(logic);
     public HeroData HeroData => _heroData;
     private PlayerData _playerData;
     private int currentLevelIndex;
@@ -91,7 +97,6 @@ public class Level : MonoBehaviour
         //Upgrade Notification
         StartCoroutine(CheckUpgrade());
     }
-
     private IEnumerator CheckUpgrade()
     {
         yield return new WaitForSeconds(1f);
@@ -138,11 +143,16 @@ public class Level : MonoBehaviour
     public void Restart()
     {
         _playerData.SpendElectroCrystals(_countECrystalsOnLevel);
+        _hadRestart = true;
         Serializator.Serialize(DataName.CountCrystals, _playerData.CountUsualCrystals);
         Serializator.Serialize(DataName.CountECrystals, _playerData.CountElectroCrystals);
         SceneManager.LoadScene(currentLevelIndex);
 
 
+    }
+    private void OnDestroy()
+    {
+        if (!_hadRestart && !_levelIsFinish) _playerData.SpendElectroCrystals(_countECrystalsOnLevel);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -157,10 +167,10 @@ public class Level : MonoBehaviour
         if (!_nextLoading)
         {
             _nextLoading = true;
+            _levelIsFinish = true;
             _playerData.SaveData();
             _ui.ShowLoadView();
             SceneManager.LoadScene(++currentLevelIndex);
         }
     }
-
 }

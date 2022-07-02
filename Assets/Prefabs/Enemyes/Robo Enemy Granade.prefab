@@ -48,6 +48,7 @@ MonoBehaviour:
   _enemyDestroyer: {fileID: 7177154816608555773}
   _animator: {fileID: 6003561805848273528}
   _shootEvent: {fileID: 5151895369170769629}
+  _queueLength: 0
 --- !u!65 &6378717852663493765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5118,6 +5119,9 @@ MonoBehaviour:
   _pushForce: -10
   _boomParticles: {fileID: 3344627423629371592}
   _destroyObj: {fileID: 6003561805848273533}
+  _sourseExplouseion: {fileID: 0}
+  _isRagdoll: 0
+  _bones: []
 --- !u!65 &3648334911343330484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5463,7 +5467,8 @@ PrefabInstance:
         by Humanoid clips.\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
         'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform 'Headgear_Right'\n\tTransform
         'Headgear_Left'\n\tFrom animation clip 'Reload'\n\tFrom animation clip 'Die'\n\tFrom
-        animation clip 'Shoot_SingleShot_AR'\n\tFrom animation clip 'Idle_Shoot_Ar'"
+        animation clip 'Shoot_SingleShot_AR'\n\tFrom animation clip 'Idle_Shoot_Ar'\n\tFrom
+        animation clip 'Idle_gunMiddle_AR'"
       objectReference: {fileID: 0}
     - target: {fileID: 2836004475591197023, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_RootOrder
@@ -5784,27 +5789,27 @@ PrefabInstance:
     - target: {fileID: 2836004475605291061, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab9c16e62ae81b459df84c0fa3cb656, type: 2}
+      objectReference: {fileID: 2100000, guid: b076880edfb97db498b5d65b53bc099a, type: 2}
     - target: {fileID: 2836004475605291063, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab9c16e62ae81b459df84c0fa3cb656, type: 2}
+      objectReference: {fileID: 2100000, guid: b076880edfb97db498b5d65b53bc099a, type: 2}
     - target: {fileID: 2836004475605291065, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab9c16e62ae81b459df84c0fa3cb656, type: 2}
+      objectReference: {fileID: 2100000, guid: 786b66c2b462e884bb3d72569a85d5a7, type: 2}
     - target: {fileID: 2836004475605291067, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab9c16e62ae81b459df84c0fa3cb656, type: 2}
+      objectReference: {fileID: 2100000, guid: b076880edfb97db498b5d65b53bc099a, type: 2}
     - target: {fileID: 2836004475605291069, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab9c16e62ae81b459df84c0fa3cb656, type: 2}
+      objectReference: {fileID: 2100000, guid: b076880edfb97db498b5d65b53bc099a, type: 2}
     - target: {fileID: 2836004475605291071, guid: f432554f564e69242897607d34218939, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab9c16e62ae81b459df84c0fa3cb656, type: 2}
+      objectReference: {fileID: 2100000, guid: 786b66c2b462e884bb3d72569a85d5a7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f432554f564e69242897607d34218939, type: 3}
 --- !u!4 &8361896620307286914 stripped

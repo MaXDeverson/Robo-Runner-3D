@@ -1,6 +1,8 @@
+using GoogleMobileAds.Api;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +18,7 @@ public class Level : MonoBehaviour
     [SerializeField] private CameraController _camera;
     [SerializeField] public SoundList SoundList;
     [SerializeField] public AudioSourses AudioSourses;
+    [SerializeField] public bool _shoowAd;
     private List<EnemyMoverLogic> _enemyMoverLogics = new List<EnemyMoverLogic>();
     public static Level CurrentLevel;
     private HeroData _heroData;
@@ -23,7 +26,7 @@ public class Level : MonoBehaviour
     private int _countECrystalsOnLevel;
     private bool _hadRestart;
     private bool _levelIsFinish;
-
+    private SettingsData _settingsData;
     /// <summary>
     /// The int parameter in action is for collected electro crystals
     /// </summary>
@@ -51,6 +54,7 @@ public class Level : MonoBehaviour
         _heroShield.Activate(2);
         _enemyMoverLogics.ForEach(x => x.SetAim(Hero));
         _playerData.CountContiuneUse();
+       
     }
     public void AddEnemyMoverLogic(EnemyMoverLogic logic) => _enemyMoverLogics.Add(logic);
     public HeroData HeroData => _heroData;
@@ -58,6 +62,9 @@ public class Level : MonoBehaviour
     private int currentLevelIndex;
     private bool _nextLoading;
     private static int _indexHero;
+    //Ad
+    private string _addId = "ca-app-pub-9558178408201758/8556519009";
+    private InterstitialAd _add;
     public static void SetHeroIndex(int index) => _indexHero = index;
     private void Awake()
     {
@@ -71,6 +78,12 @@ public class Level : MonoBehaviour
         Serializator.Serialize(DataName.CurrentLevel, currentLevelIndex);
         _ui.AddActionExit(OnApplicationQuit);
         CurrentLevel = this;
+        _settingsData = Serializator.DeSerializeSettings();
+        AudioSourses.SourceLevel.volume = _settingsData.LevelSoundValue;
+        _ui.ShowFps(_settingsData.ShowFPS);
+        Hero.GetComponent<HeroMover>().VelocityXMultiplier = _settingsData.Sensitivity;
+        QualitySettings.SetQualityLevel(_settingsData.Quality);
+        
     }
     private void OnApplicationQuit()
     {
@@ -96,6 +109,17 @@ public class Level : MonoBehaviour
         };
         //Upgrade Notification
         StartCoroutine(CheckUpgrade());
+        //Shield
+        _heroShield.ActivateAction += () =>
+        {
+            Level.CurrentLevel.AudioSourses.SourceShield.PlayOneShot(Level.CurrentLevel.SoundList.AppearanceShield);
+            PlayerData.GetPlayerData().CountShieldUse();
+            if(_countECrystalsOnLevel > 0)_countECrystalsOnLevel--;
+        };
+        //ad
+        _add = new InterstitialAd(_addId);
+        AdRequest request = new AdRequest.Builder().Build();
+        _add.LoadAd(request);
     }
     private IEnumerator CheckUpgrade()
     {
@@ -136,8 +160,9 @@ public class Level : MonoBehaviour
             {
                 _heroShield.SetActive(true);
                 _ui.ShowShieldTime(_heroShield.ShieldTimeActive);
+                return true;
             }
-
+            return false;
         });
     }
     public void Restart()
@@ -164,6 +189,21 @@ public class Level : MonoBehaviour
     }
     private void LoadNextScene()
     {
+        if (_shoowAd)
+        {
+            if (_add.IsLoaded())
+            {
+                _add.Show();
+            }
+            else
+            {
+                Debug.Log("Ad no loaded");
+            }
+        }
+        else
+        {
+            Debug.Log("Don't show");
+        }
         if (!_nextLoading)
         {
             _nextLoading = true;

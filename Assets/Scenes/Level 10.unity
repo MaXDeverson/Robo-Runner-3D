@@ -28942,27 +28942,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 780
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 958.0803
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939685240335897476, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3279693521595859169, guid: 4b58f6a8bc7e8a64488d1fa6c9b307ea, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -35401,6 +35401,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1326077250}
+    - target: {fileID: 6702669894784730855, guid: 2189af29daa810c4cad5b208a0c1469c, type: 3}
+      propertyPath: _shoowAd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6702669894784730855, guid: 2189af29daa810c4cad5b208a0c1469c, type: 3}
       propertyPath: SoundList
       value: 

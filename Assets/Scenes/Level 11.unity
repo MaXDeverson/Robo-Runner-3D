@@ -44375,6 +44375,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1326077250}
     - target: {fileID: 6702669894784730855, guid: 2189af29daa810c4cad5b208a0c1469c, type: 3}
+      propertyPath: _shoowAd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702669894784730855, guid: 2189af29daa810c4cad5b208a0c1469c, type: 3}
       propertyPath: SoundList
       value: 
       objectReference: {fileID: 680180887}

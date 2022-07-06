@@ -1,0 +1,1065 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 22000.739; Version 2009; 64bit' Language: 'en' Physical Memory: 16240 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/admin/Unity projects/Robo-Runner-3D
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53679
+Successfully changed project path to: C:/Users/admin/Unity projects/Robo-Runner-3D
+C:/Users/admin/Unity projects/Robo-Runner-3D
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 51.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.2f1 (068178b99f32)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin/Unity projects/Robo-Runner-3D/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:   
+    VRAM:     4021 MB
+    Driver:   30.0.14.9676
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56320
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001796 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 57.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.842 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007049 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.064 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1773 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.0 MB.
+System memory in use after: 113.0 MB.
+
+Unloading 86 unused Assets to reduce memory usage. Loaded Objects now: 2258.
+Total: 2.790100 ms (FindLiveObjects: 0.190500 ms CreateObjectMapping: 0.078400 ms MarkObjects: 2.278000 ms  DeleteObjects: 0.242300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Animation/Not use Animations
+  artifactKey: Guid(a99ba9681f63b7d4583edd3e1a15e402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations using Guid(a99ba9681f63b7d4583edd3e1a15e402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b69d817ce7bec134d50f93c1248f8b1') in 0.008335 seconds
+  Import took 0.011481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.978823 seconds.
+  path: Assets/Animation/Not use Animations/downShoot_auto_ar.fbx
+  artifactKey: Guid(c8da4cb88b232e94db2c41d0fae4a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/downShoot_auto_ar.fbx using Guid(c8da4cb88b232e94db2c41d0fae4a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e89b809f683b3a202ce3e570d32f56c') in 0.205998 seconds
+  Import took 0.209305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Animation/Not use Animations/idle_guard_sg.fbx
+  artifactKey: Guid(af57802bbc95f8e4bbd67997354a2a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_guard_sg.fbx using Guid(af57802bbc95f8e4bbd67997354a2a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eedf80e11ee744f63ab3094b252087c3') in 0.073810 seconds
+  Import took 0.078013 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Animation/Not use Animations/idle_ducking_sg.fbx
+  artifactKey: Guid(5dd96af64828b0e4398364df22d4bd6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_ducking_sg.fbx using Guid(5dd96af64828b0e4398364df22d4bd6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3eac5d599aeb891ab80798fa0d55acc') in 0.065093 seconds
+  Import took 0.069390 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Animation/Not use Animations/idle_emptyhands.fbx
+  artifactKey: Guid(e1e9fe2c11f5a0d41a5e339d8c9fff64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_emptyhands.fbx using Guid(e1e9fe2c11f5a0d41a5e339d8c9fff64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24d788271d261f60444e05b523f3a22f') in 0.071074 seconds
+  Import took 0.075745 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Animation/Not use Animations/idle_guard_sr.fbx
+  artifactKey: Guid(4ba03d8f10c33c3498f5e3e0fe25719d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_guard_sr.fbx using Guid(4ba03d8f10c33c3498f5e3e0fe25719d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41ff90f0d19d1043aec44a85443668d4') in 0.073911 seconds
+  Import took 0.077435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Animation/Not use Animations/downShoot_burst_ar.fbx
+  artifactKey: Guid(fd51657dfbbffa74cb46e65de8765529) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/downShoot_burst_ar.fbx using Guid(fd51657dfbbffa74cb46e65de8765529) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '214527a35cdff37dea9f0390eb8a44c4') in 0.067602 seconds
+  Import took 0.071462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Animation/Not use Animations/idle_gunMiddle_ar.fbx
+  artifactKey: Guid(d27adfefb1fbc12498b4807a0e5a331b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_gunMiddle_ar.fbx using Guid(d27adfefb1fbc12498b4807a0e5a331b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5698de1c1812939a10d2d5638475d10') in 0.066218 seconds
+  Import took 0.071709 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Animation/Not use Animations/idle_ducking_hg.fbx
+  artifactKey: Guid(96eb7e0929a79df4ba140bee3e3638db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_ducking_hg.fbx using Guid(96eb7e0929a79df4ba140bee3e3638db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84e2fccd2b44cd0709239d59d60d5c32') in 0.064439 seconds
+  Import took 0.069476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Animation/Not use Animations/lookaround_guard_ar.fbx
+  artifactKey: Guid(c9fe2c66abe68e545b53e07f4652306e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/lookaround_guard_ar.fbx using Guid(c9fe2c66abe68e545b53e07f4652306e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '984215b4c769605a5b8fc8d56988dc0f') in 0.065865 seconds
+  Import took 0.069920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Animation/Not use Animations/gunMiddleShoot_auto_ar.fbx
+  artifactKey: Guid(724177e871b443c49853ebe40593cad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/gunMiddleShoot_auto_ar.fbx using Guid(724177e871b443c49853ebe40593cad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '654ce91522c04532a8f0770fe3634f0e') in 0.068380 seconds
+  Import took 0.071926 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Animation/Not use Animations/gunMiddleShoot_single_sg.fbx
+  artifactKey: Guid(e6cb0786417af98469d2573626cf6d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/gunMiddleShoot_single_sg.fbx using Guid(e6cb0786417af98469d2573626cf6d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fb8c6b84e0419f19909adc2347f9f40') in 0.072512 seconds
+  Import took 0.076200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Animation/Not use Animations/idle_gunMiddle_hg.fbx
+  artifactKey: Guid(e76ee12c0b6c11c408b3f8c7ed1f73db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_gunMiddle_hg.fbx using Guid(e76ee12c0b6c11c408b3f8c7ed1f73db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4243b2f0fb8a7d65f89c46e7309ebfef') in 0.069833 seconds
+  Import took 0.073859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Animation/Not use Animations/idle_guard_ar.fbx
+  artifactKey: Guid(f594ff0faabeb9041b2e58f4f64df39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_guard_ar.fbx using Guid(f594ff0faabeb9041b2e58f4f64df39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfa0b966e5e28a3ec940c6961d64682c') in 0.068211 seconds
+  Import took 0.072378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Animation/Not use Animations/idle_sit_sr.fbx
+  artifactKey: Guid(004057382ab61334789e2035cfca4096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_sit_sr.fbx using Guid(004057382ab61334789e2035cfca4096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef51a5166f23c09b3a0df76b8f6fd4e') in 0.068425 seconds
+  Import took 0.072169 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Animation/Not use Animations/idle_gunMiddle_sr.fbx
+  artifactKey: Guid(a2f1e921b4a9c3a4a88625a7885dd900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_gunMiddle_sr.fbx using Guid(a2f1e921b4a9c3a4a88625a7885dd900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcfed6712773843a4a601fe6abcb076b') in 0.064533 seconds
+  Import took 0.068687 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Animation/Not use Animations/jump_gunMiddle_sr.fbx
+  artifactKey: Guid(046dda1bb3d81c041bb20df67a2f50ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jump_gunMiddle_sr.fbx using Guid(046dda1bb3d81c041bb20df67a2f50ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '958e81e9df65f2682522869cdaed83d7') in 0.069439 seconds
+  Import took 0.074110 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Animation/Not use Animations/idle_shoot_sr.fbx
+  artifactKey: Guid(6561c3bf18393dd4caca0286724e56a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_shoot_sr.fbx using Guid(6561c3bf18393dd4caca0286724e56a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88207e3f819bd56768a8a1e38da7c1a7') in 0.067533 seconds
+  Import took 0.071541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Animation/Not use Animations/idle_shoot_hg.fbx
+  artifactKey: Guid(2d9309b78f164fe4f9d1db3529bab932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_shoot_hg.fbx using Guid(2d9309b78f164fe4f9d1db3529bab932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73107177c56d482b8d2430b952605dcd') in 0.066856 seconds
+  Import took 0.070876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Animation/Not use Animations/jump_gunMiddle_sg.fbx
+  artifactKey: Guid(d04ff4ed865fee14bb9e8e4ceb48d707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jump_gunMiddle_sg.fbx using Guid(d04ff4ed865fee14bb9e8e4ceb48d707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f3713479d351caaa8939b267b242c50') in 0.066652 seconds
+  Import took 0.071061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000452 seconds.
+  path: Assets/Animation/Not use Animations/getHit_gunMiddle_rest.fbx
+  artifactKey: Guid(47057a273aee32f49adcc5fb5a55299b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/getHit_gunMiddle_rest.fbx using Guid(47057a273aee32f49adcc5fb5a55299b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '733ae825c62a9105a5f20773e013e4cd') in 0.074517 seconds
+  Import took 0.078968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Animation/Not use Animations/jump_gunMiddle_ar.fbx
+  artifactKey: Guid(08c984e9d786ad545bff1c6543021288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jump_gunMiddle_ar.fbx using Guid(08c984e9d786ad545bff1c6543021288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1fda4f19308f47bc2ebce5c6f4d24c7') in 0.067729 seconds
+  Import took 0.071726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Animation/Not use Animations/lookaround_guard_sg.fbx
+  artifactKey: Guid(d927de151f49ef1419cce0f1c35ef29f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/lookaround_guard_sg.fbx using Guid(d927de151f49ef1419cce0f1c35ef29f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '210636a9925c6fcbcfe3ab77a2f5fe97') in 0.066044 seconds
+  Import took 0.069875 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Animation/Not use Animations/lookaround_guard_sr.fbx
+  artifactKey: Guid(b316c48c057cd164cad219a84f828b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/lookaround_guard_sr.fbx using Guid(b316c48c057cd164cad219a84f828b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fde9503df70c6cf5492949780237f928') in 0.069548 seconds
+  Import took 0.073783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Animation/Not use Animations/jumpVertical_gunMiddle_ar.fbx
+  artifactKey: Guid(f92fe7f3d20e98f42b6f5053dee6e963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jumpVertical_gunMiddle_ar.fbx using Guid(f92fe7f3d20e98f42b6f5053dee6e963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09719dd9e0ec7dcdc7b69ac435f9f765') in 0.066692 seconds
+  Import took 0.070587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/Animation/Not use Animations/getHit.fbx
+  artifactKey: Guid(683df4565418a2d49b1487a09b3bfc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/getHit.fbx using Guid(683df4565418a2d49b1487a09b3bfc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b739a7add43bde35ddc3dc7b6f2d53d') in 0.069622 seconds
+  Import took 0.073683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Animation/Not use Animations/idle_gunMiddle_sg.fbx
+  artifactKey: Guid(853dab6795a44854c826612ed49e2f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_gunMiddle_sg.fbx using Guid(853dab6795a44854c826612ed49e2f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd347211fc0318f73d807368181e52c70') in 0.068070 seconds
+  Import took 0.072119 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Animation/Not use Animations/idle_ducking_ar.fbx
+  artifactKey: Guid(50fb2c94a93dd5a47aea65dd57b3d86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_ducking_ar.fbx using Guid(50fb2c94a93dd5a47aea65dd57b3d86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '002393973e87a6afe6c1f622a3b576f4') in 0.065532 seconds
+  Import took 0.070944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Animation/Not use Animations/idle_guard_hg.fbx
+  artifactKey: Guid(bc79aad91c117bb45adc16072ba0fff5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_guard_hg.fbx using Guid(bc79aad91c117bb45adc16072ba0fff5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60a45e59207e4cce61e7ede91e53523d') in 0.065470 seconds
+  Import took 0.069247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Animation/Not use Animations/idle_ducking_sr.fbx
+  artifactKey: Guid(290262e4d20c4914db1357a7c9da16d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_ducking_sr.fbx using Guid(290262e4d20c4914db1357a7c9da16d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0adb9d89873b7873603e5c5b96030453') in 0.065069 seconds
+  Import took 0.069592 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Animation/Not use Animations/jumpVertical_gunMiddle_sg.fbx
+  artifactKey: Guid(48b35579433bfcb4aa67d42b1e0768aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jumpVertical_gunMiddle_sg.fbx using Guid(48b35579433bfcb4aa67d42b1e0768aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d0b2b2baab5fa05053827c8673a53a2') in 0.068264 seconds
+  Import took 0.073030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Animation/Not use Animations/jumpVertical_gunMiddle_sr.fbx
+  artifactKey: Guid(83a00363d27522041aefc77eea5ecb25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jumpVertical_gunMiddle_sr.fbx using Guid(83a00363d27522041aefc77eea5ecb25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb5c8a4773a855d0ab7bfc9ed843d894') in 0.066180 seconds
+  Import took 0.070445 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/Animation/Not use Animations/idle_sit_hg.fbx
+  artifactKey: Guid(d6235ff052bbfdd43954d7b484c9b37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_sit_hg.fbx using Guid(d6235ff052bbfdd43954d7b484c9b37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db4c52b5b24efdab8e0b9b9dea86a777') in 0.063617 seconds
+  Import took 0.067674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Animation/Not use Animations/idle_down_ar.fbx
+  artifactKey: Guid(fa4b82c247033b94db524defff84ad67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_down_ar.fbx using Guid(fa4b82c247033b94db524defff84ad67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33b19063ccb1ae71ade163cc935db19b') in 0.068796 seconds
+  Import took 0.072699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Animation/Not use Animations/idle_shoot_ar.fbx
+  artifactKey: Guid(8270260988bf0474a8d0f3926a23f8c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_shoot_ar.fbx using Guid(8270260988bf0474a8d0f3926a23f8c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f0dd069ec2385e110aa06d174c27273') in 0.067234 seconds
+  Import took 0.070994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Animation/Not use Animations/downShoot_single_ar.fbx
+  artifactKey: Guid(96f5a5e5393cd7943b1d95472fbd848b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/downShoot_single_ar.fbx using Guid(96f5a5e5393cd7943b1d95472fbd848b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd24c3d2c1aa6480d3a71736be85f3aff') in 0.066438 seconds
+  Import took 0.070208 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Animation/Not use Animations/idle_down_sr.fbx
+  artifactKey: Guid(af9402122f0d22b439591a0ecb35c568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_down_sr.fbx using Guid(af9402122f0d22b439591a0ecb35c568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12ec71f87ad8d3bc313fdaeef0b45450') in 0.070818 seconds
+  Import took 0.074197 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Animation/Not use Animations/jump_gunMiddle_hg.fbx
+  artifactKey: Guid(12110c3121c771d458dba6461a7dd137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jump_gunMiddle_hg.fbx using Guid(12110c3121c771d458dba6461a7dd137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe28fb5ccf2da64347d8f2e863d7a31d') in 0.070931 seconds
+  Import took 0.074140 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Animation/Not use Animations/downShoot_single_sr.fbx
+  artifactKey: Guid(0379ef83eb7508d439e2120839d64490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/downShoot_single_sr.fbx using Guid(0379ef83eb7508d439e2120839d64490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd260e4ede1e4af319ab62bf3708a0515') in 0.066577 seconds
+  Import took 0.070302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Animation/Not use Animations/idle_sit_ar.fbx
+  artifactKey: Guid(532d47f40c491dd4b90ee457d06dff44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/idle_sit_ar.fbx using Guid(532d47f40c491dd4b90ee457d06dff44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8f138b54d78962b260711451505dab1') in 0.068486 seconds
+  Import took 0.073265 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Animation/Not use Animations/interact_gunMiddle_hg.fbx
+  artifactKey: Guid(4714a0c7660115a4c896596bfb7ab91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/interact_gunMiddle_hg.fbx using Guid(4714a0c7660115a4c896596bfb7ab91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '243f1676ceb4f916101a481bf8df05e3') in 0.072629 seconds
+  Import took 0.076376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Animation/Not use Animations/interact_gunMiddle_rest.fbx
+  artifactKey: Guid(faa4bedcf48d9a840921183f4e92392a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/interact_gunMiddle_rest.fbx using Guid(faa4bedcf48d9a840921183f4e92392a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '556c6da49beb7a7dcb55a9849c44360f') in 0.068348 seconds
+  Import took 0.071501 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Animation/Not use Animations/jumpVertical_gunMiddle_hg.fbx
+  artifactKey: Guid(721daff77ed161943a2a2a7d4f60539c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/jumpVertical_gunMiddle_hg.fbx using Guid(721daff77ed161943a2a2a7d4f60539c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc1fa6398ca592a4c5f1c0eb8b4e5fdc') in 0.068468 seconds
+  Import took 0.072082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Animation/Not use Animations/lookaround_guard_hg.fbx
+  artifactKey: Guid(2a056af8ef5b5ae42a6e3a4a70a58832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/lookaround_guard_hg.fbx using Guid(2a056af8ef5b5ae42a6e3a4a70a58832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a660103b069bbf2be0cc3dca30a7a4') in 0.067458 seconds
+  Import took 0.071558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.104413 seconds.
+  path: Assets/Animation/Not use Animations/pickup_gunMiddle_ar.fbx
+  artifactKey: Guid(91338f4a7251f8440b89d82251f91519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/pickup_gunMiddle_ar.fbx using Guid(91338f4a7251f8440b89d82251f91519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7ad3e623721668bbdb277141dfbd161') in 0.070996 seconds
+  Import took 0.075210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Animation/Not use Animations/pickup_gunMiddle_sr.fbx
+  artifactKey: Guid(1eaf2fcbdd3da2a408f9497f3a51ec91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/pickup_gunMiddle_sr.fbx using Guid(1eaf2fcbdd3da2a408f9497f3a51ec91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cc9f10dc5c193778efa78eeb81d4980') in 0.096359 seconds
+  Import took 0.100558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Animation/Not use Animations/pickup_gunMiddle_sg.fbx
+  artifactKey: Guid(c7ec0939bec009f429d88077ff85655a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/pickup_gunMiddle_sg.fbx using Guid(c7ec0939bec009f429d88077ff85655a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff0164560c519e40da9c3fb84e55bbcc') in 0.065599 seconds
+  Import took 0.069077 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Animation/Not use Animations/pickup_gunMiddle_hg.fbx
+  artifactKey: Guid(c9f7374cfb232e243a284563f93c699c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/pickup_gunMiddle_hg.fbx using Guid(c9f7374cfb232e243a284563f93c699c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25c9c6679376c3d77051f7c8a9b5eb9e') in 0.066390 seconds
+  Import took 0.069853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Animation/Not use Animations/reload_down_sr.fbx
+  artifactKey: Guid(c8560de5223b25f4d8d98ce344982496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_down_sr.fbx using Guid(c8560de5223b25f4d8d98ce344982496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '346e34ee3228912aa7ce29b3beb45e68') in 0.068269 seconds
+  Import took 0.071851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Animation/Not use Animations/reload_gunMiddleShoot_sg.fbx
+  artifactKey: Guid(59926facb3e0c5e469168e19c7cfd9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_gunMiddleShoot_sg.fbx using Guid(59926facb3e0c5e469168e19c7cfd9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55141e710848d45f4e8c1a9c1bed6b49') in 0.067612 seconds
+  Import took 0.071604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Animation/Not use Animations/reload_down_ar.fbx
+  artifactKey: Guid(6e8a21e8418737f46abca4056cc8a1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_down_ar.fbx using Guid(6e8a21e8418737f46abca4056cc8a1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95986bbb0769a849331c4855cefe5a28') in 0.066639 seconds
+  Import took 0.070356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.587746 seconds.
+  path: Assets/Animation/Not use Animations/reload_shoot_ar.fbx
+  artifactKey: Guid(6dccce84f88b84c40ae06be332f1430f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_shoot_ar.fbx using Guid(6dccce84f88b84c40ae06be332f1430f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4b2983d458bf9a455d1a10ebad6ac9b') in 0.054223 seconds
+  Import took 0.057500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Animation/Not use Animations/reload_shoot_sr.fbx
+  artifactKey: Guid(5d1385ca532750745bb4690ac36f8a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_shoot_sr.fbx using Guid(5d1385ca532750745bb4690ac36f8a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df50f129fcaac358498b66244f02116') in 0.066053 seconds
+  Import took 0.069540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Animation/Not use Animations/reload_sit_ar.fbx
+  artifactKey: Guid(ae17e25154299f145bc1edfbe39d1c34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_sit_ar.fbx using Guid(ae17e25154299f145bc1edfbe39d1c34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '956737a31e353253b556820c5188d910') in 0.070082 seconds
+  Import took 0.073590 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Animation/Not use Animations/run_guard_ar.fbx
+  artifactKey: Guid(1e33dd4fc8f427f4e89a64ab26fc4c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_guard_ar.fbx using Guid(1e33dd4fc8f427f4e89a64ab26fc4c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd68f213484ace3c5c20357f9b9d2d45c') in 0.070985 seconds
+  Import took 0.075240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/Animation/Not use Animations/reload_sit_hg.fbx
+  artifactKey: Guid(2a3d5c7ec31aadb41ba0ab013cbcbbb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_sit_hg.fbx using Guid(2a3d5c7ec31aadb41ba0ab013cbcbbb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4170be8b49dcd37bbdf0ce73108c212c') in 0.071229 seconds
+  Import took 0.075988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Animation/Not use Animations/reload_shoot_hg.fbx
+  artifactKey: Guid(213c9249d30de054c8601aed2ef0758e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_shoot_hg.fbx using Guid(213c9249d30de054c8601aed2ef0758e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc88aeac9ebba9c54fe70375b5597d8') in 0.065793 seconds
+  Import took 0.069902 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Animation/Not use Animations/reload_sit_sr.fbx
+  artifactKey: Guid(15728ede6826c8d48ba5beced6b6d0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_sit_sr.fbx using Guid(15728ede6826c8d48ba5beced6b6d0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a12df2942c7f49c12e0376d7d76812') in 0.066042 seconds
+  Import took 0.070099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Animation/Not use Animations/reload_shoot_hg.fbx
+  artifactKey: Guid(213c9249d30de054c8601aed2ef0758e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_shoot_hg.fbx using Guid(213c9249d30de054c8601aed2ef0758e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc88aeac9ebba9c54fe70375b5597d8') in 0.067804 seconds
+  Import took 0.071804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Animation/Not use Animations/reload_sit_sr.fbx
+  artifactKey: Guid(15728ede6826c8d48ba5beced6b6d0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/reload_sit_sr.fbx using Guid(15728ede6826c8d48ba5beced6b6d0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a12df2942c7f49c12e0376d7d76812') in 0.068265 seconds
+  Import took 0.072582 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.356545 seconds.
+  path: Assets/Animation/Not use Animations/run_guard_hg.fbx
+  artifactKey: Guid(6e5dfd67f90303a4689d100dc4172897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_guard_hg.fbx using Guid(6e5dfd67f90303a4689d100dc4172897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e6f622467665abe77a6d21928f0796') in 0.058053 seconds
+  Import took 0.061890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Animation/Not use Animations/run_gunMiddle_sr.fbx
+  artifactKey: Guid(2153e276a2067274c8ba7728b97d3bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_gunMiddle_sr.fbx using Guid(2153e276a2067274c8ba7728b97d3bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e37fc2db712fd23627de2ba26aad5e9f') in 0.068287 seconds
+  Import took 0.071660 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Animation/Not use Animations/run_guard_sr.fbx
+  artifactKey: Guid(311bf8dc7983618429234e01e3b7741c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_guard_sr.fbx using Guid(311bf8dc7983618429234e01e3b7741c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25f8936f3ab9174ed8f4adb89582e43c') in 0.068239 seconds
+  Import took 0.071974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Animation/Not use Animations/run_gunMiddle_sg.fbx
+  artifactKey: Guid(95a183e0e772fa841a4a31357fc4cd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_gunMiddle_sg.fbx using Guid(95a183e0e772fa841a4a31357fc4cd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c28dce4636d26d5ed58f8930e5c2db65') in 0.068497 seconds
+  Import took 0.076727 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Animation/Not use Animations/run_gunMiddle_ar.fbx
+  artifactKey: Guid(ce68a5ad8d5c5b9448559bb7ce60bba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_gunMiddle_ar.fbx using Guid(ce68a5ad8d5c5b9448559bb7ce60bba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd38f4a57dc4377d079b3af27a14282da') in 0.068802 seconds
+  Import took 0.073098 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Animation/Not use Animations/run_guard_sg.fbx
+  artifactKey: Guid(d36d5685071d87149b75b308c9ad354e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_guard_sg.fbx using Guid(d36d5685071d87149b75b308c9ad354e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf03dd2400eda4d56cba2e8e0a5e0c0') in 0.070633 seconds
+  Import took 0.074506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Animation/Not use Animations/run_gunMiddle_hg.fbx
+  artifactKey: Guid(4a96267061542cb409b2b5a4f041c3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_gunMiddle_hg.fbx using Guid(4a96267061542cb409b2b5a4f041c3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '041b0326f2d0fed6dd65c8f45ed7554d') in 0.066668 seconds
+  Import took 0.070745 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003270 seconds.
+  path: Assets/Animation/Not use Animations/run_gunMiddle_hg.fbx
+  artifactKey: Guid(4a96267061542cb409b2b5a4f041c3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/run_gunMiddle_hg.fbx using Guid(4a96267061542cb409b2b5a4f041c3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '041b0326f2d0fed6dd65c8f45ed7554d') in 0.065879 seconds
+  Import took 0.071341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.248619 seconds.
+  path: Assets/Animation/Not use Animations/shoot_auto_ar.fbx
+  artifactKey: Guid(a54ade35aaf2eaa4c9171ec3f51d02ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_auto_ar.fbx using Guid(a54ade35aaf2eaa4c9171ec3f51d02ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '701d0bc22c80aa6dbf274af4ce38680e') in 0.057784 seconds
+  Import took 0.061708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Animation/Not use Animations/shoot_single_sr.fbx
+  artifactKey: Guid(17489da2d2b30594e96c58f0a6c0bb35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_single_sr.fbx using Guid(17489da2d2b30594e96c58f0a6c0bb35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31b7a85a19e7881b3f3d5a452041b2b1') in 0.069854 seconds
+  Import took 0.073147 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Animation/Not use Animations/shoot_burst_ar.fbx
+  artifactKey: Guid(718f1de1a876b6d4e83ea537a2c8fc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_burst_ar.fbx using Guid(718f1de1a876b6d4e83ea537a2c8fc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea44ff38e442b6e4adb5b3584ca5b2e') in 0.066886 seconds
+  Import took 0.070675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Animation/Not use Animations/shoot_single_hg.fbx
+  artifactKey: Guid(12a62cdc04941094ba18b759021ae241) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_single_hg.fbx using Guid(12a62cdc04941094ba18b759021ae241) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10448275ed4ef206a1fbc1f220b839e8') in 0.069356 seconds
+  Import took 0.074415 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Animation/Not use Animations/shoot_burst_ar.fbx
+  artifactKey: Guid(718f1de1a876b6d4e83ea537a2c8fc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_burst_ar.fbx using Guid(718f1de1a876b6d4e83ea537a2c8fc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea44ff38e442b6e4adb5b3584ca5b2e') in 0.068126 seconds
+  Import took 0.071590 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_burst_ar.fbx
+  artifactKey: Guid(c893241a04282b942b04e3e86fb24700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_burst_ar.fbx using Guid(c893241a04282b942b04e3e86fb24700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e43c9affc8598d1a7ec8b4eabe6fb01') in 0.071715 seconds
+  Import took 0.075255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_auto_ar.fbx
+  artifactKey: Guid(cd219469b21475447b916ba053b76617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_auto_ar.fbx using Guid(cd219469b21475447b916ba053b76617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '122746ab2ee81f4a230d8b7f4fae05c6') in 0.068242 seconds
+  Import took 0.071650 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Animation/Not use Animations/shoot_single_ar.fbx
+  artifactKey: Guid(c56dd093cb0a9eb418f040fd7e4e2b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_single_ar.fbx using Guid(c56dd093cb0a9eb418f040fd7e4e2b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e18b37bec3d5b0e3680aaba3fc1e2edb') in 0.068799 seconds
+  Import took 0.072983 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.415127 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_single_ar.fbx
+  artifactKey: Guid(b98c8c9a6c9a4f24991b43a992cfe4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_single_ar.fbx using Guid(b98c8c9a6c9a4f24991b43a992cfe4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '051144719b1afc3025264631c2a46ace') in 0.055583 seconds
+  Import took 0.058871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_single_hg.fbx
+  artifactKey: Guid(cdb55d2f0925d484c9ff0f291b7fb2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_single_hg.fbx using Guid(cdb55d2f0925d484c9ff0f291b7fb2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '080dd0eee090a58c0386852dc561ca4e') in 0.068294 seconds
+  Import took 0.071718 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Animation/Not use Animations/throw_gunMiddle_sg.fbx
+  artifactKey: Guid(fe182e7cb3ce9e1438ae05cd10266083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/throw_gunMiddle_sg.fbx using Guid(fe182e7cb3ce9e1438ae05cd10266083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcbf3d2ab355e4ea92d39104c38ff9b8') in 0.072197 seconds
+  Import took 0.076891 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_single_sr.fbx
+  artifactKey: Guid(743a468662c15d5468ae477cc1d4ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_single_sr.fbx using Guid(743a468662c15d5468ae477cc1d4ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcbee9995d830f778b5e4274044b0e7f') in 0.066393 seconds
+  Import took 0.069878 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Animation/Not use Animations/throw_gunMiddle_ar.fbx
+  artifactKey: Guid(5bc9d0000c4463146ae3558df5667526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/throw_gunMiddle_ar.fbx using Guid(5bc9d0000c4463146ae3558df5667526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '404bf929d90736b67fb2359ee041cc83') in 0.068140 seconds
+  Import took 0.072954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_single_sr.fbx
+  artifactKey: Guid(743a468662c15d5468ae477cc1d4ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_single_sr.fbx using Guid(743a468662c15d5468ae477cc1d4ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcbee9995d830f778b5e4274044b0e7f') in 0.067046 seconds
+  Import took 0.071230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Animation/Not use Animations/throw_gunMiddle_sr.fbx
+  artifactKey: Guid(bd24f14ade5a5b94ea62c98e8844f86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/throw_gunMiddle_sr.fbx using Guid(bd24f14ade5a5b94ea62c98e8844f86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba28e8b57de5563a82ea14b94eae3d41') in 0.070651 seconds
+  Import took 0.074321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Animation/Not use Animations/throw_gunMiddle_hg.fbx
+  artifactKey: Guid(8efd4fddb6d81c14bb8d6238390bdcaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/throw_gunMiddle_hg.fbx using Guid(8efd4fddb6d81c14bb8d6238390bdcaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eebac3223b33f10fcec1b33737207e5') in 0.069142 seconds
+  Import took 0.073039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006366 seconds.
+  path: Assets/Animation/Not use Animations/throw_gunMiddle_hg.fbx
+  artifactKey: Guid(8efd4fddb6d81c14bb8d6238390bdcaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/throw_gunMiddle_hg.fbx using Guid(8efd4fddb6d81c14bb8d6238390bdcaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eebac3223b33f10fcec1b33737207e5') in 0.067348 seconds
+  Import took 0.071364 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064779 seconds.
+  path: Assets/Animation/Not use Animations/walk_guard_ar.fbx
+  artifactKey: Guid(6be93c0d17c0db44fb907db581f4232f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_guard_ar.fbx using Guid(6be93c0d17c0db44fb907db581f4232f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82604e776906f8289af21e18ea0ac662') in 0.059027 seconds
+  Import took 0.062986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Animation/Not use Animations/walk_gunMiddle_ar.fbx
+  artifactKey: Guid(f4d8e0b02928bcb4ba10f625f943d86a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_gunMiddle_ar.fbx using Guid(f4d8e0b02928bcb4ba10f625f943d86a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c44fe69be0718290b6501a1992260264') in 0.073915 seconds
+  Import took 0.078666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Animation/Not use Animations/walk_guard_sg.fbx
+  artifactKey: Guid(bda0126a4fc87b14c8c34e1cce6bca17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_guard_sg.fbx using Guid(bda0126a4fc87b14c8c34e1cce6bca17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28597460c1c041b236a89d2c5ebfaf9b') in 0.069668 seconds
+  Import took 0.074599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Animation/Not use Animations/walk_guard_sr.fbx
+  artifactKey: Guid(ce1aa91f24dcb5343ae7cadfe72c1bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_guard_sr.fbx using Guid(ce1aa91f24dcb5343ae7cadfe72c1bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea9e8b30410bd224d936daab39d0461') in 0.080640 seconds
+  Import took 0.085295 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000401 seconds.
+  path: Assets/Animation/Not use Animations/walk_gunMiddle_hg.fbx
+  artifactKey: Guid(3afe07494a2dd254ca58d7ff4ac89aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_gunMiddle_hg.fbx using Guid(3afe07494a2dd254ca58d7ff4ac89aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81c4c6cba59f51a183b4bf29791bc708') in 0.072735 seconds
+  Import took 0.076821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Animation/Not use Animations/walk_gunMiddle_sg.fbx
+  artifactKey: Guid(9c6b8e41d7b5ba94996cbd005afabe30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_gunMiddle_sg.fbx using Guid(9c6b8e41d7b5ba94996cbd005afabe30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '054d3dfac9ed8765c957da79bae4ef9a') in 0.070462 seconds
+  Import took 0.074372 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Animation/Not use Animations/walk_guard_hg.fbx
+  artifactKey: Guid(2add202368b2bae4fb431adc54337954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_guard_hg.fbx using Guid(2add202368b2bae4fb431adc54337954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1fe08aeb989d59afeca35d663c1dc75') in 0.075389 seconds
+  Import took 0.079198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.713533 seconds.
+  path: Assets/Animation/Not use Animations/walk_gunMiddle_sr.fbx
+  artifactKey: Guid(9b8f740a7ae41c84d8670f90b5c5bb96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_gunMiddle_sr.fbx using Guid(9b8f740a7ae41c84d8670f90b5c5bb96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e696c5008e75112ee0f80756ccceb3ae') in 0.059144 seconds
+  Import took 0.063105 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Animation/Not use Animations/walk_shoot_ar.fbx
+  artifactKey: Guid(65c18c6942c6d56469e02b278c4939e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_shoot_ar.fbx using Guid(65c18c6942c6d56469e02b278c4939e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c19ccd2916726e29c87553dc784e3704') in 0.071929 seconds
+  Import took 0.075252 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Animation/Not use Animations/walkBack_gunMiddle_sg.fbx
+  artifactKey: Guid(3660b7026b666df45a6233bf6dde0a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkBack_gunMiddle_sg.fbx using Guid(3660b7026b666df45a6233bf6dde0a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38de8fe43acfceee2d0f517131aeda25') in 0.063287 seconds
+  Import took 0.067611 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/Animation/Not use Animations/walkBack_shoot_hg.fbx
+  artifactKey: Guid(863912dc7f191f04bbdb9aaefebbb0d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkBack_shoot_hg.fbx using Guid(863912dc7f191f04bbdb9aaefebbb0d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60c4b0e8de406db8f92f592343b8fc31') in 0.072361 seconds
+  Import took 0.076327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Animation/Not use Animations/walk_shoot_sr.fbx
+  artifactKey: Guid(cc3bddafda414014e96166a6294f1e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_shoot_sr.fbx using Guid(cc3bddafda414014e96166a6294f1e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9695f88dcaf36412ef21924862f8d03') in 0.072722 seconds
+  Import took 0.076945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Animation/Not use Animations/walkBack_shoot_ar.fbx
+  artifactKey: Guid(12fb3dc95366b65418f6d545f4ef5b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkBack_shoot_ar.fbx using Guid(12fb3dc95366b65418f6d545f4ef5b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8341c5dec34acb751e53b3149fe8a3d5') in 0.075074 seconds
+  Import took 0.079530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/Animation/Not use Animations/walk_shoot_hg.fbx
+  artifactKey: Guid(48406ff6a74051d4cb92f33487d8a405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walk_shoot_hg.fbx using Guid(48406ff6a74051d4cb92f33487d8a405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76ba2afba9eb3ce3770fdf1264da54fa') in 0.089414 seconds
+  Import took 0.094411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.238474 seconds.
+  path: Assets/Animation/Not use Animations/walkBack_shoot_sr.fbx
+  artifactKey: Guid(902d9ad48e63d6c4eb99c8fcee2bd2c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkBack_shoot_sr.fbx using Guid(902d9ad48e63d6c4eb99c8fcee2bd2c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2363ef9de9578e1ead24fb3e373c1364') in 0.066960 seconds
+  Import took 0.071853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Animation/Not use Animations/walkLeft_gunMiddle_sg.fbx
+  artifactKey: Guid(e6e3eeccdb209244e8e0c16c96494b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkLeft_gunMiddle_sg.fbx using Guid(e6e3eeccdb209244e8e0c16c96494b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac20ba8ffe0db1ed9950960344376e72') in 0.077588 seconds
+  Import took 0.082310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Animation/Not use Animations/walkLeft_shoot_ar.fbx
+  artifactKey: Guid(7e0df5626868c49479b4affb3cd023c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkLeft_shoot_ar.fbx using Guid(7e0df5626868c49479b4affb3cd023c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '366359e2d98f4522891f610e0e0ee691') in 0.066995 seconds
+  Import took 0.070575 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Animation/Not use Animations/walkRight_shoot_ar.fbx
+  artifactKey: Guid(bce4ee587a8726642900fdbd6f08967f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkRight_shoot_ar.fbx using Guid(bce4ee587a8726642900fdbd6f08967f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25c1942e908dd7d0f655de738d8167eb') in 0.066912 seconds
+  Import took 0.070536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Animation/Not use Animations/walkLeft_shoot_hg.fbx
+  artifactKey: Guid(9a093e2f06a406c4a8e38f1daa5b84b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkLeft_shoot_hg.fbx using Guid(9a093e2f06a406c4a8e38f1daa5b84b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '360c103923191a739375d5b1afa6eb35') in 0.065938 seconds
+  Import took 0.069435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Animation/Not use Animations/walkRight_gunMiddle_sg.fbx
+  artifactKey: Guid(c6b21b37ed1c2b747beab79d670d2ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkRight_gunMiddle_sg.fbx using Guid(c6b21b37ed1c2b747beab79d670d2ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '661d9d587c1fc8b947c2e456647a9733') in 0.055610 seconds
+  Import took 0.059821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000364 seconds.
+  path: Assets/Animation/Not use Animations/walkLeft_shoot_hg.fbx
+  artifactKey: Guid(9a093e2f06a406c4a8e38f1daa5b84b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkLeft_shoot_hg.fbx using Guid(9a093e2f06a406c4a8e38f1daa5b84b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '360c103923191a739375d5b1afa6eb35') in 0.060715 seconds
+  Import took 0.066231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Animation/Not use Animations/walkLeft_shoot_sr.fbx
+  artifactKey: Guid(d28bdc842aeca114694bf2fb97d9059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkLeft_shoot_sr.fbx using Guid(d28bdc842aeca114694bf2fb97d9059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fafbf53834a876fe72790bb80c7310fb') in 0.067577 seconds
+  Import took 0.071237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.717517 seconds.
+  path: Assets/Animation/Not use Animations/walkRight_shoot_hg.fbx
+  artifactKey: Guid(b8e10cebcf7d74f4584e4b653dd4680f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkRight_shoot_hg.fbx using Guid(b8e10cebcf7d74f4584e4b653dd4680f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '438493f1e6ebbe3f2a47cdee8fa5a62c') in 0.055798 seconds
+  Import took 0.059690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Animation/Not use Animations/weaponChange_rest.fbx
+  artifactKey: Guid(b49e382750614aa4cbd901a73e24e16e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/weaponChange_rest.fbx using Guid(b49e382750614aa4cbd901a73e24e16e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edaf6e3e53c9158619808b5765f75ffc') in 0.068589 seconds
+  Import took 0.071923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Animation/Not use Animations/walkRight_shoot_sr.fbx
+  artifactKey: Guid(f21fa627c8fb3a942a871520c84a376d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/walkRight_shoot_sr.fbx using Guid(f21fa627c8fb3a942a871520c84a376d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13355379db2b8003a4399b0d7823fc06') in 0.068082 seconds
+  Import took 0.071863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Animation/Not use Animations/weaponChange_hg.fbx
+  artifactKey: Guid(98765a28694009a49bded2984434e2ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/weaponChange_hg.fbx using Guid(98765a28694009a49bded2984434e2ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4af961c7f3979a218492bde27d4e05d') in 0.063300 seconds
+  Import took 0.067172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006458 seconds.
+  path: Assets/Animation/Not use Animations/weaponChange_hg.fbx
+  artifactKey: Guid(98765a28694009a49bded2984434e2ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/weaponChange_hg.fbx using Guid(98765a28694009a49bded2984434e2ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4af961c7f3979a218492bde27d4e05d') in 0.066397 seconds
+  Import took 0.070376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 203.870637 seconds.
+  path: Assets/Animation/Not use Animations/shoot_single_sr 1.fbx
+  artifactKey: Guid(852cd43d4e096ba4b862db17768ae124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/shoot_single_sr 1.fbx using Guid(852cd43d4e096ba4b862db17768ae124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '968fe06ee8cf8bff6b09c7c382195319') in 0.067264 seconds
+  Import took 0.071210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_auto_ar 1.fbx
+  artifactKey: Guid(7f8a8ca05eeebfa43a3b4e42a0e097ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_auto_ar 1.fbx using Guid(7f8a8ca05eeebfa43a3b4e42a0e097ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3f72ef39cb3deef764a382b193ca40b') in 0.071217 seconds
+  Import took 0.075235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_single_ar 1.fbx
+  artifactKey: Guid(416e8c8bb06592041b413cee181c1549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_single_ar 1.fbx using Guid(416e8c8bb06592041b413cee181c1549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '650603ff84326f0296e901d5a8596c7d') in 0.069896 seconds
+  Import took 0.073574 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_burst_ar 1.fbx
+  artifactKey: Guid(36d357d3c697f054eaaccb83191f3344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_burst_ar 1.fbx using Guid(36d357d3c697f054eaaccb83191f3344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce95ec023445334a6e736bcad4d44ee') in 0.065515 seconds
+  Import took 0.070061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Animation/Not use Animations/sitShoot_single_hg 1.fbx
+  artifactKey: Guid(1df4b5aeb765f554d94629a9f6d2ab64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Not use Animations/sitShoot_single_hg 1.fbx using Guid(1df4b5aeb765f554d94629a9f6d2ab64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e76760e40c1d74df38cca346563d413') in 0.068849 seconds
+  Import took 0.073521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 316.313089 seconds.
+  path: Assets/Scenes/Level 4 - Boss.unity
+  artifactKey: Guid(1309be8c98308a7418107b0ab278e942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 4 - Boss.unity using Guid(1309be8c98308a7418107b0ab278e942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edd38418f4ead62f7268e5a988f85e2d') in 0.007019 seconds
+  Import took 0.010728 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007788 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.110 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1718 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.4 MB.
+System memory in use after: 126.4 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2271.
+Total: 3.217100 ms (FindLiveObjects: 0.266600 ms CreateObjectMapping: 0.081800 ms MarkObjects: 2.727700 ms  DeleteObjects: 0.138900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 5.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 20 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.9 MB.
+System memory in use after: 94.9 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2271.
+Total: 3.836800 ms (FindLiveObjects: 0.349100 ms CreateObjectMapping: 0.120100 ms MarkObjects: 3.162600 ms  DeleteObjects: 0.203200 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

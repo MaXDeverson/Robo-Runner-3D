@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
 
 public class MoverLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public Action DoubleClick;
     [SerializeField] private float _multiplyer;
      public float PositionX { get; private set; }
     [Header("Start Hand Animation")]
     [SerializeField] private GameObject _handAnimation;
+
     void FixedUpdate()
     {
         PositionX = 0;
@@ -21,14 +24,15 @@ public class MoverLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             _handAnimation.SetActive(false);
         }
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         PositionX = eventData.delta.x * _multiplyer;
     }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         PositionX = 0;
     }
+
+   
+
 }

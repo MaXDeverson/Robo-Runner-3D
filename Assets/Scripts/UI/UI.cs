@@ -13,7 +13,7 @@ public class UI : INotifible
 {
     [SerializeField] private TextMeshProUGUI _textLifes;
     [SerializeField] private Slider _lifesSlider;
-    [SerializeField] private Button _shieldMode;
+    [SerializeField] private DoubleClickController _shieldMode;
     [Header("For crystals")]
     [SerializeField] private TextMeshProUGUI _textCountUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textCountElectricCrystal;
@@ -55,8 +55,8 @@ public class UI : INotifible
     private bool _inProcess;
     private Action _exitAction;
 
-   // private InterstitialAd _add;
-    private string _addId = "ca-app-pub-3940256099942544/1033173712";
+    private InterstitialAd _add;
+    private string _addId = "ca-app-pub-9558178408201758/8556519009";
     private Transform _animatiedObj;
 
     private HeroDestroyer _heroDestroyer;
@@ -65,6 +65,7 @@ public class UI : INotifible
     private bool _playDamageAniamtion;
     private bool _valueToUp;
     private float _transparentValue;
+    public void ShowFps(bool value) => _fpsValue.gameObject.SetActive(value);
     public void ShowLoadView() => _loadWindow.SetActive(true);
     public void SetHeroDestroyer(HeroDestroyer heroDestroyer) => _heroDestroyer = heroDestroyer;
     public void SetUpdateDataUsualCrystal(PlayerData data)
@@ -73,35 +74,43 @@ public class UI : INotifible
         {
             _textCountUsualCrystals.text = updateCount + "";
         });
-        data.SetChangeCounECrystal ((int updateCount) =>
-         {
-             _textCountElectricCrystal.text = updateCount + "";
-         });
+        data.SetChangeCounECrystal((int updateCount) =>
+        {
+            _textCountElectricCrystal.text = updateCount + "";
+        });
     }
-    public void SetShieldModeEvent(UnityAction action)
+    public void SetShieldModeEvent(Func<bool> action)
     {
-        _shieldMode.onClick.AddListener(action);
+        _shieldMode.DoubleClickAction += () =>
+        {
+            if (!action.Invoke())
+            {
+                ShowNotification("Crystal no enought");
+                _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.NoMoney);
+            }
+        };
     }
     private void Awake()
     {
         _startPositionLooseBoard = _looseBoard.position;
-        //_add = new InterstitialAd(_addId);
-       // AdRequest request = new AdRequest.Builder().Build();
-        //_add.LoadAd(request);
     }
     private void Start()
-    {  
-        _heroDestroyer.SetGetDamageAction( count => _textLifes.text = count > 0? count + "":"0",true);
+    {
+        _heroDestroyer.SetGetDamageAction(count => _textLifes.text = count > 0 ? count + "" : "0", true);
         _heroDestroyer.SetGetDamageAction(count =>
         {
             PlayDamageAnimation();
-        },false);
+        }, false);
         _heroDestroyer.SetGetDamageActionProcent((procent) =>
         {
             _lifesSlider.value = procent;
-        },true);
+        }, true);
         InitilizationMenu();
         InitializeationLoose();
+        ///
+        _add = new InterstitialAd(_addId);
+        AdRequest request = new AdRequest.Builder().Build();
+        _add.LoadAd(request);
     }
     private void InitilizationMenu()
     {
@@ -116,11 +125,13 @@ public class UI : INotifible
         });
         _continue.onClick.AddListener(() =>
         {
+
             _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);
             _panel.SetActive(false);
             Level.CurrentLevel.Hero.GetComponent<ManagerAnimation>().Audio.mute = false;
             Level.CurrentLevel.AudioSourses.SourceLevel.mute = false;
             HideMenu();
+
         });
         _exit.onClick.AddListener(Exit);
         _replay.onClick.AddListener(Replay);
@@ -131,7 +142,7 @@ public class UI : INotifible
         {
             _panel.SetActive(true);
             _crystalCount.text = "-" + x;
-            Show(_looseBoard,false);
+            Show(_looseBoard, false);
             _contiuneButton.gameObject.SetActive(_canReward);
             if (!_canReward)
             {
@@ -199,7 +210,7 @@ public class UI : INotifible
             _playDamageAniamtion = false;
             _damageEffect.color = new Color(1, 1, 1, 0);
         }
-        if(_transparentValue >= 0 && _transparentValue<=1)
+        if (_transparentValue >= 0 && _transparentValue <= 1)
         {
             _damageEffect.color = new Color(255, 255, 255, _transparentValue);
         }
@@ -207,7 +218,7 @@ public class UI : INotifible
         _damageAnimationIsPlayed = false;
     }
     //Menu animation
-    private void Show(Transform obj,bool stop = true)
+    private void Show(Transform obj, bool stop = true)
     {
         obj.gameObject.SetActive(true);
         obj.DOMove(_finishPosition.position, 0.3f);
@@ -216,9 +227,9 @@ public class UI : INotifible
             StartCoroutine(Stop());
         }
     }
-    private IEnumerator Animate(Transform obj,Vector3 position,bool hide, bool stopGame = true)
+    private IEnumerator Animate(Transform obj, Vector3 position, bool hide, bool stopGame = true)
     {
-        if(hide)
+        if (hide)
         {
             obj.DOMove(position, 0.3f);
             yield return new WaitForSeconds(0.3f);
@@ -296,7 +307,7 @@ public class UI : INotifible
     }
     private void Exit()
     {
-        _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);   
+        _notificationSource.PlayOneShot(Level.CurrentLevel.SoundList.Button);
         Time.timeScale = 1;
         _loadWindow.SetActive(true);
         _exitAction?.Invoke();
@@ -305,19 +316,20 @@ public class UI : INotifible
     public void AddActionExit(Action action) => _exitAction += action;
     private void Contiune()
     {
-        //if (_add.IsLoaded())
-        //{
-        //    _add.Show();
-        //}
-        //else
-        //{
-        //    Debug.Log("No load");
-        //}
+        if (_add.IsLoaded())
+        {
+            _add.Show();
+            Level.CurrentLevel.Contiune();
+            Start();
+            StartCoroutine(Animate(_looseBoard, _startPositionLooseBoard, true, false));
+            _panel.SetActive(false);
+        }
+        else
+        {
+            ShowNotification("No internet connection");
+        }
         //IF ADD WAS SHOWED
-        Level.CurrentLevel.Contiune();
-        Start();
-        StartCoroutine(Animate(_looseBoard, _startPositionLooseBoard, true, false));
-        _panel.SetActive(false);
+      
     }
 
     //Notification logic

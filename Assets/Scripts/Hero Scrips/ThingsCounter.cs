@@ -17,6 +17,7 @@ public class ThingsCounter : MonoBehaviour
             case Tag.ElectroCrystal:
                 _playerData.AddElectroCrystal();
                 GetECrystalAction?.Invoke();
+                Debug.Log("Electro crystal geted");
                 break;
         }
     }

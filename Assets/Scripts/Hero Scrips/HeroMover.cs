@@ -7,10 +7,11 @@ public class HeroMover : Triggerable
     [SerializeField] private float _velocity;
     [SerializeField] private ManagerAnimation _managerAnimation;
     [SerializeField] private HeroDestroyer _destroyer;
-    private float _maxVelocity = 50;
     private Rigidbody _rigidbody;
     private const float _moveXRestriction = 2.7F;
     private bool _isDie;
+    private float _velocityXMultiplier = 1F;
+    public float VelocityXMultiplier { get => _velocityXMultiplier; set => _velocityXMultiplier = value; }
     //for jump animation;
     private bool _isJump;
     private bool _canAbortJump;
@@ -31,7 +32,7 @@ public class HeroMover : Triggerable
     }
     void Update()
     {
-        float xVelocity = _moverLogic.PositionX * 50;
+        float xVelocity = _moverLogic.PositionX * 50 * _velocityXMultiplier;
         if (transform.position.x > _moveXRestriction)
         {
             transform.position = new Vector3(_moveXRestriction, transform.position.y, transform.position.z);

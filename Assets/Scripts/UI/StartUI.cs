@@ -25,6 +25,14 @@ public class StartUI : INotifible
     [SerializeField] private Text _moneyCount;
     [SerializeField] private GameObject _cheatObj;
     [SerializeField] private Text _currentLevel;
+    [Header("Settings")]
+    [SerializeField] private GameObject _settingsWindow;
+    [SerializeField] private Button _settingsButton;
+    [SerializeField] private Button _hideSettings;
+    [SerializeField] private Slider _levelSound;
+    [SerializeField] private Slider _sencetivity;
+    [SerializeField] private Dropdown _quality;
+    [SerializeField] private Toggle _showFps;
     [Header("Notification")]
     [SerializeField] private TextMeshProUGUI _notificationText;
     [SerializeField] private GameObject _notifiWindow;
@@ -34,6 +42,19 @@ public class StartUI : INotifible
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private SoundList _soundList;
     private bool _inProcess;
+
+    //Crystal animation
+    private int _crystalCountAnimation;
+    private int _counter;
+    private bool _cryatalAnimationInProcess;
+    private bool _crystalIncrease;
+    private int step = 50;
+    private bool _crystalWithAnimation;
+    //Settings
+    public float LevelSound { get => _levelSound.value; }
+    public float Sencetivity { get => _sencetivity.value; }
+    public int Quality { get => _quality.value; }
+    public bool ShowFps { get => _showFps.isOn; }
 
     void Start()
     {
@@ -68,13 +89,85 @@ public class StartUI : INotifible
         //player data initialization;
         _textUsualCrystals.text = data.CountUsualCrystals + "";
         _textElectroCrystals.text = data.CountElectroCrystals + "";
+        //settings init
+        _settingsButton.onClick.AddListener(() => _settingsWindow.SetActive(true));
+        _hideSettings.onClick.AddListener(() => _settingsWindow.SetActive(false));
         SoundInit();
     }
+    private void FixedUpdate()
+    {
+        //Crystal animation
+        //if(_crystalIncrease? _crystalCountAnimation > 0:_crystalCountAnimation < 0 && !_cryatalAnimationInProcess)
+        //{
+        //    _cryatalAnimationInProcess = true;
+        //    StartCoroutine(CrystalAnimation());
+        //    if (_crystalIncrease? _crystalCountAnimation < step:_crystalCountAnimation>step)
+        //    {
+        //        _counter += _crystalIncrease? _crystalCountAnimation: - _crystalCountAnimation;
+        //        _crystalCountAnimation = 0;
+        //    }
+        //    else
+        //    {
+        //        _crystalCountAnimation -= _crystalIncrease ? step : -step ;   
+        //        _counter += _crystalIncrease? step:-step;
+        //    }
+        //    _textUsualCrystals.text = _counter + "";
+        //    _audioSource.PlayOneShot(_soundList.Coin);
 
+        //}
+        if (_crystalIncrease)
+        {
+            if (_crystalCountAnimation > 0 && !_cryatalAnimationInProcess)
+            {
+                _cryatalAnimationInProcess = true;
+                StartCoroutine(CrystalAnimation());
+                if (_crystalCountAnimation < step)
+                {
+                    _counter += _crystalCountAnimation;
+                    _crystalCountAnimation = 0;
+                }
+                else
+                {
+                    _crystalCountAnimation -= step; ;
+                    _counter += step;
+                }
+                _textUsualCrystals.text = _counter + "";
+                _audioSource.PlayOneShot(_soundList.Coin);
+            }
+        }
+        else
+        {
+            if (_crystalCountAnimation < 0 && !_cryatalAnimationInProcess)
+            {
+                _cryatalAnimationInProcess = true;
+                StartCoroutine(CrystalAnimation());
+                if (_crystalCountAnimation > step)
+                {
+                    _counter -= _crystalCountAnimation;
+                    _crystalCountAnimation = 0;
+                }
+                else
+                {
+                    _crystalCountAnimation += step; ;
+                    _counter -= step;
+                }
+                _textUsualCrystals.text = _counter + "";
+                _audioSource.PlayOneShot(_soundList.Coin);
+            }
+        }
+
+    }
     private void SoundInit()
     {
         _playButton.onClick.AddListener(() => _audioSource.Play());
         _upgradeButton.onClick.AddListener(() => _audioSource.Play());
+    }
+    public void InitializeSettings(float levelSound, float sencetivity, int quality, bool showFps)
+    {
+        _levelSound.value = levelSound;
+        _sencetivity.value = sencetivity;
+        _quality.value = quality;
+        _showFps.isOn = showFps;
     }
     public void AddActionPlay(Action action) => _playButton.onClick.AddListener(() => action?.Invoke());
     public void AddActionUpgrade(Action action)
@@ -87,7 +180,7 @@ public class StartUI : INotifible
             //}
             //else
             //{
-            //    ShowNotification("Will be availible after 2 level");
+            //    ShowNotification("Will be available after LV-2");
             //}
         });
     }
@@ -104,7 +197,27 @@ public class StartUI : INotifible
         _cheatObj.SetActive(isActive);
 
     }
-    public void UpdateUsualCrystals(int countUsualCrystals) => _textUsualCrystals.text = countUsualCrystals + "";
+    public void UpdateUsualCrystals(int countUsualCrystals)
+    {
+        if (_crystalWithAnimation)
+        {
+            _crystalIncrease = _counter < countUsualCrystals;
+            _crystalCountAnimation += countUsualCrystals - _counter;
+            step = Mathf.Abs(_crystalCountAnimation / 10);
+        }
+        else
+        {
+            _crystalWithAnimation = true;
+            _counter = countUsualCrystals;
+            _textUsualCrystals.text = countUsualCrystals + "";
+        }
+       
+    }//Animation
+    private IEnumerator CrystalAnimation()
+    {
+        yield return new WaitForSeconds(0.03f);
+        _cryatalAnimationInProcess = false;
+    }
     public void UpdateElectroCrysals(int countCrystals) => _textElectroCrystals.text = countCrystals + "";
     //Notification logic;
     public override void ShowNotification(string text)

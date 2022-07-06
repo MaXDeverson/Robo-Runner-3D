@@ -11,10 +11,13 @@ public class PlatformGenerator : MonoBehaviour
     private bool _isDestroy;
     void Start()
     {
-        _destroyer.ActionDie += () =>
+        if(_destroyer!= null)
         {
-            _isDestroy = true;
-        };
+            _destroyer.ActionDie += () =>
+            {
+                _isDestroy = true;
+            };
+        }
     }
 
     private void OnTriggerEnter(Collider other)

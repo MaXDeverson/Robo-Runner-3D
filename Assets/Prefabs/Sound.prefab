@@ -50,6 +50,7 @@ MonoBehaviour:
   Button: {fileID: 8300000, guid: dc5b07df51e78124bbf140cc72597113, type: 3}
   NoMoney: {fileID: 8300000, guid: a99a190323b0aab4dbcb1f50f29b6a67, type: 3}
   Teleport: {fileID: 8300000, guid: 74c274379ad77a144aeec748d03de5d7, type: 3}
+  Coin: {fileID: 8300000, guid: 30dae11b31c7c8342bee2752bff828d1, type: 3}
   HeroShoot: {fileID: 8300000, guid: 5a97176c221c1e546a9c50de08e734db, type: 3}
   HeroJump: {fileID: 8300000, guid: 623c5755049fec8458443c989f43617b, type: 3}
   HeroFall: {fileID: 8300000, guid: ef06248499b31a04d85af3419448c60c, type: 3}

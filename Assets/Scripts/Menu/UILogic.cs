@@ -15,6 +15,7 @@ public class UILogic : MonoBehaviour
     private PlayerData _playerData;
     private int _selectedHeroIndex;
     private int _currentHeroIndex;
+    private SettingsData _settingsData;
     //
     private UpgradeType _upgradeType;
     private void Start()
@@ -39,6 +40,8 @@ public class UILogic : MonoBehaviour
         _camera.SetTarget(_visualHeroes[_selectedHeroIndex], false);
         _playerData.SetChangeCounUCystal((usualCont) => _startUI.UpdateUsualCrystals(usualCont));
         _playerData.SetChangeCounECrystal((count) => _startUI.UpdateElectroCrysals(count));
+        _settingsData = Serializator.DeSerializeSettings();
+        _startUI.InitializeSettings(_settingsData.LevelSoundValue,_settingsData.Sensitivity,_settingsData.Quality,_settingsData.ShowFPS);
     }
     private void InitializationUI()
     {
@@ -198,6 +201,7 @@ public class UILogic : MonoBehaviour
                 }
                 break;
         }
+        Debug.Log("Serialize Hero upgrade data");
         Serializator.Serialize(_dataHeroes);
         Serializator.Serialize(DataName.CountCrystals,_playerData.CountUsualCrystals);
         _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
@@ -233,10 +237,14 @@ public class UILogic : MonoBehaviour
         PlayerData.ResetValues();
         SceneManager.LoadScene(0);
     }
-
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
         _playerData.SaveData();
+        _settingsData.LevelSoundValue = _startUI.LevelSound;
+        _settingsData.Sensitivity = _startUI.Sencetivity;
+        _settingsData.Quality = _startUI.Quality;
+        _settingsData.ShowFPS = _startUI.ShowFps;
+        Serializator.SerializeSettings();
     }
 }
 public enum UpgradeType

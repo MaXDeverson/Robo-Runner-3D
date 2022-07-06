@@ -79,6 +79,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\StartUI_2.cs" />
     <Compile Include="Assets\Scripts\Hero Scrips\ThingsCounter.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\AchieveItemData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Menu\CameraBuy.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Weapon\Gun.cs" />
     <Compile Include="Assets\Scripts\FallBoom.cs" />
+    <Compile Include="Assets\Scripts\UI\DoubleClickController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Effects\StylizedExplosion\scripts\particleColorChanger.cs" />
     <Compile Include="Assets\Scripts\Game Meta\Serializator.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\BossManagerAniamtion_1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Scripts\Game Meta\SettingsData.cs" />
     <Compile Include="Assets\Scripts\PhysicMover.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\GetAnimation.cs" />
@@ -152,7 +155,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\UILogic.cs" />
     <Compile Include="Assets\Scripts\UI\GuideUI.cs" />
-    <Compile Include="Assets\Scripts\Game Meta\AchieveItemData.cs" />
+    <Compile Include="Assets\Scripts\CatCamera.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

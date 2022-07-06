@@ -7,8 +7,10 @@ using UnityEngine;
 
 public static class Serializator
 {
-    private static string[] Names = { "CurrentLevel", "Count cryst", "Count El Cyst", "MaxContLives", "Is first launching", "CurrentGuideIndex", "Count kills", "Shield Use", "Contiune Count" };
+    private static string[] Names = { "CurrentLevel", "Count cryst", "Count El Cyst", "MaxContLives", "Is first launching",
+                                      "CurrentGuideIndex", "Count kills", "Shield Use", "Contiune Count","Level music volume","Sencetivity","Quality","Show FPS"};
     private const string FILE_NAME = "/gamedata.dat";
+    private const string FILE_NAME_ACHIEVES = "/gamedata Achieves.dat";
     private static List<HeroData> _initData = new List<HeroData>
     {
             new HeroData(true,true,0, 0,0,0,0),
@@ -17,6 +19,7 @@ public static class Serializator
             new HeroData(false,false,30000,0,0,0,0)
     };
     public static List<AchieveItemData> AchievementItemsInitData;
+    private static SettingsData _settingsData = new SettingsData(0.4f, 1f,1,false);
     static Serializator()
     {
         AchievementItemsInitData = new List<AchieveItemData>{
@@ -70,6 +73,27 @@ public static class Serializator
         }
         return value;
     }
+    public static SettingsData DeSerializeSettings()
+    {
+        float sencetiviy = PlayerPrefs.GetFloat(Names[(int)DataName.Sencetivity]);
+        if(sencetiviy != 0)
+        {
+            float lvMusicV = PlayerPrefs.GetFloat(Names[(int)DataName.LvMusicVolume]);
+            int quality = PlayerPrefs.GetInt(Names[(int)DataName.Quality]);
+            int showFps = PlayerPrefs.GetInt(Names[(int)DataName.ShowFPS]);
+            _settingsData = new SettingsData(lvMusicV, sencetiviy, quality, showFps != 0);
+        }
+        return _settingsData;
+    }
+    public static void SerializeSettings()
+    {
+        PlayerPrefs.SetFloat(Names[(int)DataName.LvMusicVolume], _settingsData.LevelSoundValue);
+        PlayerPrefs.SetInt(Names[(int)DataName.Quality], _settingsData.Quality);
+        PlayerPrefs.SetFloat(Names[(int)DataName.Sencetivity], _settingsData.Sensitivity);
+        PlayerPrefs.SetInt(Names[(int)DataName.ShowFPS], _settingsData.ShowFPS? 1:0);
+
+    }
+    
     public static bool IsFirstLaunching()
     {
         if (PlayerPrefs.GetInt(Names[(int)DataName.IsFirstLaunching]) != 1)
@@ -92,6 +116,7 @@ public static class Serializator
         {
             PlayerPrefs.SetInt(Names[i], 0);
         }
+        _settingsData = new SettingsData(0.4f, 1, 1, false);
         Serialize(_initData);
         AchievementItemsInitData.ForEach(item => item.SetGIftGeted(false));
         SerializeAchievement();
@@ -118,13 +143,12 @@ public static class Serializator
         {
             data[i] = AchievementItemsInitData[i].GiftGeted;
         }
-        using (Stream stream = File.Open(Application.persistentDataPath + FILE_NAME, FileMode.Create))
+        using (Stream stream = File.Open(Application.persistentDataPath + FILE_NAME_ACHIEVES, FileMode.Create))
         {
             BinaryFormatter bformatter = new BinaryFormatter();
             bformatter.Serialize(stream, data);
         }
     }
-
     public static List<HeroData> DeSerialize()
     {
 
@@ -148,7 +172,7 @@ public static class Serializator
         bool[] serialize = new bool[AchievementItemsInitData.Count];
         try
         {
-            using (Stream stream = File.Open(Application.persistentDataPath + FILE_NAME, FileMode.Open))
+            using (Stream stream = File.Open(Application.persistentDataPath + FILE_NAME_ACHIEVES, FileMode.Open))
             {
                 BinaryFormatter bformatter = new BinaryFormatter();
                 serialize = (bool[])bformatter.Deserialize(stream);
@@ -173,4 +197,8 @@ public enum DataName
     KillsCount,
     ShieldUseCount,
     ContiuneCount,
+    LvMusicVolume,
+    Sencetivity,
+    Quality,
+    ShowFPS,
 }

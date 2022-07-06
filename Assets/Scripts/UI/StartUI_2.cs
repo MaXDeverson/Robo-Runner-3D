@@ -179,7 +179,6 @@ public class StartUI_2 : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Debug.Log("Destroy");
         Serializator.AchievementItemsInitData.ForEach(item =>
         {
             item.GetAction -= UpdateAchievementsVisual;

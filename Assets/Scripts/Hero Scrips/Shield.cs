@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Shield : MonoBehaviour
 {
     [SerializeField] private HeroDestroyer _destroyer;
     [SerializeField] private GameObject _shieldObj;
     public int ShieldTimeActive { get => _shieldTimeActive;}
+    public Action ActivateAction;
     private const int MAX_SCALE_SHIELD = 6;
     private const int MIN_SCALE_SHIELD = 1;
     private float _shieldScaleValue = 1;
@@ -54,8 +56,7 @@ public class Shield : MonoBehaviour
                 _isAnimatedScaleUP = false;
                 StartScaleUpAniamtion();
                 StartCoroutine(TurnOff());
-                Level.CurrentLevel.AudioSourses.SourceShield.PlayOneShot(Level.CurrentLevel.SoundList.AppearanceShield);
-                PlayerData.GetPlayerData().CountShieldUse();
+                ActivateAction.Invoke();
             }
         }
         else

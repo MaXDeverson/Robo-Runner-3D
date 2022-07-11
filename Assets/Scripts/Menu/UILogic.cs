@@ -206,7 +206,7 @@ public class UILogic : MonoBehaviour
         Serializator.Serialize(DataName.CountCrystals,_playerData.CountUsualCrystals);
         _upgradeUI.UpdateUI(_dataHeroes[_currentHeroIndex], _upgradeType);
         _startUI_2.UpdateUI(_dataHeroes[_currentHeroIndex], _dataHeroes[_dataHeroes.Count - 1], _playerData.KillsCount);
-    }
+    } 
     private void SelectHero()
     {
         _dataHeroes.ForEach(hero => hero.IsSelect = false);
@@ -237,7 +237,7 @@ public class UILogic : MonoBehaviour
         PlayerData.ResetValues();
         SceneManager.LoadScene(0);
     }
-    private void OnDestroy()
+    private void OnApplicationQuit()
     {
         _playerData.SaveData();
         _settingsData.LevelSoundValue = _startUI.LevelSound;

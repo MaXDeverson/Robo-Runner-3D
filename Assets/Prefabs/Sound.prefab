@@ -57,5 +57,7 @@ MonoBehaviour:
   HeroRun: {fileID: 8300000, guid: e0fd92ee66958fd46a9d1f64d51dfd2f, type: 3}
   AppearanceShield: {fileID: 8300000, guid: 641df7b6d6100c644ac3ec37ac259b13, type: 3}
   DisappearanceShield: {fileID: 8300000, guid: a50987146a7589e4d97615eb597bd49d, type: 3}
+  JetPack: {fileID: 8300000, guid: f54dc88fb430915478b803c5d2efcbab, type: 3}
   EnemyExplosion: {fileID: 8300000, guid: 47e9f6f9a22a03949819c7009c3d3b43, type: 3}
   EnemyShoot: {fileID: 8300000, guid: 36d3e6cb6f6972f41a20667742c8e59e, type: 3}
+  PlatformRun: {fileID: 8300000, guid: ef7caa641f77ed64881dbd1f70993b2b, type: 3}

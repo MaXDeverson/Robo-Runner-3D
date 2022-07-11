@@ -112,13 +112,13 @@ public static class Serializator
     }
     public static void ResetValues()
     {
+        File.Delete(Application.persistentDataPath + FILE_NAME);
+        File.Delete(Application.persistentDataPath + FILE_NAME_ACHIEVES);
         for (int i = 0; i < Names.Length; i++)
         {
             PlayerPrefs.SetInt(Names[i], 0);
         }
-        _settingsData = new SettingsData(0.4f, 1, 1, false);
-        Serialize(_initData);
-        AchievementItemsInitData.ForEach(item => item.SetGIftGeted(false));
+        AchievementItemsInitData.ForEach(ach => ach.GiftGeted = false);
         SerializeAchievement();
     }
     public static void Serialize(List<HeroData> herosData)

@@ -83,13 +83,13 @@ public class PlayerData
         Serializator.Serialize(DataName.ContiuneCount, _continueCount);
         Serializator.Serialize(DataName.ShieldUseCount, _shieldUseCount);
         Serializator.SerializeAchievement();
-        Debug.Log("Save contiune count:" + _continueCount + " shield count:" + _shieldUseCount);
+        //Debug.Log("Save contiune count:" + _continueCount + " shield count:" + _shieldUseCount);
     }
     public static PlayerData GetPlayerData()
     {
-        if(_playerData == null)
+        bool isFirstLaunch = Serializator.IsFirstLaunching();
+        if (_playerData == null)
         {
-            bool isFirstLaunch = Serializator.IsFirstLaunching();
             int countUCrystals = isFirstLaunch?1000: Serializator.DeSerialize(DataName.CountCrystals);
             int countECrystals = isFirstLaunch?1: Serializator.DeSerialize(DataName.CountECrystals);
             int killsCount = Serializator.DeSerialize(DataName.KillsCount);
@@ -114,7 +114,8 @@ public class PlayerData
     }
     public static void ResetValues()
     {
-        _playerData = null;
+        Serializator.ResetValues();
+        _playerData = new PlayerData(1000, 1, 0, 0, 0, Serializator.AchievementItemsInitData);
         ///1000 and 10 start values of crustals
     }
     public void AddKill() => _killsCount++;

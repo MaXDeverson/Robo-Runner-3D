@@ -47,6 +47,9 @@ public class StartUI_2 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _nextLv;
     [SerializeField] private Transform _levelVisualWindow;
     [SerializeField] private Transform _secondLevelPosition;
+    [Header("Sound")]
+    [SerializeField] private AudioSource _audio;
+    [SerializeField] private SoundList _soundList;
     private Vector3 _startLevelVisPosition;
      private bool _inProcess;
     int countForGet = 0;
@@ -60,10 +63,12 @@ public class StartUI_2 : MonoBehaviour
         _achivementWindow.transform.position = _finishPosition.position;
         _achivementButton.onClick.AddListener(()=> {
             Show(_achivementWindow.transform);
+            _audio.PlayOneShot(_soundList.Button);
         });
         _achivementHide.onClick.AddListener(() =>
         {
             HideWindow(_achivementWindow.transform);
+            _audio.PlayOneShot(_soundList.Button);
         });
         AchievementInitialization();
         _firstYposiiton = (int)_statsWindow.transform.position.y;
@@ -86,6 +91,12 @@ public class StartUI_2 : MonoBehaviour
             newItem.localScale = new Vector3(1, 1, 1);
             if (item.Done && !item.GiftGeted) countForGet++;
             item.GetAction += UpdateAchievementsVisual;
+            item.GetAction += () =>
+            {
+                PlayerData.GetPlayerData().SaveData();
+                Serializator.SerializeAchievement();
+              
+            };
         });
         _achieveCount.SetActive(countForGet > 0);
         _blinkAchieves.SetActive(countForGet > 0);
@@ -93,8 +104,6 @@ public class StartUI_2 : MonoBehaviour
         {
             _textAchieveCount.text = countForGet + "";
         }
-
-        
         _content.transform.localPosition = new Vector3(_content.transform.localRotation.x, -300, 0);
     }
     public void UpdateUI(HeroData currentHero, HeroData lastHero, int killsCount)

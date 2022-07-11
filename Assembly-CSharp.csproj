@@ -70,6 +70,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Obstacle Scripts\Mine.cs" />
     <Compile Include="Assets\Scripts\StartParticles.cs" />
+    <Compile Include="Assets\Scripts\CAT\CatSceneController.cs" />
     <Compile Include="Assets\Scripts\Weapon\Bullet.cs" />
     <Compile Include="Assets\Scripts\UI\StartUI.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Drone\DroneAnimator.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Menu\CameraBuy.cs" />
     <Compile Include="Assets\Scripts\Game Meta\AnimationType.cs" />
+    <Compile Include="Assets\Scripts\CAT\BossCatAnimManager.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyShooter.cs" />
     <Compile Include="Assets\Scripts\BrightnesChanger.cs" />
     <Compile Include="Assets\Scripts\UI\BuyUI.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Assets\Scripts\Game Meta\Serializator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
+    <Compile Include="Assets\Scripts\CAT\BossCatController.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMoverLogic.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -142,7 +145,7 @@
     <Compile Include="Assets\Scripts\Hero Scrips\MoverLogic.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyAnimator.cs" />
-    <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\BossManagerAniamtion_1.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Bosses Logic\BossManagerAniamtion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Game Meta\SettingsData.cs" />
@@ -155,7 +158,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\UILogic.cs" />
     <Compile Include="Assets\Scripts\UI\GuideUI.cs" />
-    <Compile Include="Assets\Scripts\CatCamera.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -832,6 +834,12 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

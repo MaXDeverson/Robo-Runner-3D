@@ -27,12 +27,12 @@ public class HeroMover : Triggerable
         _jumpGameObject = gameObject;
         _rigidbody = GetComponent<Rigidbody>();
         _destroyer.DieAction += () => _isDie = true;
-        _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
+        _managerAnimation.PlayAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
 
     }
     void Update()
     {
-        float xVelocity = _moverLogic.PositionX * 50 * _velocityXMultiplier;
+        float xVelocity = _moverLogic.PositionX * 70 * _velocityXMultiplier;
         if (transform.position.x > _moveXRestriction)
         {
             transform.position = new Vector3(_moveXRestriction, transform.position.y, transform.position.z);
@@ -49,7 +49,7 @@ public class HeroMover : Triggerable
         //transform.position = new Vector3(newXPosition> _moveXRestriction? _moveXRestriction:(newXPosition< -_moveXRestriction?-_moveXRestriction:newXPosition), transform.position.y, transform.position.z);
         if (!_isJump && !_stay && _startAnimationWillPlayed)
         {
-            _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
+            _managerAnimation.PlayAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
         }
 
         ////////////////////////
@@ -84,7 +84,7 @@ public class HeroMover : Triggerable
                 {
                     _jumpGameObject = inputCollider.gameObject;
                     _isJump = true;
-                    _managerAnimation.SetMainAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
+                    _managerAnimation.PlayAnimation(AnimationType.Jump, ManagerAnimation.LayerType.MainLayer);
                     _rigidbody.AddForce(new Vector3(0, 3, 0), ForceMode.Impulse);
                     await Task.Delay(500);
                     _canAbortJump = true;
@@ -92,7 +92,7 @@ public class HeroMover : Triggerable
                 break;
             case Tag.StopSpot:
                 _stay = true;
-                _managerAnimation.SetMainAnimation(AnimationType.Stay, ManagerAnimation.LayerType.MainLayer);
+                _managerAnimation.PlayAnimation(AnimationType.Stay, ManagerAnimation.LayerType.MainLayer);
                 break;
         }
     }
@@ -101,7 +101,7 @@ public class HeroMover : Triggerable
         if (exitCollider.CompareTag(Tag.StopSpot))
         {
             _stay = false;
-            _managerAnimation.SetMainAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
+            _managerAnimation.PlayAnimation(AnimationType.Run, ManagerAnimation.LayerType.MainLayer);
         }
     }
 }

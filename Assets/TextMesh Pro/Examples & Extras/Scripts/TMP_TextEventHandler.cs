@@ -98,10 +98,10 @@ namespace TMPro
 
         void Awake()
         {
-            // Get a reference to the _text component.
+            // Get a reference to the _logText component.
             m_TextComponent = gameObject.GetComponent<TMP_Text>();
 
-            // Get a reference to the camera rendering the _text taking into consideration the _text component type.
+            // Get a reference to the camera rendering the _logText taking into consideration the _logText component type.
             if (m_TextComponent.GetType() == typeof(TextMeshProUGUI))
             {
                 m_Canvas = gameObject.GetComponentInParent<Canvas>();

@@ -44,7 +44,7 @@ namespace TMPro.Examples
 
             m_Transform = m_TextComponent.transform;
 
-            // Get a reference to the _text object's textInfo
+            // Get a reference to the _logText object's textInfo
             m_TextInfo = m_TextComponent.textInfo;
 
             // Update Text Statistics
@@ -79,13 +79,13 @@ namespace TMPro.Examples
                 DrawLinkBounds();
             #endregion
 
-            // Draw Quad around the bounds of the _text
+            // Draw Quad around the bounds of the _logText
             #region Draw Bounds
             if (ShowMeshBounds)
                 DrawBounds();
             #endregion
 
-            // Draw Quad around the rendered region of the _text.
+            // Draw Quad around the rendered region of the _logText.
             #region Draw Text Bounds
             if (ShowTextBounds)
                 DrawTextBounds();
@@ -190,7 +190,7 @@ namespace TMPro.Examples
                 DrawSquare(advancePosition, 0.025f / m_ScaleMultiplier, Color.yellow);
                 DrawCrosshair(advancePosition, 0.0125f / m_ScaleMultiplier, Color.yellow);
 
-                // Draw _text labels for metrics
+                // Draw _logText labels for metrics
                if (m_HandleSize < 0.5f)
                {
                    GUIStyle style = new GUIStyle(GUI.skin.GetStyle("Label"));
@@ -254,7 +254,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        /// Method to draw rectangles around each word of the _text.
+        /// Method to draw rectangles around each word of the _logText.
         /// </summary>
         /// <param name="text"></param>
         void DrawWordBounds()
@@ -358,7 +358,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        /// Draw rectangle around each of the links contained in the _text.
+        /// Draw rectangle around each of the links contained in the _logText.
         /// </summary>
         /// <param name="text"></param>
         void DrawLinkBounds()
@@ -381,7 +381,7 @@ namespace TMPro.Examples
 
                 Color32 linkColor = Color.cyan;
 
-                // Iterate through each character of the link _text
+                // Iterate through each character of the link _logText
                 for (int j = 0; j < linkInfo.linkTextLength; j++)
                 {
                     int characterIndex = linkInfo.linkTextfirstCharacterIndex + j;
@@ -462,7 +462,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        /// Draw Rectangles around each lines of the _text.
+        /// Draw Rectangles around each lines of the _logText.
         /// </summary>
         /// <param name="text"></param>
         void DrawLineBounds()
@@ -514,7 +514,7 @@ namespace TMPro.Examples
                 Handles.color = Color.yellow;
                 Handles.DrawDottedLine(descentLineStart, descentLineEnd, dottedLineSize);
 
-                // Draw _text labels for metrics
+                // Draw _logText labels for metrics
                 if (m_HandleSize < 1.0f)
                 {
                     GUIStyle style = new GUIStyle();
@@ -543,7 +543,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        /// Draw Rectangle around the bounds of the _text object.
+        /// Draw Rectangle around the bounds of the _logText object.
         /// </summary>
         void DrawBounds()
         {

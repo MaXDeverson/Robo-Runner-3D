@@ -24,7 +24,7 @@ namespace TMPro.Examples
 
         void OnEnable()
         {
-            // Subscribe to event fired when _text object has been regenerated.
+            // Subscribe to event fired when _logText object has been regenerated.
             TMPro_EventManager.TEXT_CHANGED_EVENT.Add(ON_TEXT_CHANGED);
         }
 
@@ -34,7 +34,7 @@ namespace TMPro.Examples
         }
 
 
-        // Event received when the _text object has changed.
+        // Event received when the _logText object has changed.
         void ON_TEXT_CHANGED(Object obj)
         {
             hasTextChanged = true;
@@ -42,7 +42,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        /// Method revealing the _text one character at a time.
+        /// Method revealing the _logText one character at a time.
         /// </summary>
         /// <returns></returns>
         IEnumerator RevealCharacters(TMP_Text textComponent)
@@ -51,7 +51,7 @@ namespace TMPro.Examples
 
             TMP_TextInfo textInfo = textComponent.textInfo;
 
-            int totalVisibleCharacters = textInfo.characterCount; // Get # of Visible Character in _text object
+            int totalVisibleCharacters = textInfo.characterCount; // Get # of Visible Character in _logText object
             int visibleCount = 0;
 
             while (true)
@@ -78,7 +78,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        /// Method revealing the _text one word at a time.
+        /// Method revealing the _logText one word at a time.
         /// </summary>
         /// <returns></returns>
         IEnumerator RevealWords(TMP_Text textComponent)
@@ -86,7 +86,7 @@ namespace TMPro.Examples
             textComponent.ForceMeshUpdate();
 
             int totalWordCount = textComponent.textInfo.wordCount;
-            int totalVisibleCharacters = textComponent.textInfo.characterCount; // Get # of Visible Character in _text object
+            int totalVisibleCharacters = textComponent.textInfo.characterCount; // Get # of Visible Character in _logText object
             int counter = 0;
             int currentWord = 0;
             int visibleCount = 0;

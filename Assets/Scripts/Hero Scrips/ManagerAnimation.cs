@@ -13,6 +13,7 @@ public class ManagerAnimation : MonoBehaviour
     [SerializeField] private Transform _animatetTransformForCatchBullet;
     [SerializeField] private float _speedShoot;
     [SerializeField] private AudioSource _audio;
+    [SerializeField] private bool _platformRun;
     private const string MAIN_LAYER_NAME = "MainLayer";
     private const string HAND_LAYER_NAME = "HandLayer";
     private const string SPEED_JUMP_MULTIPLIER = "SpeedJump";
@@ -24,10 +25,10 @@ public class ManagerAnimation : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator.SetFloat(SPEED_JUMP_MULTIPLIER, 0.2f);
         _animator.SetFloat(SPEED_SHOOT_MULTIPLIER, _speedShoot);
-        _audio.clip = Level.CurrentLevel.SoundList.HeroRun;
+        _audio.clip = _platformRun? Level.CurrentLevel.SoundList.PlatformRun:Level.CurrentLevel.SoundList.HeroRun;
 
     }
-    public async void SetMainAnimation(AnimationType type,LayerType layerType)
+    public async void PlayAnimation(AnimationType type,LayerType layerType)
     {
         if (_palyDieAnimation) return;
         switch (type)
@@ -58,6 +59,7 @@ public class ManagerAnimation : MonoBehaviour
                 break;
             case AnimationType.Jump:
                 _audio.PlayOneShot(Level.CurrentLevel.SoundList.HeroJump);
+                //_audio.PlayOneShot(Level.CurrentLevel.SoundList.JetPack);
                 StartCoroutine(SlowJumpAnimation());
                 break;
             case AnimationType.Run:

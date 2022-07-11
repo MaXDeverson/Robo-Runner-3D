@@ -5,13 +5,14 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using GoogleMobileAds.Api;
 
 public class StartUI : INotifible
 {
     [SerializeField] private Button _playButton;
     [SerializeField] private Button _reset;
     [SerializeField] private GameObject _loadObjects;
-    [SerializeField] private Text _text;
+    [SerializeField] private Text _logText;
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private BuyUI _buyUI;
     [SerializeField] private Button _info;
@@ -20,6 +21,7 @@ public class StartUI : INotifible
     [Header("Crystals")]
     [SerializeField] private TextMeshProUGUI _textUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textElectroCrystals;
+    [SerializeField] private Button _getCrystals;
     [Header("Cheat")]
     [SerializeField] private Button _addMoney;
     [SerializeField] private Text _moneyCount;
@@ -42,7 +44,6 @@ public class StartUI : INotifible
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private SoundList _soundList;
     private bool _inProcess;
-
     //Crystal animation
     private int _crystalCountAnimation;
     private int _counter;
@@ -55,6 +56,9 @@ public class StartUI : INotifible
     public float Sencetivity { get => _sencetivity.value; }
     public int Quality { get => _quality.value; }
     public bool ShowFps { get => _showFps.isOn; }
+    //add
+    private InterstitialAd _add;
+    private string _addId = "ca-app-pub-9558178408201758/8556519009";
 
     void Start()
     {
@@ -92,6 +96,36 @@ public class StartUI : INotifible
         //settings init
         _settingsButton.onClick.AddListener(() => _settingsWindow.SetActive(true));
         _hideSettings.onClick.AddListener(() => _settingsWindow.SetActive(false));
+        ///
+        try
+        {
+            _add = new InterstitialAd(_addId);
+            AdRequest request = new AdRequest.Builder().Build();
+            _add.LoadAd(request);
+            _logText.text = "Ad loading...";
+
+        }
+        catch(Exception ex)
+        {
+            _logText.text = ex.Message;
+        }
+        _getCrystals.onClick.AddListener(() =>
+        {
+            try
+            {
+                if (_add.IsLoaded())
+                    _add.Show();
+                else
+                {
+                    _logText.text = "Ad is not load";
+                }
+            }
+            catch(Exception ex)
+            {
+                _logText.text = ex.Message;
+            }
+           
+        });
         SoundInit();
     }
     private void FixedUpdate()

@@ -22,11 +22,11 @@ public class ShootLogic : Triggerable
     {
         if (!_isDie)
         {
-            _managerAniamtion.SetMainAnimation(_enemyIsInZone && !_isInStopZone ? AnimationType.Shoot : AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
+            _managerAniamtion.PlayAnimation(_enemyIsInZone && !_isInStopZone ? AnimationType.Shoot : AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
         }
         else
         {
-            _managerAniamtion.SetMainAnimation(AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
+            _managerAniamtion.PlayAnimation(AnimationType.Stay, ManagerAnimation.LayerType.HandLayer);
         }
         _enemyIsInZone = false;
     }

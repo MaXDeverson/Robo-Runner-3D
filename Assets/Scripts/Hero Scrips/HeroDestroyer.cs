@@ -70,12 +70,12 @@ public class HeroDestroyer : MonoBehaviour
         }
         if (_countLifes > 0)
         {
-            _managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
+            _managerAnimation.PlayAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
         }
         else if(!_isDie)
         {
-            //_managerAnimation.SetMainAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
-            _managerAnimation.SetMainAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);
+            //_managerAnimation.PlayAnimation(typeAnimation, ManagerAnimation.LayerType.MainLayer);
+            _managerAnimation.PlayAnimation(AnimationType.Die, ManagerAnimation.LayerType.MainLayer);
             DieAction?.Invoke();
         }
     }

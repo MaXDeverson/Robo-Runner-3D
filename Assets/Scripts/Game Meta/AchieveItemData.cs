@@ -26,7 +26,7 @@ public class AchieveItemData
             }
             return done;
         }}
-    public bool GiftGeted { get => _giftGeted; }
+    public bool GiftGeted { get => _giftGeted; set => _giftGeted = value; }
 
     public AchieveType Type { get => _type; }
     private string _header;

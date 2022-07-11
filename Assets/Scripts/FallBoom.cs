@@ -5,6 +5,7 @@ public class FallBoom : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _fallParticlesEffect;
     [SerializeField] private AudioSource _audio;
+    [SerializeField] private Vector3 _delta;
     private Rigidbody _rigidbody;
     private bool _canAnimated;
     private void Start()
@@ -21,7 +22,7 @@ public class FallBoom : MonoBehaviour
         Collider other = collision.collider;
         if (other.CompareTag(Tag.Untagged) && !other.isTrigger && _canAnimated)
         {
-            ParticleSystem newEffect = Instantiate(_fallParticlesEffect, transform.position, Quaternion.identity);
+            ParticleSystem newEffect = Instantiate(_fallParticlesEffect, transform.position + _delta, Quaternion.identity);
             newEffect.transform.parent = null;
             newEffect.Play();
             _audio.PlayOneShot(Level.CurrentLevel.SoundList.HeroFall);

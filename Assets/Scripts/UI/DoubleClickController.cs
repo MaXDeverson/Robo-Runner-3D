@@ -32,7 +32,6 @@ public class DoubleClickController : MonoBehaviour, IPointerClickHandler
             _timeFirstClick = _timeSecondClick;
             _timeSecondClick = DateTime.Now;
             TimeSpan diff = (_timeSecondClick - _timeFirstClick);
-            Debug.Log("Mill:" + diff.Milliseconds + " Sec:" + diff.Seconds);
             if (diff.Milliseconds <= 300 && diff.Seconds < 1 && diff.Minutes < 1)
             {
                 DoubleClickAction?.Invoke();

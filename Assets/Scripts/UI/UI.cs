@@ -57,7 +57,9 @@ public class UI : INotifible
 
     private InterstitialAd _add;
     private string _addId = "ca-app-pub-9558178408201758/8556519009";
+    private string _testAdId = "ca-app-pub-3940256099942544/1033173712";
     private Transform _animatiedObj;
+    private bool _adIsClosed;
 
     private HeroDestroyer _heroDestroyer;
     //damage animation
@@ -108,7 +110,7 @@ public class UI : INotifible
         InitilizationMenu();
         InitializeationLoose();
         ///
-        _add = new InterstitialAd(_addId);
+        _add = new InterstitialAd(_testAdId);
         AdRequest request = new AdRequest.Builder().Build();
         _add.LoadAd(request);
     }
@@ -186,6 +188,14 @@ public class UI : INotifible
             {
                 _fpsValue.color = Color.yellow;
             }
+        }
+        if (_adIsClosed)
+        {
+            Level.CurrentLevel.Contiune();
+            Start();
+            StartCoroutine(Animate(_looseBoard, _startPositionLooseBoard, true, false));
+            _panel.SetActive(false);
+            _adIsClosed = false;
         }
     }
     private void PlayDamageAnimation()
@@ -316,20 +326,21 @@ public class UI : INotifible
     public void AddActionExit(Action action) => _exitAction += action;
     private void Contiune()
     {
+        _add.OnAdClosed += _add_OnAdClosed;
         if (_add.IsLoaded())
         {
             _add.Show();
-            Level.CurrentLevel.Contiune();
-            Start();
-            StartCoroutine(Animate(_looseBoard, _startPositionLooseBoard, true, false));
-            _panel.SetActive(false);
         }
         else
         {
             ShowNotification("No internet connection");
         }
         //IF ADD WAS SHOWED
-      
+
+    }
+    private void _add_OnAdClosed(object sender, EventArgs e)
+    {
+        _adIsClosed = true;
     }
 
     //Notification logic

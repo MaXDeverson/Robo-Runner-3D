@@ -4168,7 +4168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 562d9fbe224ba84489e27fde70d57b93, type: 2}
+  - {fileID: 2100000, guid: 049e1ba515c914f4d9553f365275a7ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36814,6 +36814,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1326077250}
+    - target: {fileID: 6702669894784730855, guid: 2189af29daa810c4cad5b208a0c1469c, type: 3}
+      propertyPath: _shoowAd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6702669894784730855, guid: 2189af29daa810c4cad5b208a0c1469c, type: 3}
       propertyPath: SoundList
       value: 

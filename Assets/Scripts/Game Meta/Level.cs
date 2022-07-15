@@ -54,7 +54,7 @@ public class Level : MonoBehaviour
         _heroShield.Activate(2);
         _enemyMoverLogics.ForEach(x => x.SetAim(Hero));
         _playerData.CountContiuneUse();
-       
+
     }
     public void AddEnemyMoverLogic(EnemyMoverLogic logic) => _enemyMoverLogics.Add(logic);
     public HeroData HeroData => _heroData;
@@ -64,7 +64,9 @@ public class Level : MonoBehaviour
     private static int _indexHero;
     //Ad
     private string _addId = "ca-app-pub-9558178408201758/8556519009";
+    private string _testAdId = "ca-app-pub-3940256099942544/1033173712";
     private InterstitialAd _add;
+    private bool _adIsClosed;
     public static void SetHeroIndex(int index) => _indexHero = index;
     private void Awake()
     {
@@ -83,7 +85,18 @@ public class Level : MonoBehaviour
         _ui.ShowFps(_settingsData.ShowFPS);
         Hero.GetComponent<HeroMover>().VelocityXMultiplier = _settingsData.Sensitivity;
         QualitySettings.SetQualityLevel(_settingsData.Quality);
-        
+
+    }
+    private void FixedUpdate()
+    {
+        if (_adIsClosed)
+        {
+            _levelIsFinish = true;
+            _playerData.SaveData();
+            _ui.ShowLoadView();
+            SceneManager.LoadScene(++currentLevelIndex);
+            _adIsClosed = false;
+        }
     }
     private void OnApplicationQuit()
     {
@@ -114,10 +127,10 @@ public class Level : MonoBehaviour
         {
             Level.CurrentLevel.AudioSourses.SourceShield.PlayOneShot(Level.CurrentLevel.SoundList.AppearanceShield);
             PlayerData.GetPlayerData().CountShieldUse();
-            if(_countECrystalsOnLevel > 0)_countECrystalsOnLevel--;
+            if (_countECrystalsOnLevel > 0) _countECrystalsOnLevel--;
         };
         //ad
-        _add = new InterstitialAd(_addId);
+        _add = new InterstitialAd(_testAdId);
         AdRequest request = new AdRequest.Builder().Build();
         _add.LoadAd(request);
     }
@@ -189,6 +202,7 @@ public class Level : MonoBehaviour
     }
     private void LoadNextScene()
     {
+        _add.OnAdClosed += _add_OnAdClosed;
         if (_shoowAd)
         {
             if (_add.IsLoaded())
@@ -197,13 +211,29 @@ public class Level : MonoBehaviour
             }
             else
             {
-                Debug.Log("Ad no loaded");
+                _ui.ShowNotification("Please, connect to the internet. It's help to develop the game");
+                StartCoroutine(LoadSceneThrowTime(4));
             }
         }
         else
         {
-            Debug.Log("Don't show");
+            if (!_nextLoading)
+            {
+                _nextLoading = true;
+                _levelIsFinish = true;
+                _playerData.SaveData();
+                _ui.ShowLoadView();
+                SceneManager.LoadScene(++currentLevelIndex);
+            }
         }
+    }
+    private void _add_OnAdClosed(object sender, EventArgs e)
+    {
+        _adIsClosed = true;
+    }
+    private IEnumerator LoadSceneThrowTime(int timeS)
+    {
+        yield return new WaitForSeconds(timeS);
         if (!_nextLoading)
         {
             _nextLoading = true;

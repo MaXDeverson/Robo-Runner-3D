@@ -1431,6 +1431,15 @@ MonoBehaviour:
   - {fileID: 91672809592761511}
   - {fileID: 97655354542890165}
   - {fileID: 97644342597451809}
+  _withParts: 1
+  _parts:
+  - {fileID: 6744191436568250323, guid: e7f1acba247e6c542b2d517026c1d79f, type: 3}
+  - {fileID: 6744191436568250323, guid: e7f1acba247e6c542b2d517026c1d79f, type: 3}
+  - {fileID: 1908439087361666368, guid: e52f945b0ba36d14d973cfbdc8635683, type: 3}
+  - {fileID: 1908439087361666368, guid: e52f945b0ba36d14d973cfbdc8635683, type: 3}
+  - {fileID: 7631599029268492581, guid: d9438437c3daa444986a443485a27e5a, type: 3}
+  - {fileID: 5502016436400263320, guid: 12b77e80868ad0a48bd78ba3b94543ca, type: 3}
+  - {fileID: 8794747437034232360, guid: eb1495c7244cdd140ba35c650d4b9b14, type: 3}
 --- !u!65 &6909103094900413158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6631,7 +6640,7 @@ PrefabInstance:
     - target: {fileID: 9027463041387190874, guid: 40d1a1057589ec940bed435c847f3c9b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1a40c9541bf97d14fbaf181a953abbc6, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 9187475301105004574, guid: 40d1a1057589ec940bed435c847f3c9b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295

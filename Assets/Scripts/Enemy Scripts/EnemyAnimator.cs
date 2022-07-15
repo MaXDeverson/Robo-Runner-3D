@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -14,6 +13,9 @@ public class EnemyAnimator : MonoBehaviour
     [Header("For Ragdoll")]
     [SerializeField] private bool _isRagdoll;
     [SerializeField] private List<Transform> _bones;
+    [Header("For destroy")]
+    [SerializeField] private bool _withParts;
+    [SerializeField] private List<Transform> _parts;
     public AnimationType CurrentAnimation { get; protected set; }
     protected Rigidbody _rigidbody;
     protected const string MAIN_LAYER_NAME = "MainLayer";
@@ -56,6 +58,20 @@ public class EnemyAnimator : MonoBehaviour
                 _isDie = true;
                 _animator.SetInteger(MAIN_LAYER_NAME,(int)animation);
                 await Task.Delay(1100);
+                if (_withParts)
+                {
+                    int i = 0;
+                    _parts.ForEach(part =>
+                    {
+                        float randomX = ((float)random.Next(-25 - i ,25 + i++)) / 10;
+                        int randomZ = random.Next(1, 1 + i);
+                        Transform newPart = Instantiate(part, _bones[0].position + Vector3.up, new Quaternion(randomX,randomX,randomZ,randomZ));
+                        newPart.parent = null;
+                        newPart.GetComponent<Rigidbody>().AddForce(new Vector3(randomX * 2, randomX + 2,  1 + randomZ )/2, ForceMode.Impulse);
+                       // Destroy(newPart, 4);
+                    });
+                }
+
                 if (Application.isPlaying)
                 {
                     _boomParticles.transform.parent = null;

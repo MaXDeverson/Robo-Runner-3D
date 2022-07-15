@@ -11,6 +11,7 @@ public static class Serializator
                                       "CurrentGuideIndex", "Count kills", "Shield Use", "Contiune Count","Level music volume","Sencetivity","Quality","Show FPS"};
     private const string FILE_NAME = "/gamedata.dat";
     private const string FILE_NAME_ACHIEVES = "/gamedata Achieves.dat";
+    private const string FILE_DATE_NAME = "/gamedata Date.dat";
     private static List<HeroData> _initData = new List<HeroData>
     {
             new HeroData(true,true,0, 0,0,0,0),
@@ -79,7 +80,7 @@ public static class Serializator
         if(sencetiviy != 0)
         {
             float lvMusicV = PlayerPrefs.GetFloat(Names[(int)DataName.LvMusicVolume]);
-            int quality = PlayerPrefs.GetInt(Names[(int)DataName.Quality]);
+            int quality = QualitySettings.GetQualityLevel();
             int showFps = PlayerPrefs.GetInt(Names[(int)DataName.ShowFPS]);
             _settingsData = new SettingsData(lvMusicV, sencetiviy, quality, showFps != 0);
         }
@@ -93,7 +94,6 @@ public static class Serializator
         PlayerPrefs.SetInt(Names[(int)DataName.ShowFPS], _settingsData.ShowFPS? 1:0);
 
     }
-    
     public static bool IsFirstLaunching()
     {
         if (PlayerPrefs.GetInt(Names[(int)DataName.IsFirstLaunching]) != 1)
@@ -110,6 +110,38 @@ public static class Serializator
     {
         PlayerPrefs.SetInt(Names[(int)name], value);
     }
+    public static void Serialize(DateTime dateTime)
+    {
+        try
+        {
+            using (Stream stream = File.Open(Application.persistentDataPath + FILE_DATE_NAME, FileMode.Create))
+            {
+                BinaryFormatter bformatter = new BinaryFormatter();
+                bformatter.Serialize(stream, dateTime);
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex.Message);
+        }
+    }
+    public static DateTime DeSerializeDate()
+    {
+        DateTime serialize = new DateTime(1,1,1);
+        try
+        {
+            using (Stream stream = File.Open(Application.persistentDataPath + FILE_DATE_NAME, FileMode.Open))
+            {
+                BinaryFormatter bformatter = new BinaryFormatter();
+                serialize = (DateTime)bformatter.Deserialize(stream);
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.Log("Data NO deserialize" + ex.Message);
+        }
+        return serialize;
+    }
     public static void ResetValues()
     {
         File.Delete(Application.persistentDataPath + FILE_NAME);
@@ -120,6 +152,7 @@ public static class Serializator
         }
         AchievementItemsInitData.ForEach(ach => ach.GiftGeted = false);
         SerializeAchievement();
+        Serialize(new DateTime(1,1,1));
     }
     public static void Serialize(List<HeroData> herosData)
     {

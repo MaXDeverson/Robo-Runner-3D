@@ -20,14 +20,6 @@ public class UILogic : MonoBehaviour
     private UpgradeType _upgradeType;
     private void Start()
     {
-        //try
-        //{
-        //    MobileAds.Initialize(x => { });
-        //}
-        //catch (Exception exception)
-        //{
-        //    _startUI.ShowNotification(exception.Message);
-        //}
         _startUI.gameObject.SetActive(true);////fortesting
         _upgradeUI.gameObject.SetActive(true);
         _buyUI.gameObject.SetActive(true);
@@ -41,7 +33,7 @@ public class UILogic : MonoBehaviour
         _playerData.SetChangeCounUCystal((usualCont) => _startUI.UpdateUsualCrystals(usualCont));
         _playerData.SetChangeCounECrystal((count) => _startUI.UpdateElectroCrysals(count));
         _settingsData = Serializator.DeSerializeSettings();
-        _startUI.InitializeSettings(_settingsData.LevelSoundValue,_settingsData.Sensitivity,_settingsData.Quality,_settingsData.ShowFPS);
+        _startUI.InitializeSettings(_settingsData.LevelSoundValue,_settingsData.Sensitivity,_settingsData.Quality,_settingsData.ShowFPS);/////OBJ
     }
     private void InitializationUI()
     {
@@ -233,18 +225,22 @@ public class UILogic : MonoBehaviour
     }
     private void Resset()
     {
+        _startUI.InitializeSettings(0.4f, 1, 1, false);
         Serializator.ResetValues();
         PlayerData.ResetValues();
         SceneManager.LoadScene(0);
     }
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
-        _playerData.SaveData();
         _settingsData.LevelSoundValue = _startUI.LevelSound;
         _settingsData.Sensitivity = _startUI.Sencetivity;
         _settingsData.Quality = _startUI.Quality;
         _settingsData.ShowFPS = _startUI.ShowFps;
         Serializator.SerializeSettings();
+    }
+    private void OnApplicationQuit()
+    {
+        _playerData.SaveData();
     }
 }
 public enum UpgradeType

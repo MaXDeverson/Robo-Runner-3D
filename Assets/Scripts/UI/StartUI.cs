@@ -21,7 +21,9 @@ public class StartUI : INotifible
     [Header("Crystals")]
     [SerializeField] private TextMeshProUGUI _textUsualCrystals;
     [SerializeField] private TextMeshProUGUI _textElectroCrystals;
-    [SerializeField] private Button _getCrystals;
+    [SerializeField] private Button _getCrystalsButton;
+    [SerializeField] private TextMeshProUGUI _getCrystalsText;
+    [SerializeField] private GameObject _getCrystalsAnimation;
     [Header("Cheat")]
     [SerializeField] private Button _addMoney;
     [SerializeField] private Text _moneyCount;
@@ -51,6 +53,8 @@ public class StartUI : INotifible
     private bool _crystalIncrease;
     private int step = 50;
     private bool _crystalWithAnimation;
+
+    private bool _timerIsWork = true;
     //Settings
     public float LevelSound { get => _levelSound.value; }
     public float Sencetivity { get => _sencetivity.value; }
@@ -58,7 +62,8 @@ public class StartUI : INotifible
     public bool ShowFps { get => _showFps.isOn; }
     //add
     private InterstitialAd _add;
-    private string _addId = "ca-app-pub-9558178408201758/8556519009";
+    private string _testAdId = "ca-app-pub-3940256099942544/1033173712";
+    private string _id = "ca-app-pub-9558178408201758/8556519009";
 
     void Start()
     {
@@ -96,59 +101,114 @@ public class StartUI : INotifible
         //settings init
         _settingsButton.onClick.AddListener(() => _settingsWindow.SetActive(true));
         _hideSettings.onClick.AddListener(() => _settingsWindow.SetActive(false));
-        ///
+        /// Ad initialization
         try
         {
-            _add = new InterstitialAd(_addId);
+            MobileAds.Initialize(x =>
+            {
+    
+            });
+        }
+        catch (Exception ex)
+        {
+            _logText.text = $"Failed initialize m: {ex.Message}";
+        }
+        try
+        {
+            _add = new InterstitialAd(_testAdId);
             AdRequest request = new AdRequest.Builder().Build();
             _add.LoadAd(request);
-            _logText.text = "Ad loading...";
-
         }
-        catch(Exception ex)
+        catch (Exception ex)
+        {
+            _logText.text = $"Ads loading is failed:{ex.Message}";
+        }
+        
+        GetCrystalsInit();
+        SoundInit();
+    }
+    private void GetCrystalsInit()
+    {
+        _add.OnAdClosed += AdClosed;
+        DateTime lastTime = Serializator.DeSerializeDate();
+        TimeSpan diff = DateTime.Now - lastTime;
+        if (lastTime.Year == 1 || diff.Minutes >= 2)
+        {
+            _getCrystalsButton.onClick.RemoveAllListeners();
+            _getCrystalsButton.onClick.AddListener(CrystalButtonClick);
+            _getCrystalsText.text = "Get 200";
+            _getCrystalsAnimation.SetActive(true);
+        }
+        else
+        {
+            _timerIsWork = false;
+        }
+    }
+    private void AdClosed(object obj,EventArgs args)
+    {
+        PlayerData.GetPlayerData().AddUsualCrystals(200);
+        Serializator.Serialize(DateTime.Now);
+        DateTime lastTime = Serializator.DeSerializeDate();
+        TimeSpan diff = DateTime.Now - lastTime;
+        TimeSpan visual = new TimeSpan(0, 2, 0) - diff;
+        _getCrystalsText.text = $"{visual.Minutes} m : {visual.Seconds} s";
+        _timerIsWork = false;
+        //Add init
+        _add = new InterstitialAd(_testAdId);
+        AdRequest request = new AdRequest.Builder().Build();
+        _add.LoadAd(request);
+        _add.OnAdClosed += AdClosed;
+        _getCrystalsButton.onClick.RemoveAllListeners();
+    }
+
+    private void CrystalButtonClick()
+    {
+        try
+        {
+            if (_add.IsLoaded())
+            {
+                _add.Show();
+            }
+            else
+            {
+                _add = new InterstitialAd(_testAdId);
+                AdRequest request = new AdRequest.Builder().Build();
+                _add.LoadAd(request);
+                _add.OnAdClosed += AdClosed;
+                ShowNotification("Ad is not loaded. Retry or connect to the internet and try later");
+            }
+        }
+        catch (Exception ex)
         {
             _logText.text = ex.Message;
         }
-        _getCrystals.onClick.AddListener(() =>
+        _getCrystalsAnimation.SetActive(false);
+    }
+
+    private IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1);
+        DateTime lastTime = Serializator.DeSerializeDate();
+        TimeSpan diff = DateTime.Now - lastTime;
+        TimeSpan visual = new TimeSpan(0, 2, 0) - diff;
+        _getCrystalsText.text =  $"{visual.Minutes} m : {visual.Seconds} s";
+        if (diff.Minutes >=2)
         {
-            try
-            {
-                if (_add.IsLoaded())
-                    _add.Show();
-                else
-                {
-                    _logText.text = "Ad is not load";
-                }
-            }
-            catch(Exception ex)
-            {
-                _logText.text = ex.Message;
-            }
-           
-        });
-        SoundInit();
+            _timerIsWork = true;
+            _getCrystalsButton.onClick.RemoveAllListeners();
+            _getCrystalsButton.onClick.AddListener(CrystalButtonClick);
+            _getCrystalsText.text = "Get 200";
+            _getCrystalsAnimation.SetActive(true);
+        }
+        else
+        {
+            _timerIsWork = false;
+            _getCrystalsAnimation.SetActive(false);
+        }
+
     }
     private void FixedUpdate()
     {
-        //Crystal animation
-        //if(_crystalIncrease? _crystalCountAnimation > 0:_crystalCountAnimation < 0 && !_cryatalAnimationInProcess)
-        //{
-        //    _cryatalAnimationInProcess = true;
-        //    StartCoroutine(CrystalAnimation());
-        //    if (_crystalIncrease? _crystalCountAnimation < step:_crystalCountAnimation>step)
-        //    {
-        //        _counter += _crystalIncrease? _crystalCountAnimation: - _crystalCountAnimation;
-        //        _crystalCountAnimation = 0;
-        //    }
-        //    else
-        //    {
-        //        _crystalCountAnimation -= _crystalIncrease ? step : -step ;   
-        //        _counter += _crystalIncrease? step:-step;
-        //    }
-        //    _textUsualCrystals.text = _counter + "";
-        //    _audioSource.PlayOneShot(_soundList.Coin);
-
-        //}
         if (_crystalIncrease)
         {
             if (_crystalCountAnimation > 0 && !_cryatalAnimationInProcess)
@@ -189,7 +249,12 @@ public class StartUI : INotifible
                 _audioSource.PlayOneShot(_soundList.Coin);
             }
         }
-
+        //CrystalChange Aniamtion
+        if (!_timerIsWork)
+        {
+            StartCoroutine(Timer());
+        }
+      
     }
     private void SoundInit()
     {
